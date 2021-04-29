@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">click</button>
+<script>
+    window.onload=function () {
+        var btnNode=document.getElementById("btn");
+        /*
+        *   1.事件名称
+        *       ie带on
+        *   2.this的指向
+        *      ie: this指向windows
+        *   3.事件函数的指向顺序
+        *       标准ie（ie9，ie10）    按绑定顺序
+        *       非标准ie(ie6,7,8)      按绑定的顺序倒序
+        * */
+        btnNode.attachEvent("onclick",function () {
+            console.log(this,1);
+        })
+        btnNode.attachEvent("onclick",function () {
+            console.log(this,2);
+        })
+        btnNode.attachEvent("onclick",function () {
+            console.log(this,3);
+        })
+        btnNode.attachEvent("onclick",function () {
+            console.log(this,4);
+        })
+    }
+</script>
+</body>
+</html>

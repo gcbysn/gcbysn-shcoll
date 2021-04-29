@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="wrap">
+        <div class="inner1">inner1 </div>
+        <div class="inner2">inner2</div>
+    </div>
+    <script>
+        window.onload=function () {
+            var wrapNode=document.getElementById("wrap");
+            var inner1=document.querySelector("#wrap .inner1");
+            var inner2=document.querySelector("#wrap .inner2");
+
+
+            //传给我任意两个节点 可以替换他们的位置
+            /*
+            * 确保oneNode和twoNode都在dom树中，而且必须得有父节点
+            * */
+            function replaceEach(oneNode,twoNode) {
+                    var oneParent =oneNode.parentNode;
+                    var twoParent=twoNode.parentNode;
+                    var tempNode=null;
+                    if (oneParent&&twoParent){
+                        //把oneNode复制一份
+                        tempNode=twoNode.cloneNode(true);
+                        /*
+                        * 实现交换的逻辑
+                        *   wrap 剪掉twoNode 覆盖掉oneNode
+                        *       oneNode处于游离状态；twoNode换了个位置存在dom树中
+                        * */
+                        var replaceNode = oneParent.replaceChild(tempNode,oneNode);
+                        /*
+                        * wrap 找到游离状态的oneNode 覆盖掉twoNode
+                        * 将oneNode重新挂载到dom树上    覆盖掉twoNode处于游离状态
+                        * */
+                        twoParent.replaceChild(replaceNode,twoNode);
+                    }
+            }
+            replaceEach(inner1,inner2);
+        }
+    </script>
+</body>
+</html>

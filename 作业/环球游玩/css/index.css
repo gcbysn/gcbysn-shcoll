@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: calc(100vw/7.2);
+    /*overflow: hidden;*/
+}
+body{
+    /*overflow-y: hidden;*/
+    /*height: 100%;*/
+}
+.app{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /*height: 11.7rem;*/
+    /*height: 100%;*/
+    background-image: url("../images/in_bg3.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /*position: relative;*/
+}
+.mb{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 9;
+}
+.app .top{
+    width: 6.4rem;
+    position: absolute;
+    top: 0;
+    left: 0.4rem;
+}
+.tc{
+    width: 6.15rem;
+    height: 7.4rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: none;
+    z-index: 99;
+}
+.tc .wz{
+    width: 6rem;
+    height: 4.32rem;
+    margin-left: 0.15rem;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+.tc .wz p{
+    text-align: center;
+    line-height: 0.36rem;
+    font-size:0.24rem ;
+    color: #A2A2A2;
+}
+.tc .wz p:nth-child(2n+1){
+    margin-bottom: 0.4rem;
+    padding-left: 0.8rem;
+    text-align: left;
+}
+
+.tc .wz h3{
+    text-align: center;
+    font-size:0.36rem ;
+    color: black;
+    font-weight: 700;
+    margin: 0.2rem 0;
+}
+.tc .gongGao{
+    display: block;
+    width: 6.15rem;
+    height: 3.08rem;
+}
+.app .bottom{
+    position: absolute;
+    bottom: 0rem;
+    left: 3rem;
+    width: 3.15rem;
+    height: 3.65rem;
+    background-image: url("../images/index_hand.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.app span{
+    position: absolute;
+    text-decoration:underline ;
+    bottom: 0.28rem;
+    left: 0.44rem;
+    font-size: 0.32rem;
+    color: white;
+}
+.bottom1{
+    width: 7.2rem;
+    height: 2.3rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/bottom.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0.07rem 1.2rem;
+    display: none;
+}
+.load{
+    width: 3.51rem;
+    height: 4.1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    z-index: 10;
+}
+.active{
+    display: block;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script type="text/javascript">
+        console.log('圆周率'+Math.PI)
+        console.log('绝对值'+Math.abs(-6));
+        console.log('向上取整'+Math.ceil(10.01));
+        console.log('向下取整'+Math.floor(10.99));
+        console.log('最大值'+Math.max(2,34,564,676,1));
+        console.log('最小值'+Math.min(2,34,564,676,1));
+        console.log('四舍五入'+Math.round(45.5));
+        console.log('四位数随机数'+parseInt((Math.random()*9000)+1000));
+
+        //Math.random()*(min+1)+(max-min)
+        //Math.random()*(max-min)+(min)
+        console.log(Math.random()*12+13);
+        /*
+        * 求任意个数的最大值
+        * */
+        function max() {
+            var max=arguments[0];
+            for (let i = 0; i <arguments.length ; i++) {
+                if (max<arguments[i]){
+                    max=arguments[i];
+                }
+            }
+            return max;
+        }
+        console.log(max(2,56,3,76,897,12,4567));
+    </script>
+</body>
+</html>

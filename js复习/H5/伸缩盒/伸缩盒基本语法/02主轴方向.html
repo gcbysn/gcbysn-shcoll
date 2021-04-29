@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .warp{
+            width: 800px;
+            margin: 100px auto;
+            border:1px solid red;
+
+            /*变为伸缩容器*/
+            display: flex;
+            /*改变主轴方向
+                row（默认值）：主轴为水平方向，起点在左端。
+                row-reverse：主轴为水平方向，起点在右端。
+                column：主轴为垂直方向，起点在上沿。
+                column-reverse：主轴为垂直方向，起点在下沿。
+            */
+            flex-direction: row;
+            flex-direction: column;
+            flex-direction: row-reverse;
+            flex-direction: column-reverse;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+
+        }
+        .box1{
+            background: red;
+        }
+        .box2{
+            background: black;
+        }
+        .box3{
+            background: blue;
+        }
+        .box4{
+            background: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+    </div>
+
+</body>
+</html>

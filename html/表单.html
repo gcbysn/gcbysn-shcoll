@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+<!--
+    表单：表单标签         提示信息    表单域
+    label标签：标题
+    for属性：关联表单标签的id属性
+ =====================================================
+    input标签：
+        属性：
+            type:类型
+                属性：
+                    text：输入框
+                    radio:单选
+                        属性：
+                        name：组的概念，让几个单选按钮形成单选的效果，起相同的name的名称
+                        checked：默认选中    checked=“checked”； checked=“”； checked
+                    buttton:普通按钮
+                        属性：
+                        value：按钮文本
+                    submit：提交按钮
+                    reset：重置按钮
+                    checkbox：复选
+                        属性：
+                        checked：默认选中    checked=“checked”； checked=“”； checked
+ =====================================================
+    select：下拉框
+    option：下拉项
+        属性：
+        selected：默认选中   selected=“selected”； selected=“”； selected
+    optgroup：下拉组
+        属性：
+        label：组标题
+ =====================================================
+    textarea:文本域
+ =====================================================
+    form:表单域
+    属性：
+        action：提交地址
+        method：提交方式         get/post
+-->
+<form action="https://www.taobao.com" method="post">
+    <label for="name">姓名：</label><input type="text" id="name"><br>
+    <label for="psd">密码：</label><input type="password" id="psd"><br>
+    性别：<input type="radio" name="sex">男&nbsp;&nbsp;<input type="radio" name="sex">女 <br>
+    兴趣爱好：<input type="checkbox">足球<input type="checkbox">篮球<input type="checkbox">羽毛球<input type="checkbox">排球 <br>
+    学历：
+    <select name="" id="">
+        <option value="">幼儿园</option>
+        <option value="">小学</option>
+        <option value="">初中</option>
+        <option value="">高中</option>
+        <option value="">专科</option>
+        <option value="">本科</option>
+        <option value="">研究生</option>
+    </select><br>
+    你的国籍是：
+    <select name="">
+        <optgroup label="亚洲">
+            <option value="">中国</option>
+            <option value="">韩国</option>
+            <option value="">日本</option>
+            <option value="">泰国</option>
+        </optgroup>
+        <optgroup label="欧洲">
+            <option value="">瑞典</option>
+            <option value="">法国</option>
+        </optgroup>
+    </select><br>
+    请描述一下你自己：<br>
+    <textarea name="" cols="30" rows="10">
+    </textarea><br>
+    <input type="button" value="普通按钮">
+    <input type="submit" value="提交">
+    <input type="reset" value="重置按钮">
+</form>
+</body>
+</html>

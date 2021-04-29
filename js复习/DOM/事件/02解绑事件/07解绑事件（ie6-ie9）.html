@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">清楚缓存</button>
+    <button id="clear">解除绑定</button>
+    <script>
+        /*
+        *   ie6 ie7 ie8 ie9 用这种方式
+        * */
+        window.onload=function () {
+            var btnNode=document.getElementById("btn");
+            var clearNode=document.getElementById("clear");
+
+            function fn(){
+                console.log("清楚成功");
+            }
+            btnNode.attachEvent("onclick",fn);
+            clearNode.attachEvent("onclick",function () {
+                btnNode.detachEvent("onclick",fn);
+           })
+        }
+    </script>
+</body>
+</html>

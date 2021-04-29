@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*
+            html标签都有一些默认的css样式，如果是文本属性会被自身的样式层叠掉，如果想改变，在给标签人为设置就ok
+
+
+            css继承性：
+            后代标签会继承父辈标签的所有关于文本的属性,后代标签会优秀继承离他最近的父辈元素的属性，一层一层向外，进程的权重是零
+
+            能够继承的属性是：
+            所有的文本属性，text-align:center，行高 (line-height)
+        */
+        .box{
+            color: red;
+            font-size: 40px;
+            background: aqua;
+            text-align: center;
+        }
+        span{
+            color: blue;
+        }
+        .u{
+            color: yellow;
+            background: chartreuse;
+        }
+        .box2{
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>我是一个盒子</span>
+        <p>段落
+            <i>倾斜</i>
+        </p>
+        <p class="u">段落
+            <i>倾斜</i>
+        </p>
+    </div>
+<div class="box2">
+    <span>我是span</span>
+    <h1>我是标题</h1>
+    <a href="##">超链接</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*
+            盒子模型：元素的模型
+            内边距：padding：当元素加了内边距后，可以让内容和元素有设置的间距，此时元素的尺寸会变大
+                             如果不希望改元素尺寸变大，要相应的从元素的宽高剪去内边距的尺寸
+             盒子在网页上的尺寸=自身宽高+内边距+边框
+        */
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+           /* padding-left: 10px; 左间距
+            padding-top: 10px;     上间距
+            padding-right: 10px;    右间距
+            padding-bottom: 10px;   下间距
+            */
+            border: 10px solid black;
+            /*
+                一个值：上下左右
+                两个值：上下  左右
+                三个值：上  左右 下
+                四个值：上 右 下 左
+            */
+            padding: 10px;
+            float: right;
+        }
+        .phone{
+            width: 50px;
+            height: 100px;
+            background: blue;
+
+        }
+        /*
+            padding减宽度的场景，当元素是块级显示模式的时候，如果不给该元素设置固定的宽度，宽度会和父元素的宽度相同，此时
+            改元素设置水平方向的padding宽度会自动计算，不会撑大盒子。
+            如果该元素设置了固定的宽度，此时加了padding后会撑大该元素。
+        */
+        .box2{
+            width: 500px;
+            height: 300px;
+            background: red;
+            padding-left: 100px;
+        }
+        .box3{
+            height: 300px;
+            background: yellow;
+            padding-left: 100px;
+        }
+        .box4{
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="phone"></div>
+    </div>
+    <div class="box2">
+
+    </div>
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    变量：暂时对不同数据类型的数据进行存储
+    定义变量使用关键字：var const let
+    变量命名规范：不能使用数字开头，可以是字母，下划线，数字，$
+
+    var定义的变量可以修改，如果不初始化会输出undefined，不会报错    var + 变量名
+
+    const定义的变量不可以修改，而且必须初始化    const + 变量名=值
+
+    let是块级作用域，函数内部使用let定义后，对函数外部无影响。
+
+    声明变量： var num;
+    给变量负值： num='world';
+
+    alert():在浏览器弹出对话框进行打印
+    console.log():在浏览器的控制台用日志的方式输出
+    document.write():在网页中输出
+
+    数据类型：
+        数值类型（number）：数学中用到的数字，作用进行计算
+        字符串类型（string）:
+        布尔类型（boolean）:true false
+        未定义类型（undefined）:undefined  当变量只声明没有赋值的时候就是undefined    var num03
+        对象类型（object）:复杂的数据类型      var obj=new Object();
+        空类型（object）：值只有一个null
+
+    数据类型装换：
+        parseInt():转换成整数类型，向下取整
+        parseFloat():转换成小数
+        Number():转换成数值，严格型的转换
+        totString（）：其他数据类型转换成字符串
+        String():其他数据类型转换成字符串
+        Boolean():其他数据类型转换成布尔类型
+
+    运算符（操作符）
+        算术运算符：+ — * / % =
+        一元运算符：一个操作数 ++ ——
+        二元运算符：两个操作数以上
+        三元运算符：三元表达式
+        复合运算符：+= -= *= /=
+        关系运算符：> <
+        ==等于（只比较值，不比较数据类型，不严格比较）
+        != 不等于（只比较值，不比较数据类型，不严格比较）
+        ===全等（既比较值，又比较数据类型，严格型比较）
+        !==不等于（既比较值，又比较数据类型，严格型比较）
+     逻辑运算符：
+        &&
+
+    前++和后++的区别
+    共同点：都要加1
+    区别：前++先加1在计算     后++，是否再用到a,用到就加1
+-->
+<script type="text/javascript">
+    /*
+    * 不借助第三方变量，交换两个变量的值
+    * */
+    var num01=1;
+    var num02=2;
+    num01=num01+num02;      //num01=3 num02=2
+    num02=num01-num02;      //num01=3 num02=1
+    num01=num01-num02;      //num01=2 num02=1
+    console.log(num01,num02)
+
+    /*typeof检查是啥数据类型*/
+    console.log(typeof 5)
+    /*parseInt():转换成整数类型，向下取整*/
+    console.log(parseInt('10.99'));
+    console.log(parseInt('10'));
+    console.log(parseInt('true'));
+    console.log(parseInt('abc10.99'));
+    /* parseFloat():转换成小数*/
+    console.log(parseFloat('10.99'));
+    console.log(parseFloat('10'));
+    console.log(parseFloat('abc10'));
+    /*Number():转换成数值，严格型的转换*/
+    console.log(Number('10.99'));
+    console.log(Number('10'));
+    console.log(Number('true'));//1
+    console.log(Number('false'))//0
+
+    var c = 'hello';
+
+    var a = 1;
+    var c = ++a + ++a + a++ + a++ + ++a + a++ + a;
+    console.log(c)
+
+    const num03 = 8;
+    var num04;
+    console.log('10'-num04); //NaN
+    console.log('10'+num04);//10undefined
+    console.log('10'+num04*num03);//10NaN
+    console.log(('10'+num03).toString()+num04);//108undefined
+    console.log(Boolean(5)+5);//6
+
+</script>
+</body>
+</html>

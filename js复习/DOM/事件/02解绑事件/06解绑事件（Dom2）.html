@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">清楚缓存</button>
+    <button id="clear">解除绑定</button>
+    <script>
+
+        window.onload=function () {
+            var btnNode=document.querySelector("#btn");
+            var clearNode=document.getElementById("clear");
+            function fn() {
+                alert("清楚成功");
+            }
+            //dom2定义事件
+            btnNode.addEventListener("click",fn)
+            //dom2解绑事件
+            clearNode.addEventListener("click",function () {
+                //解绑
+                btnNode.removeEventListener("click",fn);
+            })
+        }
+    </script>
+</body>
+</html>

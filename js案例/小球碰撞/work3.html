@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1,.box3{
+            width: 100px;
+            height: 100px;
+            /*padding: 20px;*/
+            /*border: 15px solid blue;*/
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            /*animation: name 2s infinite;*/
+        }
+        .box3{
+            margin-left: 900px;
+            margin-top: 0px;
+            /*animation: name2 2s infinite;*/
+            background-color: blue;
+        }
+        .box2{
+            width: 1000px;
+            height: 500px;
+            /*border: 10px solid black;*/
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="box2">
+    <div class="box1"></div>
+    <div class="box3"></div>
+</div>
+</body>
+<script>
+    var box1=document.querySelector('.box1');
+    var box3=document.querySelector('.box3');
+    var box2=document.querySelector('.box2');
+
+    var flag=true;
+
+    var box2_w=0;
+    var box2_h=0;
+
+    var box1_left=0;
+    var box1_top=0;
+    var box1_w=0;
+    var box1_h=0;
+
+    var box3_left=0;
+    var box3_top=0;
+    var box3_w=0;
+    var box3_h=0;
+
+    var t_bol=false;
+    var l_bol=false;
+
+    var t_bol3=false;
+    var l_bol3=false;
+
+    var t_bol2=false;
+    var l_bol2=false;
+
+    //获得box2的宽高
+    box2_h=box2.clientHeight;
+    box2_w=box2.clientWidth;
+    //获得box1的初始偏移量
+    box1_top=box1.offsetTop;
+    box1_left=box1.offsetLeft;
+    //获得box1的宽高
+    box1_w=box1.clientWidth;
+    box1_h=box1.clientHeight;
+
+    //获得box1的初始偏移量
+    box3_top=box3.offsetTop;
+    box3_left=box3.offsetLeft;
+    //获得box1的宽高
+    box3_w=box3.clientWidth;
+    box3_h=box3.clientHeight;
+
+var time,time1;
+
+    function move(){
+        time=setInterval(function () {
+            //表示图片已经移动到底部了，偏移量开始减少
+            if(box1_top+box1_h==box2_h){
+                t_bol=true
+            }
+            //表示图片已经到最右边了，偏移量要开始减少
+            if (box1_left+box1_w==box2_w){
+                l_bol=true
+            }
+            //表示图片已经到浏览器顶部了，偏移量增加
+            if (box1_top==0){
+                t_bol=false
+            }
+            //表示图片已经到最左边，偏移量增加
+            if (box1_left==0){
+                l_bol=false
+            }
+
+            if (!t_bol){
+                box1_top++
+            } else{
+                box1_top--
+            }
+            if (!l_bol){
+                box1_left++
+            } else
+            {
+                box1_left--
+            }
+
+            box1.style.marginLeft=box1_left+"px";
+            box1.style.marginTop=box1_top+"px";
+            pz()
+
+        },1)
+    }
+
+    function move2(){
+        time1=setInterval(function () {
+            //表示图片已经移动到底部了，偏移量开始减少
+            if(box3_top+box3_h==box2_h){
+                t_bol2=true
+            }
+            //表示图片已经到最右边了，偏移量要开始减少
+            if (box3_left+box3_w==box2_w){
+                l_bol2=true
+            }
+            //表示图片已经到浏览器顶部了，偏移量增加
+            if (box3_top==0){
+                t_bol2=false
+            }
+            //表示图片已经到最左边，偏移量增加
+            if (box3_left==0){
+                l_bol2=false
+            }
+
+            if (!t_bol2){
+                box3_top++
+            } else{
+                box3_top--
+            }
+            if (!l_bol2){
+                box3_left++
+            } else
+            {
+                box3_left--
+            }
+            box3.style.marginLeft=box3_left+"px";
+            box3.style.marginTop=box3_top+"px";
+
+            pz()
+        },5)
+    }
+
+
+
+    function ft() {
+        setInterval(function () {
+            if (box3_left>box1_left){
+                box3_left++;
+                box1_left--;
+            }
+            if (box3_left<box1_left){
+                box3_left--;
+                box1_left++;
+            }
+            if (box3_top<box1_top){
+                box3_top--;
+                box1_top++;
+            }
+            if (box3_top<box1_top){
+                box1_top--;
+                box3_top++;
+            }
+
+            move();
+            move2();
+
+            box3.style.marginLeft=box3_left+"px";
+            box3.style.marginTop=box3_top+"px";
+            box1.style.marginLeft=box1_left+"px";
+            box1.style.marginTop=box1_top+"px";
+        },5)
+    }
+
+    move();
+    move2();
+
+    function pz() {
+        var box1_r=box1.clientWidth/2;
+        //求得半径
+        var box3_r=box3.clientWidth/2;
+
+        var box3_x=box3_r+box3.offsetLeft;
+        var box1_x=box1_r+box1.offsetLeft;
+        var box3_y=box3_r+box3.offsetTop;
+        var box1_y=box1_r+box1.offsetTop;
+
+        // console.log(box2.clientTop,box2.clientLeft,box3_x,box3_y,box1_x,box1_y)
+        var r=Math.sqrt(((box1_x-box3_x)*(box1_x-box3_x))+((box1_y-box3_y)*(box1_y-box3_y)) ) ;
+        var body=document.getElementsByTagName('body')[0]
+        console.log(r)
+        if (r<=(box1_r+box3_r)){
+            if (flag){
+                box3.style.background='rgb('+parseInt(Math.random()*256)+','+parseInt(Math.random()*256)+','+parseInt(Math.random()*256)+')'
+                box1.style.background='rgb('+parseInt(Math.random()*256)+','+parseInt(Math.random()*256)+','+parseInt(Math.random()*256)+')'
+                flag=false;
+            }
+        }
+        else{
+            flag=true;
+        }
+    }
+    // pz();
+    // console.log(box2_h,box2_w,box1_top,box1_left,box1_w,box1_h)
+</script>
+</html>
+
+

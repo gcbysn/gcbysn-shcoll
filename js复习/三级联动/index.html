@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+    <select id="province" onchange="addCity(this.value);">
+        <option value="-1">--请选择--</option>
+        <option value="0">湖南</option>
+        <option value="1">广东</option>
+        <option value="2">河南</option>
+    </select>
+    <select id="city" onchange="addCounty(this.value);">
+        <option value="-1">--请选择--</option>
+    </select>
+    <select id="county">
+        <option value="-1">--请选择--</option>
+    </select>
+</body>
+<script>
+    var citys = [
+        ["长沙","郴州","永州"],
+        ["广州","惠州","深圳"],
+        ["郑州","开封","洛阳"]
+    ];
+    var countys = [
+        [
+            ["芙蓉区","雨花区","天心区"],["苏仙区","北湖区","嘉禾县"],["蓝山县","宁远县","道县"]
+        ],
+        [
+            ["黄浦区","天河区","番禺区"],["惠城区","惠阳区","博罗县"],["福田区","南山区","宝安区"]
+        ],
+        [
+            ["中原区","金水区","上街区"],["龙亭区","祥符区","杞县"],["洛龙区","洛宁县","孟津县"]
+        ]
+    ];
+    function addCitysOpt(text,value){
+        //根据id获得city下拉框
+        var city = document.getElementById("city");
+        //创建下拉选项
+        var opt = document.createElement("option");
+        //分别赋值
+        opt.text = text;
+        opt.value = value;
+        //将该节点添加到city下拉框节点中
+        city.options.add(opt);
+    }
+    function addCountyOpt(text,value){
+        //同上
+        var county = document.getElementById("county");
+        var opt = document.createElement("option");
+        opt.text = text;
+        opt.value = value;
+        county.options.add(opt);
+    }
+    function addCity(value){
+        //通过id获得省级元素
+        var province = document.getElementById("province");
+        //通过id获得市级元素
+        var city = document.getElementById("city");
+        //通过id获得县级元素
+        var county = document.getElementById("county");
+        //每次联动前，将联动下拉框的长度变为1；
+        city.options.length = 1;
+        county.options.length = 1;
+        //根据value循环citys数组，将对应城市一一添加进城市下拉框。
+        for(var i = 0 ; i< citys[value].length; i++){
+            addCitysOpt(citys[value][i],i);
+        }
+    }
+    function addCounty(value){
+        //同上
+        var province = document.getElementById("province");
+        var city = document.getElementById("city");
+        var county = document.getElementById("county");
+        p_value = province.value;
+        county.options.length = 1;
+        for(var i = 0;i<countys[p_value][value].length;i++){
+            addCountyOpt(countys[p_value][value][i],i);
+        }
+    }
+</script>
+</html>

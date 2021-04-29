@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <div id="app" class="active" name="damu">app</div>
+    <script>
+        //querySelector():方法返回文档中与指定选择器或选择器组匹配的第一个 html元素Element。 如果找不到匹配项，则返回null。
+        var appNode =document.querySelector("#app")
+        //属性节点 getAttributeNode(): 返回指定元素的指定属性节点
+        var idAttr=appNode.getAttributeNode("id");
+        console.dir(idAttr.nodeValue);
+        //属性值(可以拿自定义，预定义属性的属性值)
+        //getAttribute():返回元素上一个指定的属性值,如果指定的属性不存在，则返回  null 或 "" （空字符串）
+
+        var val=appNode.getAttribute("id");
+        console.log(val);
+        //属性值（对象点的形式，只能拿预定义属性的属性值）
+        console.log(appNode.id);
+        console.log(appNode.name);
+        console.log(appNode.className);
+        /*attributes:
+        * 属性返回该元素所有属性节点的一个实时集合。
+        * 该集合是一个 NamedNodeMap 对象，不是一个数组，所以它没有 数组 的方法，
+        * 其包含的 属性 节点的索引顺序随浏览器不同而不同。
+        * 更确切地说，attributes 是字符串形式的名/值对，每一对名/值对对应一个属性节点。
+        * */
+        console.log(appNode.attributes);
+        //getAttributeNames:返回一个Array，该数组包含指定元素（Element）的所有属性名称，如果该元素不包含任何属性，则返回一个空数组。
+        console.log(appNode.getAttributeNames());
+        //hasAttribute 返回一个布尔值，指示该元素是否包含有指定的属性（attribute）
+        console.log(appNode.hasAttribute("id"));
+
+        //class的CRUD
+        appNode.classList.add("active2");
+        appNode.classList.remove("active");
+        var firstClass=appNode.classList.item(0);
+        console.log(firstClass);
+
+    </script>
+</body>
+</html>

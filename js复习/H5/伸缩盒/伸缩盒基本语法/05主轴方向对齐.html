@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .warp{
+            width: 800px;
+            margin: 100px auto;
+            border:1px solid red;
+
+            /*变为伸缩容器*/
+            display: flex;
+            /*主轴方向对齐方式
+                flex-start（默认值）：左对齐
+                flex-end：右对齐
+                center： 居中
+                space-between：两端对齐，项目之间的间隔都相等。
+                space-around：每个伸缩项目两侧的间隔相等。所以，伸缩项目之间的间隔比伸缩项目与边框的间隔大一倍。
+                space-evenly: 伸缩项目之间的间隔以及缩项目与伸缩容器边框的间隔相等。 （新增属性值，兼容性稍差）。
+            */
+         /*   justify-content:flex-start;
+            justify-content: flex-end;
+            justify-content: center;*/
+            /*justify-content: space-between; !*常用*!*/
+            /*justify-content: space-around;*/
+            justify-content: space-evenly;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+
+        }
+        .box1{
+            background: red;
+        }
+        .box2{
+            background: black;
+        }
+        .box3{
+            background: blue;
+        }
+        .box4{
+            background: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .warp{
+            width: 400px;
+            margin: 100px auto;
+            border:1px solid red;
+
+            /*变为伸缩容器*/
+            display: flex;
+
+
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+            flex-shrink: 0;
+            flex-shrink: 1;
+        }
+        .box1{
+            background: red;
+            width: 100px;
+            /*第一个值 flex-grow  第二个值 flex-shrink  第三值 flex-basis*/
+            flex:1 2 200px;
+        }
+        .box2{
+            background: wheat;
+            width: 200px;
+            flex: 1 2 200px;
+
+        }
+        .box3{
+            background: blue;
+            width: 200px;
+            flex: 1 2 200px;
+        }
+        .box4{
+            background: burlywood;
+            width: 100px;
+            flex: 1 1 100px;
+        }
+        /*
+            每个伸缩项目该缩多少=（flex-shrink*原本伸缩项目的长度/（每个原本伸缩项目长度*flex-shrink的和））* 总共多出来的长度
+
+        */
+    </style>
+</head>
+<body>
+<div class="warp">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+    <div class="box box4">4</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>三列瀑布流</title>
+    <style>
+        body {
+            /* height: 2000px; */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            border: 1px solid red;
+            width: 720px;
+            overflow: hidden;
+            margin: 0 auto;
+            /*display: flex;*/
+            /*position: relative;*/
+        }
+
+        .cont {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            background: #000;
+            float: left;
+        }
+        .loading{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            animation: name 2s 0s infinite;
+        }
+        @keyframes name{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+</div>
+<!-- <img src="images/1-150614203H20-L.jpg" class="loading">  -->
+</body>
+<script>
+    var flag = 0
+    var box = document.querySelector('.box')
+    var cont = document.querySelector('.cont')
+    if (window.addEventListener)
+        window.addEventListener('DOMMouseScroll', wheel, false)
+    //FF,火狐浏览器会识别该方法
+
+    window.onmousewheel = document.onmousewheel = wheel //W3C
+    var scrollTop;
+    // 页面高度
+    //  console.log(document.documentElement.clientHeight)
+    var ymH =
+        document.documentElement.clientHeight || document.body.clientHeight
+    function wheel(event) {
+        document.onscroll = function(){
+            scrollTop =
+                document.documentElement.scrollTop ||document.body.scrollTop || 0
+            // e = event || window.event || 0
+            // console.log(window.opera)
+            // var event = event || window.event
+            var delta = 0
+            if (!event) event = window.event
+            if (event.wheelDelta) {
+                //IE、chrome浏览器使用的是wheelDelta，并且值为“正负120”
+                //   下滚  -120   上滚 120
+                delta = event.wheelDelta / 120
+                //window.opera    ---->判断 当前浏览器 是否为 opera
+                if (window.opera) delta = -delta //因为IE、chrome等向下滚动是负值，FF是正值，为了处理一致性，在此取反处理
+            } else if (event.detail) {
+                //FF浏览器使用的是detail,其值为“正负3”
+                delta = -event.detail / 3
+            }
+            if (delta) handle(delta)
+
+        }
+    }
+
+    //mousewheel ----滚动条滚动
+    //上下滚动时的具体处理函数
+    function handle(delta) {
+        scrollTop =
+            document.documentElement.scrollTop || document.body.scrollTop || 0
+        if (delta < 0) {
+            //向下滚动
+            // console.log('下')
+            // console.log(scrollTop)
+            // 获取元素最后一个节点距离顶部的高度
+            var box_T = box.lastElementChild.offsetTop;
+            var box_H = box.lastElementChild.offsetHeight;
+            var box_TH = box_T+box_H
+            //获取外边距
+            var cont_mar = parseInt(
+                getComputedStyle(box.lastElementChild, null).margin
+            )
+            if (scrollTop + ymH - (box_T + box_H + cont_mar) >= 0) {
+                if(flag == 0){
+                    var img = document.createElement('img')
+                    img.setAttribute('src','img/2.png')
+                    img.setAttribute('class','loading')
+                    document.body.appendChild(img)
+                    var h=[];
+                    setTimeout(function(){
+                        for(var i=0;i<3;i++){
+                            var conts = document.createElement('div')
+                            conts.className = 'cont'
+                          var a=parseInt(Math.random()*3)
+                            var arry=[50,100,150];
+                            // console.log(arry[a])
+                            conts.style.height=arry[a]+"px";
+                            box.appendChild(conts);
+                            var mar=parseInt(getComputedStyle(conts).margin);
+                            var minh=conts.offsetTop+conts.offsetHeight+mar;
+                            var minw=conts.offsetLeft+conts.offsetWidth+mar
+                            // conts.style.position="relative";
+                            // conts.style.top = minh + "px";
+                            // conts.style.left=minw+"px";
+
+                            // h.push(minh);
+                            // var minHeightOfCols = Math.min.apply(null, h);
+                            // console.log(h)
+                            // console.log(minHeightOfCols)
+                        }
+
+                        document.body.removeChild(img)
+                        flag = 0
+                    },2000)
+                    flag = 1
+                }
+            }
+        } else {
+            //向上滚动
+            // console.log('上')
+        }
+    }
+    var conts=document.querySelectorAll(".cont")
+    // getNum(conts,3)
+    function getNum(allArr,num) {
+        var onlyOneColsArr = [];
+        for(var i = 0; i<allArr.length; i++){
+
+            if(i<num){
+                //num为传进来的参数, 即为每行放图片的张数, 此步骤的目的是为了将第一行每张图片的高度遍历出来存放如新数组
+                onlyOneColsArr[i]=allArr[i].offsetHeight;
+            } else {
+                //当大于每行存放的图片个数时进入该方法, Math.min.apply这个方法是为了得到数组中的最小值
+                var minHeightOfCols = Math.min.apply(null, onlyOneColsArr);
+                //此方法的目的是为了得到最小高度图片的下表, 也就是在每行的第几张, 具体方法见下面
+                var minHeightOfindex = getminIndex(onlyOneColsArr, minHeightOfCols);
+                //定义布局方式为绝对布局
+                allArr[i].style.position = "absolute";
+                //得到下一行图片应放的高度
+                allArr[i].style.top = minHeightOfCols + "px";
+                //得到下一行图片应放于那个位置
+                allArr[i].style.left = allArr[minHeightOfindex].offsetLeft + "px";
+                //将两张图片高度相加得到一个新的高度用来进行下一次的计算
+                onlyOneColsArr[minHeightOfindex] += allArr[i].offsetHeight;
+            }
+        }
+    }
+    function getminIndex(onlyOneColsArr, min){
+        //遍历传进来的高度数组
+        for(var i in onlyOneColsArr){
+            //如果高度等于最小高度, 返回i即为该图片下标
+            if(onlyOneColsArr[i] == min){
+                return i;
+            }
+        }
+    }
+</script>
+</html>

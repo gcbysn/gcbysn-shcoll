@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #list{
+            width: 92px;
+            height: 288px;
+            background: #795da3;
+            list-style: none;
+        }
+        .item{
+            width: 90px;
+            height: 30px;
+            background: #55a532;
+            border: 1px solid;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li class="item">item-1</li>
+        <li class="item">item-2</li>
+        <li class="item">item-3</li>
+        <li class="item">item-4</li>
+        <li class="item">item-5</li>
+        <li class="item">item-6</li>
+        <li class="item">item-7</li>
+        <li class="item">item-8</li>
+        <li class="item">item-9</li>
+    </ul>
+    <script>
+        window.onload=function () {
+            var listNode=document.querySelector("#list");
+          var liNodes=document.querySelectorAll("#list .item");
+          /*    // 第一种：使用this
+            for (var i = 0; i <liNodes.length ; i++) {
+                liNodes[i].onclick=function () {
+                    console.log(this.textContent);
+                }
+            }*/
+            //有问题！确实使用了闭包但闭包中这个i的值一直在变！！！
+          /*  for (var i = 0; i <liNodes.length ; i++) {
+                liNodes[i].onclick=function () {
+                    //异步代码：回调函数中的都是异步代码
+                    console.log(i);
+                }
+            }*/
+          /*  使用闭包 结合 for循环
+            for (var i = 0; i <liNodes.length ; i++) {
+                (function (i) {
+                    liNodes[i].onclick=function () {
+                        console.log(liNodes[i].textContent);
+                    }
+                })(i)
+            }*/
+          /*  //使用闭包结合forEach
+            liNodea=Array.prototype.slice.call(liNodes);
+            liNodes.forEach(function (item,index,arr) {
+                item.onclick=function () {
+                    console.log(item.textContent);
+                }
+            })*/
+            //使用事件委托
+            listNode.onclick=function (ev) {
+                ev=ev||event;
+                if (ev.target.nodeName.toUpperCase()==="LI"){
+                    console.log(ev.target.textContent);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

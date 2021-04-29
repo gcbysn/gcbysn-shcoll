@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/work3.css">
+</head>
+<body>
+<!-- 最外层容器 -->
+<div id="container">
+    <!-- 时钟容器 -->
+    <div class="clock">
+        <!-- 钟盘 -->
+        <div class="clock-plate">
+            <!-- 时针模块 -->
+            <div class="hour"></div>
+            <!-- 分针模块 -->
+            <div class="minute"></div>
+            <!-- 秒针模块 -->
+            <div class="second"></div>
+            <!-- 刻度模块 -->
+            <div class="clock-scale">
+                <!-- 刻度列表 -->
+                <ul class="scale-list"></ul>
+            </div>
+            <div class="clock-num">
+                <ul class="num-list"></ul>
+            </div>
+        </div>
+        <!-- 旋转中心 -->
+        <div class="clock-center">
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    window.onload = function () {
+        var scale=document.querySelector(".scale-list");
+        var num =document.querySelector(".num-list");
+        var hour =document.querySelector(".hour");
+        var minute =document.querySelector(".minute");
+        var second =document.querySelector(".second");
+        for (let i = 1; i <= 60; i++) {
+            scale.innerHTML += "<li style='transform:translateY(-50%) rotate(" + (6 * i) + "deg);'></li>"
+        }
+
+        for (let i = 1; i <= 12; i++) {
+            num.innerHTML += "<li class='num-item' style='transform:translateY(-50%) rotate(" +
+                (30 * i - 90) + "deg)'><span style='transform:rotate(" + (30 * i - 90) * -1
+                + "deg);'>" + i + "</span></li>"
+        }
+        clock_rotate();
+        function clock_rotate() {
+            time=setInterval(function(){
+                var date = new Date();
+                var hour1 = date.getHours();
+                if (hour1>12){
+                    hour1=hour1-12;
+                }else {
+                    hour1=hour1;
+                }
+                var minute1 = date.getMinutes();
+                var second1 = date.getSeconds();
+                console.log(hour1 )
+                second.style.transform = "rotate(" + (second1 * 6 - 90) + "deg) translateY(-90%)";
+                minute.style.transform = "rotate(" + (minute1 * 6 - 90) + "deg) translateY(-90%)";
+                hour.style.transform = "rotate(" + (hour1 * 30 - 90)  + "deg)  translateY(-90%)";
+            },1000)
+        }
+    }
+</script>
+</html>

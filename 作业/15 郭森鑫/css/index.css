@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.app{
+    width: 720px;
+    margin: 0 auto;
+    /*box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.1);*/
+    height: 880px;
+    position: relative;
+    overflow-x: scroll;
+}
+.app .top{
+    width: 100%;
+    height: 113px;
+    background-image: url("../image/1.jpg");
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.top .top_right{
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(to right,#4b41e0,#8554fb);
+    margin-left: 530px;
+    margin-top: 30px;
+    border-radius: 18px;
+}
+.app .top2{
+    width: 100%;
+    height: 90px;
+    margin-top: 7px;
+    background-image: linear-gradient(to right,#5697fd,#84eefe);
+    font-size: 0;
+    line-height: 90px;
+    position: relative;
+}
+.top2 img{
+    margin-left: 30px;
+    margin-top: 24px;
+    margin-right: 25px;
+}
+.top2 span{
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    top: 0px;
+}
+.top3{
+    width: 713px;
+    height: 97px;
+    background-color: white;
+    border-left: 7px solid #FF6E6E;
+    line-height: 97px;
+    position: relative;
+}
+.y:hover .top4{
+    display: block;
+}
+.top3 span{
+    margin-left: 59px;
+    font-size: 18px;
+}
+.top3 img{
+    float: right;
+    margin-top: 32px;
+    margin-right: 34px;
+}
+.top4{
+    width: 720px;
+    height: 250px;
+    background-color: #EEEEEE;
+    display: none;
+}
+.top4 p{
+    padding-left: 30px;
+    padding-bottom: 10px;
+}
+.top4 p:nth-child(1){
+    padding-top: 21px;
+}
+.top4 p span{
+    font-weight: 700;
+    color: black;
+}
+.c{
+    border-left: 7px solid #39CF78;
+}
+.e{
+    border-left: 7px solid #3C8AFF;
+}
+.f{
+    border-left: 7px solid #FF6E6E;
+}
+.app .t{
+    margin-top: 0;
+}
+.bottom{
+    width: 720px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 810px;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+.bottom .an{
+    width: 663px;
+    height: 70px;
+    line-height: 70px;
+    margin-left: 31px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+    font-weight: 700;
+    background-color: #6C99FE;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            float: left;
+            line-height: 50px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+<div class="item"></div>
+<input class="start" type="button" value="开始">
+<input type="button" value="停止" class="stop">
+</body>
+<script>
+    window.onload=function(){
+        var start=document.querySelector('.start');
+        var stop=document.querySelector('.stop');
+        var items=document.querySelectorAll(".item");
+        var time=0;
+        var one,two,three,four,five,sex,sever;
+        var array=[];
+        function autoClick() {
+            time= setInterval(function (ev) {
+                start.onclick();
+            },5)
+        }
+        //停止
+        stop.onclick=function(){
+            clearInterval(time);
+            console.log('1111');
+        }
+        start.onclick=function(){
+            //移除
+            clearInterval(time);
+            autoClick();
+            one=parseInt(Math.random()*36);
+            two=parseInt(Math.random()*11+10);
+            three=parseInt(Math.random()*21+20);
+            four=parseInt(Math.random()*101);
+            five=parseInt(Math.random()*101+100);
+            sex=parseInt(Math.random()*200+1);
+            sever=parseInt(Math.random()*51);
+            array.push(one,two,three,four,five,sex,sever);
+            for (let i = 0; i <items.length ; i++) {
+                items[i].innerHTML=array[i];
+            }
+            array=[];
+        }
+
+    }
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #app{
+            height: 400px;
+            background: red;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        window.onload=function () {
+            function  fn(ev) {
+                ev=ev||event;
+                console.log(ev.detail,ev.wheelDelta);
+            }
+            //非火狐        上划为正 下滑为负
+            app.onmousewheel=fn;
+            //火狐浏览器         上划为负 下滑为正
+            app.addEventListener("DOMMouseScroll",fn)
+            //Firefox 17+ ie9+
+            app.onwheel=fn;
+        }
+    </script>
+</body>
+</html>

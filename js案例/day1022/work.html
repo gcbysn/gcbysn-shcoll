@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <input type="text">
+</body>
+<script>
+    window.onload=function () {
+        var divNode=document.getElementsByTagName("div")[0];
+        var inputNode=document.getElementsByTagName("input")[0];
+        var flag=true;
+        divNode.onclick=function () {
+            if (flag){
+                console.log("鼠标单击事件");
+                flag=false;
+            }
+        }
+        // divNode.ondblclick=function () {
+        //     console.log("鼠标双击事件");
+        // }
+        // divNode.oncontextmenu=function () {
+        //     console.log("鼠标右击事件");
+        // }
+        // divNode.onmousedown=function () {
+        //     console.log("鼠标按键按下事件");
+        // }
+        // divNode.onmouseup=function () {
+        //     console.log("鼠标按键抬起事件");
+        // }
+        // divNode.onmousemove=function () {
+        //     console.log("鼠标移动事件");
+        // }
+        // divNode.onmouseover=function () {
+        //     console.log("鼠标悬停事件");
+        // }
+        // divNode.onmouseout=function () {
+        //     console.log("鼠标离开事件");
+        // }
+        // divNode.onmouseleave=function () {
+        //     console.log("鼠标离开事件");
+        // }
+        // divNode.onmouseenter=function () {
+        //     console.log("鼠标悬停事件");
+        // }
+        // inputNode.onkeydown=function () {
+        //     console.log("键盘按下事件");
+        // }
+        // inputNode.onkeyup=function () {
+        //     console.log("键盘抬起事件");
+        // }
+        // inputNode.onkeypress=function () {
+        //     console.log("键盘字符键按下事件");
+        // }
+        // function  fn(ev) {
+        //     ev=ev||event;
+        //     console.log(ev.detail,ev.wheelDelta);
+        // }
+        // divNode.onmousewheel=fn;
+
+    }
+</script>
+</html>

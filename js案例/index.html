@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+<div class="box">开始</div>
+<div class="btn">停止</div>
+</body>
+<script>
+    box=document.querySelector(".box");
+    btn=document.querySelector(".btn");
+    var i=0;
+    var a;
+    var flag=0;
+    function time(){
+         a=setInterval(function () {
+             console.log(++i);
+        },1000)
+    }
+    box.onclick=function () {
+        if (flag==0){
+            time()
+        }
+        flag=1;
+        // clearInterval(a)
+        // time()
+
+    }
+    btn.onclick=function () {
+        clearInterval(a)
+        flag=0;
+    }
+</script>
+</html>

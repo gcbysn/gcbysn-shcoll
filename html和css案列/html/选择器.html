@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <style type="text/css">
+        /*
+            权重：
+            标签选择器<类选择器<id选择器<行内样式<!important
+                1        10      100      1000     无穷大
+        */
+
+
+        /*
+            标签选择器
+        */
+       h3{
+           color: green;
+       }
+        /*
+            后代选择器：将几种选择器结合使用，选择器之间用空格表示后代，后代指的就是子子孙孙
+
+        */
+        .box1 h3{
+            color: red;
+        }
+        /*
+            类选择器
+            定义类名规范：不能用数字开头，可以是字母+数字+下划线，区分大小写，建议用驼峰命名法
+            调用类名：在标签中用class属性调用类名，不加点
+        */
+        .box2{
+            float:left;
+        }
+        .box1{
+            float: right;
+        }
+        .font150{
+            font-size: 150px;
+        }
+        .g{
+            color: blue;
+        }
+        .o{
+            color: red;
+        }
+        .o_o{
+            color: chocolate;
+        }
+        .l{
+            color:forestgreen;
+        }
+        /*
+            id选择器
+            定义id选择器：用#加名称定义
+            调用id选择器：用标签中的id属性，id名称是唯一的
+        */
+        /*
+            类选择器可以重复，id选择器是唯一的
+        */
+        #stu{
+            color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <h1>老刘</h1>
+        <h2>班长</h2>
+        <h3>学员</h3>
+        <h3>学员</h3>
+        <h3>学员</h3>
+        <h3>学员</h3>
+        <h3>学员</h3>
+    </div>
+    <div class="box2">
+        <h1>导演</h1>
+        <h2>主编</h2>
+        <h3>演员</h3>
+        <h3>演员</h3>
+        <h3>演员</h3>
+        <h3>演员</h3>
+        <h3>演员</h3>
+    </div>
+    <div class="box3">
+        <span class="g font150">G</span>
+        <span class="o font150">o</span>
+        <span class="o_o font150">o</span>
+        <span class="g font150">g</span>
+        <span class="l font150">l</span>
+        <span class="o font150">e</span>
+        <span id="stu">我是span</span>
+    </div>
+</body>
+</html>

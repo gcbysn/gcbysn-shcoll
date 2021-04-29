@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+<select name="" id="province">
+</select>
+<select name="" id="city"></select>
+<select name="" id="county"></select>
+</body>
+<script>
+    //根据id获取省元素
+    var provinces=document.getElementById("province");
+    //根据id获取市元素
+    var citys=document.getElementById("city");
+    //根据id获取区元素
+    var countys=document.getElementById("county");
+    var a=['江西省','湖北省','湖南省'];
+    var b=[
+        ['南昌市','九江市','新余市'],
+        ['武汉市','黄冈市','京师市'],
+        ['长沙市','株洲市','常德市']
+    ]
+    var c=[
+        [
+            ['南昌1','南昌2','南昌3'],
+            ['九江1','九江2','九江3'],
+            ['新余1','新余2','新余3'],
+        ],
+        [
+            ['武汉1','武汉2','武汉3'],
+            ['黄冈1','黄冈2','黄冈3'],
+            ['京师1','京师2','京师3'],
+        ],
+        [
+            ['长沙1','长沙2','长沙3'],
+            ['株洲1','株洲2','株洲3'],
+            ['常德1','常德2','常德3'],
+        ]
+    ]
+    function f(a,b) {
+        for (let i = 0; i <a.length ; i++) {
+            var option=new Option(a[i],a[i]);
+            b.add(option);
+        }
+    }
+    f(a,provinces);
+    f(b[0],citys);
+    f(c[0][0],countys);
+    //给第一个省下拉框绑定事件
+    provinces.onchange=function () {
+        //清空市下拉框的内容
+        citys.innerHTML="";
+        //循环遍历市数组，给每个省添加相应的市
+        f(b[provinces.selectedIndex],citys);
+        //清空区下拉框的内容
+        countys.innerHTML="";
+        //循环遍历区数组，给每个市添加相应的区
+        f(c[provinces.selectedIndex][citys.selectedIndex],countys);
+    }
+    //给第二个下市拉框绑定事件
+    citys.onchange=function () {
+        //清空区下拉框的内容
+        countys.innerHTML="";
+        //循环遍历区数组，给每个市添加相应的区
+        f(c[provinces.selectedIndex][citys.selectedIndex],countys);
+    }
+</script>
+</html>

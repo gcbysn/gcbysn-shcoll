@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            /*height: 2000px;*/
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            margin:5px;
+            background: red;
+        }
+        .box1{
+            width: 500px;
+            border: 1px solid;
+        }
+        .imgs{
+            display: block;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            animation: name 2s linear;
+            /*margin:  0 auto;*/
+        }
+        @keyframes name {
+             0%{
+                transform: rotate(0deg);
+            }
+         100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box1">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+</body>
+<script>
+    var flag=true;
+    var box1=document.querySelector('.box1');
+var body=document.getElementsByTagName('body')[0];
+    if (window.addEventListener)//FF,火狐浏览器会识别该方法
+        window.addEventListener('DOMMouseScroll', wheel, false);
+    window.onmousewheel = document.onmousewheel = wheel;//W3C
+    //统一处理滚轮滚动事件
+    function wheel(event){
+        var delta = 0;
+        if (!event) event = window.event;
+        if (event.wheelDelta) {//IE、chrome浏览器使用的是wheelDelta，并且值为“正负120”
+            delta = event.wheelDelta/120;
+            if (window.opera) delta = -delta;//因为IE、chrome等向下滚动是负值，FF是正值，为了处理一致性，在此取反处理
+        } else if (event.detail) {//FF浏览器使用的是detail,其值为“正负3”
+            delta = -event.detail/3;
+        }
+        if (delta)
+            handle(delta);
+    }
+    //上下滚动时的具体处理函数
+    function handle(delta) {
+        if (delta <0){//向下滚动
+            var top = document.documentElement.scrollTop||document.body.scrollTop;
+            var lastdiv=box1.lastElementChild;
+            var mar=parseInt(getComputedStyle(lastdiv).marginBottom);
+            var height=lastdiv.offsetTop+lastdiv.offsetHeight+mar;
+
+            var fistHeight=document.documentElement.clientHeight||document.body.clientHeight;
+
+            console.log(height,fistHeight,top)
+            if (flag){
+                var imgs=document.createElement('img');
+                imgs.setAttribute('src','./img/1.jpg');
+                imgs.setAttribute('class','imgs')
+                body.appendChild(imgs)
+                flag=false
+            }
+            if (height-fistHeight-top==0){
+                var div=document.createElement("div");
+                div.classList.add('box')
+                box1.appendChild(div);
+                flag=true
+            }
+        }else{//向上滚动
+
+
+
+        }
+    }
+</script>
+</html>

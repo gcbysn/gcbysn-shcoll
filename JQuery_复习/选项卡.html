@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/work.js"></script>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .tabbox{
+            margin:10px;
+        }
+        .tabbox ul{
+            list-style:none;
+            display:table;
+        }
+        .tabbox ul li{
+            float:left;
+            width:100px;
+            line-height:30px;
+            text-align: center;
+            border:1px solid #aaccff;
+            margin-right:-1px;
+            cursor:pointer;
+        }
+        .tabbox ul li.active{
+            background-color:#e73839;
+            color:white;
+            font-weight:bold;
+        }
+        .tabbox .content{
+            width: 403px;
+            border:1px solid #aaccff;
+            height: 200px;
+        }
+        .tabbox .content div{
+            text-align: center;
+            display:none;
+        }
+        .tabbox .content .active{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabbox">
+        <ul>
+            <li>选项卡一</li>
+            <li class="active">选项卡二</li>
+            <li>选项卡三</li>
+            <li>选项卡四</li>
+        </ul>
+        <div class="content">
+            <div>11111111</div>
+            <div class="active">22222222</div>
+            <div>33333333</div>
+            <div> 44444444 </div>
+        </div>
+    </div>
+</body>
+</html>

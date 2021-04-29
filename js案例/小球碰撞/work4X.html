@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1,.box3{
+            width: 100px;
+            height: 100px;
+            /*padding: 20px;*/
+            /*border: 15px solid blue;*/
+            background-color: red;
+            border-radius: 50%;
+            position: relative;
+            top: 0;
+            left: 0;
+            /*animation: name 2s infinite;*/
+        }
+        .box3{
+            left: 900px;
+            top: 0;
+            /*animation: name2 2s infinite;*/
+            background-color: blue;
+        }
+        .box2{
+            width: 1000px;
+            height: 500px;
+            /*border: 10px solid black;*/
+            background-color: yellow;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="box2">
+    <div class="box1"></div>
+    <div class="box3"></div>
+</div>
+</body>
+<script>
+    var box1=document.querySelector('.box1');
+    var box3=document.querySelector('.box3');
+    var box2=document.querySelector('.box2');
+
+    var box2W=box2.clientWidth;
+    var box2H=box2.clientHeight;
+
+    var move=10;
+    var move1=10;
+    var time,time1,time2,time3;
+
+
+
+    function f() {
+        // move2(time,move,box2W,box1.offsetWidth,box1,f1)
+        time=setInterval(function () {
+            move=move+10;
+            if (move>=box2W-box1.offsetWidth){
+                move=box2W-box1.offsetWidth;
+                clearInterval(time)
+                f1();
+            }
+            box1.style.left=move+'px';
+        },10)
+    }
+    function f1() {
+        // move2(time,move,box2W,box1.offsetWidth,box1,f)
+        time1=setInterval(function () {
+            move=move-10;
+            if (move<=0){
+                move=0;
+                clearInterval(time1)
+                f();
+            }
+            box1.style.left=move+'px';
+        },10)
+    }
+    function f2() {
+        time2=setInterval(function () {
+            move1=move1+10;
+            if (move1>=box2H-box1.offsetHeight){
+                move1=box2H-box1.offsetHeight;
+                clearInterval(time2)
+                f3()
+            }
+            box1.style.top=move1+'px';
+        },10)
+    }
+    function f3() {
+        time3=setInterval(function () {
+            move1=move1-10;
+            if (move1<=0){
+                move1=0;
+                clearInterval(time3)
+                f2();
+            }
+            box1.style.top=move1+'px';
+        },10)
+    }
+
+
+    f()
+    f3()
+</script>
+</html>

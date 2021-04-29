@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 0px;
+        }
+        .img{
+            width: 632px;
+            height: 340px;
+            /*background: url("./images/img1.jpg");*/
+        }
+        /*.img:hover .mb{*/
+        /*    display: block;*/
+        /*}*/
+        .mb{
+            width: 632px;
+            height: 340px;
+            background: rgba(0,0,0,1);
+            margin-top: -340px;
+            /*display: none;*/
+
+        }
+    </style>
+</head>
+<body>
+    <div class="img">
+        <img src="./image/img1.jpg" alt="">
+    </div>
+    <div class="mb">
+
+    </div>
+    <script>
+        var img=document.querySelector(".img");
+        var mb=document.querySelector(".mb");
+        // img.onmouseover=function () {
+        //     // alert("hhh");
+        //     mb.style.display="block";
+        // }
+        // img.onmouseout=function () {
+        //     mb.style.display="none";
+        // }
+    </script>
+</body>
+</html>

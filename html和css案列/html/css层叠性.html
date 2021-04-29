@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css层叠性</title>
+    <style type="text/css">
+        /*
+            css层叠性：在给标签设置不同的属性时，都可以实现，设置相同属性时，谁的权重高实现谁的，权重相同时，实现后定义的
+
+            权重：
+            标签选择器<类选择器<id选择器<行内样式<!important
+        */
+        .d{
+            color: blueviolet;
+        }
+        div{
+            color: red !important;
+        }
+        div{
+            font-size: 40px;
+        }
+        div{
+            color: gold;
+        }
+        #div{
+            color: blue;
+        }
+        .div{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="div d " id="div" style="color: black">
+        我是一个盒子
+    </div>
+</body>
+</html>

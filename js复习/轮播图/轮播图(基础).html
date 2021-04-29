@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+           width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #app{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top:0;
+            bottom: 0;
+            margin: auto;
+            width: 700px;
+            height: 320px;
+            border: 2px solid;
+            overflow: hidden;
+
+        }
+        .list{
+            position: absolute;
+            width: 3500px;
+            list-style: none;
+        }
+        i{
+            position: absolute;
+            background: rgba(128,128,128,.5);
+            width: 30px;
+            line-height:70px;
+            text-align: center;
+            display: none;
+        }
+        .pre{
+            right: 0;
+            top: 125px;
+        }
+        .next{
+           left: 0;
+            top: 125px;
+        }
+
+        .item{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="app">
+            <ul class="list">
+                <li class="item">
+                    <img src="image/1.jpg" alt="">
+                </li>
+                <li class="item">
+                    <img src="image/2.jpg" alt="">
+                </li>
+                <li class="item">
+                    <img src="image/3.jpg" alt="">
+                </li>
+                <li class="item">
+                    <img src="image/4.jpg" alt="">
+                </li>
+                <li class="item">
+                    <img src="image/5.jpg" alt="">
+                </li>
+            </ul>
+            <i class="next"><img src="image/arrow-left.png" alt=""> </i>
+            <i class="pre"><img src="image/arrow-right.png" alt=""></i>
+        </div>
+    </div>
+    <script>
+        window.onload=function () {
+            var appNode=document.querySelector("#app");
+            var nextNode=document.querySelector(".next");
+            var preNode=document.querySelector(".pre");
+            var listNode=document.querySelector(".list")
+            appNode.onmouseenter=function () {
+                nextNode.style.display="block";
+                preNode.style.display="block";
+            }
+            appNode.onmouseleave=function () {
+                nextNode.style.display="none";
+                preNode.style.display="none";
+            }
+            /*轮播*/
+            function Carousel() {
+                nextNode.onclick=function () {
+                    move(700);
+                }
+                preNode.onclick=function () {
+                    move(-700);
+                }
+                /*让ul产生位移*/
+                function move(dis) {
+                    var left=listNode.offsetLeft+dis;
+                    /*无缝*/
+                    /*left> 0?-2800:left;*/
+                    if (left>0){
+                        left=-2800;
+                    }else if (left<-2800){
+                        left=0;
+                    }
+                    listNode.style.left=left+"px";
+                }
+            }
+            Carousel();
+        }
+    </script>
+</body>
+</html>

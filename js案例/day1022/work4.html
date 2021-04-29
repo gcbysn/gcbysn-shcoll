@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box"></div>
+</body>
+<script type="text/javascript">
+    var box=document.querySelector(".box")
+    var timer = setInterval(format, 1000);
+    format();
+    function format() {
+        var date = new Date();
+        var year = date.getFullYear() + "";
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+        var week = date.getDay();
+
+        // 转换中文大写
+        function formatCapital(number) {
+            var arr = ["零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖"];
+            if (number < 10) {
+                return arr[number];
+            } else if (number % 10 === 0) {
+                return arr[number / 10] + "拾";
+            } else {
+                //取余
+                var ge = number % 10;
+                //取整
+                var shi = parseInt(number / 10);
+                return arr[shi] + "拾" + arr[ge];
+            }
+        }
+
+        // 转换中文小写
+        function formatSmall(number) {
+            var arr = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+            if (number < 10) {
+                return arr[number];
+            } else if (number % 10 === 0) {
+                return arr[number / 10] + "十";
+            } else {
+                var ge = number % 10;
+                var shi = parseInt(number / 10);
+                return arr[shi] + "十" + arr[ge];
+            }
+        }
+        var yearStr = "";
+        for (i = 0; i < year.length; i++) {
+            yearStr += formatCapital(year[i])
+        }
+        var monthStr = formatCapital(month);
+        var dayStr = formatCapital(day);
+
+        var hoursStr = formatSmall(hour);
+        var minutesStr = formatSmall(minute);
+        var secondsStr = formatSmall(second);
+
+        var weekStr = ""
+        switch (week) {
+            case 1:
+                weekStr = "星期一";
+                break;
+            case 2:
+                weekStr = "星期二";
+                break;
+            case 3:
+                weekStr = "星期三";
+                break;
+            case 4:
+                weekStr = "星期四";
+                break;
+            case 5:
+                weekStr = "星期五";
+                break;
+            case 6:
+                weekStr = "星期六";
+                break;
+            case 0:
+                weekStr = "星期日";
+                break;
+            default:
+                break;
+        }
+        box.innerHTML=yearStr + "年" + monthStr + "月" + dayStr + "日 " + hoursStr + "点" + minutesStr + "分" + secondsStr + "秒 " + weekStr;
+    }
+
+</script>
+</html>

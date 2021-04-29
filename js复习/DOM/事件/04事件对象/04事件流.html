@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrap{
+            width: 400px;
+            height: 400px;
+            background: blue;
+        }
+        #inner3{
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+        #inner2{
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+        #inner1{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+        #app{
+            width: 50px;
+            height: 50px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        wrap1
+        <div id="inner3">
+            inner2
+            <div id="inner2">
+                inner3
+                <div id="inner1">
+                    inner4
+                    <div id="app">
+                       5
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload=function (){
+            /*  事件流 捕获+目标处理+冒泡
+            * dom0只有冒泡
+            * dom2拥有完整的事件流
+            * */
+            //谷歌提供的一个测试功能 用id就带表这个节点
+            // wrap.addEventListener("click",function () {
+            //     console.log("wrap-false");
+            // },false)
+            wrap.addEventListener("click",function () {
+                console.log("wrap1-true");
+            },true)
+
+            inner3.addEventListener("click",function () {
+                console.log("inner2-false");
+            },false)
+            // inner3.addEventListener("click",function () {
+            //     console.log("inner3-true");
+            // },true)
+
+            // inner2.addEventListener("click",function () {
+            //     console.log("inner2-false");
+            // },false)
+            inner2.addEventListener("click",function () {
+                console.log("inner3-true");
+            },true)
+
+            // inner1.addEventListener("click",function () {
+            //     console.log("inner1-false");
+            // },false)
+            // inner1.addEventListener("click",function () {
+            //     console.log("inner1-true");
+            // },true)
+            //
+            // app.addEventListener("click",function () {
+            //     console.log("app-false");
+            // },false)
+            // app.addEventListener("click",function () {
+            //     console.log("app-true");
+            // },true)
+        }
+    </script>
+</body>
+</html>

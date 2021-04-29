@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,viewport-fit=cover">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/work2.css">
+</head>
+<body>
+    <div class="app">
+        <div class="north">
+            <div class="yuan yuan1"></div>
+            <div class="qz qz1"></div>
+        </div>
+        <div class="south">
+            <div class="yuan yuan2"></div>
+            <div class="qz qz2"></div>
+        </div>
+        <div class="eurasia">
+            <div class="yuan yuan3"></div>
+            <div class="qz qz3"></div>
+            <div class="yuan yuan6"></div>
+            <div class="qz qz6"></div>
+            <div class="yuan yuan7"></div>
+            <div class="qz qz7"></div>
+            <div class="yuan yuan8"></div>
+            <div class="qz qz8"></div>
+            <div class="yuan yuan9"></div>
+            <div class="qz qz9"></div>
+            <div class="yuan yuan10"></div>
+            <div class="qz qz10"></div>
+            <div class="yuan yuan11"></div>
+            <div class="qz qz11"></div>
+        </div>
+        <div class="africa">
+            <div class="yuan yuan4"></div>
+            <div class="qz qz4"></div>
+        </div>
+        <div class="oceania">
+            <div class="yuan yuan5"></div>
+            <div class="qz qz5"></div>
+        </div>
+        <div class="bottom">
+            <img class="top" src="./images/balloon.png" alt="">
+            <img class="tx" src="./images/head1.png" alt="">
+            <img class="xing" src="./images/star1.png" alt="">
+            <img class="xing" src="./images/star1.png" alt="">
+            <img class="xing" src="./images/star1.png" alt="">
+            <img class="xing" src="./images/star1.png" alt="">
+            <img class="xing" src="./images/star1.png" alt="">
+            <div class="right">
+                <span></span>>15天
+                <span></span>8-14天
+                <span></span>4-7天<br>
+                <span></span><3天
+            </div>
+            <img class="db" src="./images/img_1.png" alt="">
+        </div>
+        <div class="l">
+            领取20元话费
+        </div>
+        <img class="fx" src="./images/share1.png" alt="">
+        <span class="hd">活动规则</span>
+        <span class="cx">查看详情</span>
+    </div>
+    <div class="mb">
+    </div>
+    <div class="tc">
+        <img class="gongGao" src="./images/pop_t.png" alt="">
+        <div class="wz">
+            <h3>活动规则</h3>
+            <p>1、8月18-10月31 8成功订购国际漫游大包多天</p>
+            <p>流量包且激活使用。</p>
+            <p>2、活动期间办理并激活多个大包多天流量，只享</p>
+            <p>受1次20元话费赠送。</p>
+            <p>3、赠送的20元话费领取后立即到账，可以冲抵当<br></p>
+            <p>月消费。</p>
+        </div>
+    </div>
+    <div class="tc tc1">
+        <img class="gongGao" src="./images/pop_t.png" alt="">
+        <div class="wz">
+            <p class="xhx"><span>产品名称</span><span>订购时间</span><span>使用时间</span></p>
+            <p class="xlb"><span>2018俄罗斯&nbsp;世<br />界杯7天优惠包</span><span>2018.9.13</span><span>2018.9.13</span></p>
+            <p class="xlb"><span>2018俄罗斯&nbsp;世<br />界杯7天优惠包</span><span>2018.9.13</span><span>2018.9.13</span></p>
+            <p class="xlb"><span>2018俄罗斯&nbsp;世<br />界杯7天优惠包</span><span>2018.9.13</span><span>2018.9.13</span></p>
+            <p class="xlb"><span>2018俄罗斯&nbsp;世<br />界杯7天优惠包</span><span>2018.9.13</span><span>2018.9.13</span></p>
+        </div>
+        <img class="lj" src="./images/pop_c.png" alt="">
+        <div class="wz2">
+            <p class="xxs"><span>领取记录</span><span>领取时间</span><span>状态</span></p>
+            <p class="xxss"><span>20元话费</span><span>2018.9.13</span><span>失败</span></p>
+            <p class="xwz">业务受理失败!当前的受理商品:<br>
+                ([310095300989)国漫用产0预存送20元话费关<br>
+                联的前向限制校验失败，原因:检查规则类型项<br>
+                为[签约编号列表].取值为(7867),不能通过检查.<br>
+                限制提示,限目标用户可办理
+            </p>
+        </div>
+    </div>
+    <div class="tc2">
+        <div class="left">
+            微信
+        </div>
+        <div class="right">
+            QQ
+        </div>
+    </div>
+</body>
+<script>
+    var mb=document.querySelector('.mb')
+    var tc=document.querySelector('.tc')
+    var fx=document.querySelector('.fx')
+    var tc1=document.querySelector('.tc1')
+    var tc2=document.querySelector('.tc2')
+    // var b_1=document.querySelector('.bottom1')
+    var bottom=document.querySelector('.bottom');
+    var hd=document.querySelector('.hd');
+    var cx=document.querySelector('.cx');
+    var tx=document.querySelector('.tx');
+    var db=document.querySelector('.db');
+    var xing=document.querySelectorAll('.xing');
+    var spans=document.querySelectorAll('.right span')
+
+    var txArray=['head1.png','head2.png','head3.png','head4.png','h5.png']
+    var dbArray=['img_1.png','img_2.png','img_3.png','img_4.png','img_5.png']
+    function info(num) {
+        if (num!=1){
+            tx.src='./images/'+txArray[num-1]+'';
+            // console.log(txArray[num-1])
+            db.src='./images/'+dbArray[num-1];
+            spans[5-num].classList.add('warning');
+            // spans[5-num].style.opacity='1';
+            for (let i = 0; i <num ; i++) {
+                xing[i].style.display='block';
+                // xing[i].style.display='block';
+            }
+        }
+       else{
+            xing[0].style.display='block'
+        }
+    }
+    hd.onclick=function () {
+        mb.classList.add('active')
+        tc.classList.add('active')
+    }
+    mb.onclick=function () {
+        mb.classList.remove('active')
+        tc.classList.remove('active')
+        tc1.classList.remove('active')
+        tc2.classList.remove('active')
+    }
+    cx.onclick=function () {
+        mb.classList.add('active')
+        tc1.classList.add('active')
+    }
+    fx.onclick=function () {
+        mb.classList.add('active')
+        tc2.classList.add('active')
+    }
+
+    function location() {
+
+    }
+
+</script>
+</html>

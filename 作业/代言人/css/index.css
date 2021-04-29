@@ -1,0 +1,370 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+
+    color: #FC9090;
+}
+ul li{
+    list-style: none;
+
+}
+.wrap{
+    width: 100%;
+    overflow: hidden;
+}
+.wrap .logo{
+    width: 100%;
+}
+.wrap .logo img{
+    /*width: 1920px;*/
+    /*height: 560px;*/
+    /*background-image: url("../image/top.jpg");*/
+    /*background-position: -277px 0px;*/
+    width: 100%;
+    /*margin-left: -277px;*/
+}
+.wrap .content{
+    width: 960px;
+    margin: 0 auto;
+}
+.content .top{
+    height: 394px;
+    border-bottom: 1px solid #E6E6E6;
+}
+.top .nr{
+    width: 409px;
+    overflow: hidden;
+}
+.nr img{
+    display: block;
+    margin:40px auto 0px;
+}
+.nr div:nth-child(2){
+    /*width: 210px;*/
+    margin: 26px auto 0px;
+    text-align:left;
+    text-align-last: center;
+    font-size: 30px;
+    font-family: SourceHanSansCN;
+    font-weight: 500;
+    color: #333333;
+    /*line-height: 1;*/
+}
+.nr div:nth-child(3){
+    width: 300px;
+    height: 1px;
+    margin: 22px auto;
+    background-color: #E6E6E6;
+}
+.nr div:nth-child(4){
+    line-height: 32px;
+    /*height: 147px;*/
+    word-break:break-all;
+    text-align:left;
+    text-align-last: center;
+    font-size: 20px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: #666666;
+}
+.top .left{
+    float: left;
+}
+.top .right{
+    float: right;
+}
+.content .center{
+    height: 354px;
+    overflow: hidden;
+}
+.center p:nth-child(1){
+    margin-top: 42px;
+    text-align: center;
+    font-size: 30px;
+    font-family: SourceHanSansCN;
+    font-weight: 500;
+    color: #333333;
+    line-height: 1;
+}
+.center ul{
+    margin: 56px 48px 0px 32px;
+    overflow: hidden;
+}
+.center ul li{
+    list-style: none;
+    text-align: center;
+    float: left;
+
+}
+.center ul li span{
+    line-height: 24px;
+}
+.center ul li img{
+    display: block;
+}
+.center ul li:nth-child(2) img{
+    margin-top: 26px;
+    margin-right: 52px;
+    margin-left: 25px;
+}
+.center ul li:nth-child(4) img{
+    margin-top: 26px;
+    margin-right: 48px;
+    margin-left: 58px;
+
+}
+.center ul li:nth-child(6) img{
+    margin-top: 26px;
+    margin-left:52px;
+    margin-right:4px;
+
+}
+.center ul li:nth-child(2n+1){
+    position: relative;
+}
+.center ul li:nth-child(2n+1) img{
+   position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.center ul li:nth-child(2n+1) span{
+    display: inline-block;
+  padding-top: 116px;
+}
+.fist{
+    width: 100%;
+    height: 660px;
+    position: relative;
+    background-color: #FB6161;
+}
+.fist .body{
+    width: 960px;
+    margin: 0 auto;
+    font-size: 0;
+    position: relative;
+    line-height: 1;
+    text-align: center;
+    overflow: hidden;
+    z-index: 4;
+}
+.fist .body .img{
+    width: 184px;
+    height: 114px;
+    background-image: url("../image/bu.png");
+    text-align: center;
+    color: #D20D0D;
+    font-size: 36px;
+    font-family: SourceHanSansCN;
+    font-weight: 500;
+    overflow: hidden;
+}
+.img p{
+    margin-top: 19px;
+}
+.fist .body img:nth-child(2){
+    position: absolute;
+    top: 37px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.body p:nth-child(3){
+    width: 270px;
+    margin: -15px auto 0px;
+    font-size: 30px;
+    font-family: SourceHanSansCN;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 38px;
+}
+.body p:nth-child(4){
+    margin-top: 18px;
+    font-size: 20px;
+    font-family: SourceHanSansCN;
+    font-weight: 400;
+    color: #FFE5E5;
+}
+.body ul li{
+    margin-top: 50px;
+    float: left;
+}
+.body ul li:nth-child(2n){
+    margin:0 32px;
+}
+.body ul li:nth-child(2n) img{
+    /*204px*/
+    margin-top: 228px;
+}
+.body ul li:nth-child(2n+1) img{
+    height: 430px;
+}
+.fist .dian{
+    position: absolute;
+    top: 44px;
+    right: 0px;
+    z-index: 0;
+}
+.two{
+    height: 1098px;
+    position: relative;
+    z-index: 2;
+}
+.two .body2{
+    width: 960px;
+    margin: 0 auto;
+    font-size: 0;
+    position: relative;
+    /*line-height: 1;*/
+    text-align: center;
+    overflow: hidden;
+    z-index: 3;
+}
+.two .dian2{
+    position: absolute;
+    top: -30px;
+    left: 0px;
+    width: 368px;
+    height: 246px;
+   background-image: url("../image/dian02.png");
+    z-index: 1;
+}
+.two .body2 .img{
+    float: right;
+    width: 184px;
+    height: 114px;
+    background-image: url("../image/bu.png");
+    text-align: center;
+    color: #D20D0D;
+    font-size: 36px;
+    font-family: SourceHanSansCN;
+    font-weight: 500;
+    overflow: hidden;
+}
+.two .body2 .img p{
+    margin-top: 28px;
+}
+.two .body2 img:nth-child(2){
+    position: absolute;
+    top: 37px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.body2 p:nth-child(3){
+    width: 270px;
+   margin: 92px auto 36px;
+    font-size: 30px;
+    font-family: SourceHanSansCN;
+    font-weight: 500;
+    color: #333333;
+    line-height: 38px;
+}
+.fist2 {
+    height: 1090px;
+}
+.fist2 .body .o{
+    margin-top: 44px;
+}
+.two2{
+    height: 822px;
+}
+.two2 .body2 p:nth-child(3){
+    margin-bottom: 40px;
+    width: 390px;
+}
+.two2 .body2 ul{
+   height: 522px;
+}
+.two2 .body2 ul li{
+    float: left;
+    margin-right: 104px;
+}
+.two2 .body2 ul li:nth-child(3){
+    margin-right: 0px;
+}
+.two2 .body2 p:nth-child(5){
+    margin-top: 60px;
+    font-size: 18px;
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: #666666;
+}
+.two2 .body2 div:nth-child(6){
+    width: 960px;
+    height: 1px;
+    margin-top: 30px;
+    background-color: #E6E6E6;
+}
+.foot{
+    height: 230px;
+    text-align: center;
+}
+.foot p:nth-child(1){
+    margin-top: 44px;
+    font-size: 30px;
+    font-family: SourceHanSansCN;
+    font-weight: 500;
+    color: #333333;
+}
+.foot p:nth-child(2){
+    margin:32px auto 0px ;
+    width: 960px;
+    /*margin-top: 32px;*/
+    font-size: 20px;
+    font-family: SourceHanSansCN;
+    font-weight: 400;
+    color: #666666;
+    line-height: 38px;
+}
+.wrap .db {
+   /*width: 1920px;*/
+    height: 286px;
+    background-image: url("../image/foot.jpg");
+    background-position: 50% 50%;
+    background-size: cover;
+}
+.db .center2{
+    width: 960px;
+    height: 286px;
+    margin: 0 auto;
+    position: relative;
+}
+.db .center2 div{
+    float: left;
+}
+.center2 .l{
+    margin-top: 74px;
+    width: 580px;
+}
+.db .center2 .l p{
+    font-size: 19px;
+    word-wrap:break-word;
+    /*word-break:break-all;*/
+    /*text-align: left;*/
+    font-family: Adobe Heiti Std;
+    font-weight: normal;
+    color: #FFFFFF;
+    line-height: 30px;
+}
+.db .center2 .l p:nth-child(2){
+    margin-top: 42px;
+}
+.center2 .z{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 632px;
+    transform: translate(0,-50%);
+
+}
+.center2 .r{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 810px;
+    transform: translate(0,-50%);
+}

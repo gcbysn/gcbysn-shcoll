@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>仿京东详情放大镜</title>
+    <!--
+
+    -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="wrap">
+        <div class="small_wrap">
+            <img class="small_pic clearFix" src="img/1.jpg" alt="">
+            <i class="moveBrick"></i>
+        </div>
+        <div class="big_wrap">
+            <img class="big_pic clearFix" src="img/big1.jpg" alt="">
+            <i class="moveBrick"></i>
+        </div>
+        <ul class="list">
+            <li class="item">
+                <img src="img/1.jpg" alt="">
+            </li>
+            <li class="item">
+                <img src="img/2.jpg" alt="">
+            </li>
+            <li class="item">
+                <img src="img/3.jpg" alt="">
+            </li>
+            <li class="item">
+                <img src="img/4.jpg" alt="">
+            </li>
+            <li class="item">
+                <img src="img/5.jpg" alt="">
+            </li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        window.onload=function () {
+            document.addEventListener("mousedown",function (ev) {
+                ev=ev||event;
+                ev.preventDefault();
+            })
+            var smallWrap=document.querySelector("#wrap .small_wrap")
+            var bigWrap=document.querySelector("#wrap .big_wrap");
+            var bigPic=document.querySelector("#wrap .big_wrap .big_pic");
+            var smallPic=document.querySelector("#wrap .small_wrap .small_pic");
+            var moveBrick=document.querySelector("#wrap .small_wrap .moveBrick");
+            //大图容器的尺寸=小图容器的尺寸
+            bigWrap.style.width=window.getComputedStyle(smallWrap).width;
+            bigWrap.style.height=window.getComputedStyle(smallWrap).height;
+            //跟随鼠标移动
+            smallWrap.onmouseenter=function(){
+                moveBrick.style.display="block";
+                bigWrap.style.display="block";
+            }
+            //鼠标悬停
+            smallWrap.onmousemove=function (ev) {
+                ev=event||window.event;
+                //移动距离
+                var L=ev.clientX-this.offsetLeft-parseInt(window.getComputedStyle(this).borderLeftWidth);
+                var T=ev.clientY-this.offsetTop-parseInt(window.getComputedStyle(this).borderTopWidth);
+                console.log(L,T,this.offsetLeft)
+                /*
+                *    一个元素如果开启绝对定位
+                *   left：0
+                *   top：0
+                *   将其margin-box的左上角顶到其包含块padding-box的左上角
+                * */
+                //超过一半才能动
+                L=L-moveBrick.offsetWidth/2;
+                T=T-moveBrick.offsetHeight/2;
+                /*限制范围*/
+                var maxL=smallWrap.clientWidth-moveBrick.offsetWidth;
+                var maxT=smallWrap.clientHeight-moveBrick.offsetHeight;
+
+                L=L<0?0:L;
+                T=T<0?0:T;
+
+                L=L>maxL?maxL:L;
+                T=T>maxT?maxT:T;
+
+                moveBrick.style.left=L+"px";
+                moveBrick.style.top=T+"px";
+
+                //放大镜和选项卡
+                /*块移动的实时距离/块移动的最大距离= 大图移动的实时距离/大图实时移动的最大距离*/
+                var flagL=L/maxL;
+                var flagT=T/maxT;
+                //大图实时移动的最大距离
+                var maxLForBig=bigPic.offsetWidth-bigWrap.clientWidth;
+                var maxTForBig=bigPic.offsetHeight-bigWrap.clientHeight;
+                //大图移动的实时距离
+                bigPic.style.left = -flagL * maxLForBig+"px";
+                bigPic.style.top = -flagT * maxTForBig+"px";
+            }
+            smallWrap.onmouseleave=function(){
+                moveBrick.style.display="none";
+                bigWrap.style.display="none";
+            }
+            //选项卡
+            var liNode=document.querySelectorAll("#wrap .list .item");
+            for (var i=0;i<liNode.length;i++)
+            {
+                (
+                    function (i) {
+                        // var images= liNode[i];
+                        liNode[i].onmouseenter=function()
+                        {
+                            smallPic.src="img/"+(i+1)+".jpg";
+                            bigPic.src="img/"+"big"+(i+1)+".jpg";
+                            this.style.border="1px solid red";
+                        }
+                        liNode[i].onmouseleave=function()
+                        {
+                            this.style.border="none";
+                        }
+                    }
+                )(i)
+            }
+        }
+    </script>
+
+
+</div>
+</div>
+
+</body>
+</html>

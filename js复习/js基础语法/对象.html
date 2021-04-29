@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>d对象</title>
+</head>
+<body>
+<!--
+    js是一门基于对象的语言，可以通过代码来模拟除类的概念
+    对象;万物皆对象，在程序世界中，我们所看到的每一个事物都是一个对象，根据中对象的特征和行为（属性和方法），看属于哪一类群体，
+    将它的特征和行为抽象除以类型（class）,在通过这个类型实列化到具体的某一个的对象，这个过程就是面向对象
+-->
+<script type="text/javascript">
+    /*
+    * 第一种方式：new Object
+    * */
+    var person=new Object();
+    person.name='小明';
+    person.age=18;
+    person.eat=function () {
+        alert('火锅')
+    }
+    console.log(person)
+    /*工厂模式：是设计模式的一种
+    *
+    * 工厂方式创建对象
+    *
+    * */
+    function createPerson(name,age,gender) {
+        var person=new Object();
+        person.name=name;
+        person.age=age;
+        person.gender=gender;
+        person.eat=function () {
+            alert('火锅')
+        }
+        return person;
+    }
+    var xm=createPerson('小明',18,'男');
+    console.log('名字是 '+xm.name+' 年龄是 '+xm.age+' 性别是 '+xm.gender)
+    xm.eat();
+    /*
+    * 构造函数创建对象:
+    * new Person 实列化一个具体的对象，在内存中开辟以内存空间
+    * this指向的是当前实列对象
+    * 可以通过this.属性或者方法动态给对象进行添加
+    * 不需要返回值，将对象返回除构造函数
+    * */
+    function Person(name,age,gender) {
+        this.name=name;
+        this.age=age;
+        this.gender=gender;
+        this.eat=function () {
+            alert('火锅')
+        }
+    }
+    var xm=new Person('小明',18,'男')
+    console.log(xm);
+</script>
+</body>
+</html>

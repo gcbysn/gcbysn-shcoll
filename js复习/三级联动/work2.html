@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    省：
+    <select id="sname">
+        <option>—请选择—</option>
+    </select>
+    市：
+    <select id="s_city">
+        <option>—请选择—</option>
+    </select>
+    区：
+    <select id="q_name">
+        <option>—请选择—</option>
+    </select>
+</body>
+<script>
+    var sheng=["陕西省","四川省"];
+    var city=[
+        ["西安市","渭南市","宝鸡市"],
+        ["成都市","绵阳市"]
+    ]
+    var qu=[
+        [
+            ["莲湖区","雁塔区","长安区"],
+            ["渭南1区","渭南2区","渭南3区"],
+            ["成仓区","金台区","高新区"],
+        ],
+        [
+            ["成都1区","成都2区","成都3区"],
+            ["绵阳1区","绵阳2区","绵阳3区"]
+        ]
+    ]
+    //先获取
+    var s=document.getElementById("sname");
+    var s_city=document.getElementById("s_city");
+    var q_name=document.getElementById("q_name");
+    //for循环使js里的sheng元素添加到s里
+    for(var i=0;i<sheng.length;i++)
+    {
+        var option=new Option(sheng[i],i);
+        s.appendChild(option);
+    }
+    //选择事件
+    var qucity;
+    s.onchange=function (){
+        s_city.options.length=1;
+        q_name.options.length=1;
+        var index=this.value;
+        var shi=city[index];
+        qucity=qu[index];
+        for(var i=0;i<shi.length;i++)
+        {
+            var option=new Option(shi[i],i);
+            s_city.appendChild(option)
+        }
+    }
+    s_city.onchange=function (){
+        q_name.options.length=1;
+        var index=this.value;
+        var squ=qucity[index];
+        for(var i=0;i<squ.length;i++)
+        {
+            var option=new Option(squ[i],i);
+            q_name.appendChild(option);
+        }
+    }
+</script>
+</html>

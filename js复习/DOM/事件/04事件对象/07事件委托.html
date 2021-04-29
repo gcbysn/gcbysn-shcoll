@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            width: 300px;
+            height: 300px;
+            background: #795da3;
+        }
+        #inner{
+            width: 100px;
+            height: 100px;
+            background: #55a532;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="inner">
+
+        </div>
+    </div>
+    <script>
+        /*
+        *   什么是事件委托？
+        *       将字节点共性的动作放到父节点中统一定义并执行
+        *   前提条件：不能阻止冒泡
+        * */
+        window.onload=function () {
+            var wrapNode=document.querySelector("#wrap");
+            var innerNode=document.querySelector("#inner");
+            //target:真正触发事件的元素
+            wrapNode.onclick=function (ev) {
+                ev=ev||event;
+                console.log(ev.target);
+            }
+        }
+    </script>
+</body>
+</html>

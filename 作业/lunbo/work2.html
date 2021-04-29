@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <script type="text/javascript" src="./js/swiper.min.js">
+
+    </script>
+    <style>
+        .swiper-container{
+            /*width: 500px;*/
+            width: 750px;
+            height: 500px;
+        }
+        img{
+            width: 750px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="javascript:">
+                <img src="./images/1.jpg" alt="">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="javascript:">
+                <img src="./images/2.jpg" alt="">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="javascript:">
+                <img src="./images/3.jpg" alt="">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="javascript:">
+                <img src="./images/4.jpg" alt="">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="javascript:">
+                <img src="./images/5.jpg" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        /*循环*/
+        loop:true,
+        /*自动*/
+        // autoplay:2000,
+
+        prevButton:'.swiper-button-prev',
+
+        nextButton:'.swiper-button-next',
+
+        pagination : '.swiper-pagination',
+
+        paginationClickable :true,
+
+        // spaceBetween: '18%',
+        slidesPerView: 3,
+
+        effect : 'coverflow',
+
+        centeredSlides: true,
+        coverflow: {
+            rotate: 0,
+            stretch: 0,
+            depth: 300,
+            modifier: 2,
+            slideShadows : true
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var a='1231bc'
+    var arr=a.split("");
+    for (let i = 0; i <arr.length/2 ; i++) {
+
+        //arr[i]和arr[arr.length-1-i]
+        //arr[0]和arr[arr.length-1-0]
+        //arr[1]和arr[arr.length-1-1]
+        //arr[2]和arr[arr.length-1-2]
+        //arr[3]和arr[arr.length-1-3]
+        var temp=arr[i];
+        arr[i]=arr[arr.length-1-i];
+        arr[arr.length-1-i]=temp;
+    }
+    console.log(arr)
+
+
+    var arr2=[1,2,3,4,,5,6];;
+    var b=4;
+    for (let i = 0; i <arr2.length ; i++) {
+        if (arr2[i]==b){
+            console.log(i)
+        }
+    }
+
+    // var arr3=['a','b','c','c','b','i'];
+    var arr3=['a','b','c','c','b','a'];
+    // var arr3=['a','b','c','b','a'];
+    // var arr3=['a','b','c','b','y'];
+    var b=0;
+    for (let i = 0; i <arr3.length/2 ; i++) {
+        if (arr3[i]==arr3[arr3.length-1-i]){
+            b++;
+            console.log(b)
+        }else {
+            b=0;
+        }
+    }
+    if (b==Math.ceil(arr3.length/2)){
+        console.log('对称数组')
+    }else {
+        console.log('不对称数组')
+    }
+
+    var str='axyxbxxyxyxcxyxcxxxybcxyxyz';
+    var str2='xyxy';
+
+    var index=str.indexOf(str2[0]);
+    for (let i = index; i <str.length ; i++) {
+        for (let j = 0; j <str2.length ; j++) {
+            if (str2[j+1]==str[i]){
+                b++
+                console.log(str[i],i)
+            }
+        }
+    }
+
+</script>
+</html>

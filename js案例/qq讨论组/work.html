@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<div class="box">
+    <div class="top"><p>创建群聊</p><span id="close1">x</span></div>
+    <div class="center">
+        <div class="box-left">
+            <input type="text" name="tex" id="tex" value="" placeholder="输入查找关键字"/>
+            <div class="friend">
+                <span></span><h4>选择好友<i></i></h4>
+                <ul class="item list">
+                    <li class="li">我的好友<span class="span">+</span>
+                        <ul class="ul list">
+                            <li title="a(12345678)"><img src="./img/1.jpg"/>a(12345678)</li>
+                            <li title="b(12345678)"><img src="./img/1.jpg"/>b(12345678)</li>
+                            <li title="c(12345678)"><img src="./img/1.jpg"/>c(12345678)</li>
+                            <li title="d(12345678)"><img src="./img/1.jpg"/>d(12345678)</li>
+                            <li title="e(12345678)"><img src="./img/1.jpg"/>e(12345678)</li>
+                            <li title="f(12345678)"><img src="./img/1.jpg"/>f(12345678)</li>
+                        </ul>
+                    </li>
+                    <li class="li">游戏好友<span class="span">+</span>
+                        <ul class="ul list">
+                            <li title="a(12345678)"><img src="./img/1.jpg"/>a(12345678)</li>
+                            <li title="b(12345678)"><img src="./img/1.jpg"/>b(12345678)</li>
+                            <li title="c(12345678)"><img src="./img/1.jpg"/>c(12345678)</li>
+                            <li title="d(12345678)"><img src="./img/1.jpg"/>d(12345678)</li>
+                            <li title="e(12345678)"><img src="./img/1.jpg"/>e(12345678)</li>
+                            <li title="f(12345678)"><img src="./img/1.jpg"/>f(12345678)</li>
+                        </ul>
+                    </li>
+                    <li class="li">计网2班<span class="span">+</span>
+                        <ul class="ul list">
+                            <li title="a(12345678)"><img src="./img/1.jpg"/>a(12345678)</li>
+                            <li title="b(12345678)"><img src="./img/1.jpg"/>b(12345678)</li>
+                            <li title="c(12345678)"><img src="./img/1.jpg"/>c(12345678)</li>
+                            <li title="d(12345678)"><img src="./img/1.jpg"/>d(12345678)</li>
+                            <li title="e(12345678)"><img src="./img/1.jpg"/>e(12345678)</li>
+                            <li title="f(12345678)"><img src="./img/1.jpg"/>f(12345678)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="box-right">
+            <div class="number">
+                已选联系人
+                <span id="person">1</span>
+            </div>
+            <p>
+                <img id="img" src="./img/1.jpg">我自己
+            </p>
+            <div class="people">
+
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        <input type="button" name="btnYes" id="btnNo" value="取消" />
+        <input type="button" name="btnNo" id="btnYes" value="确定" />
+    </div>
+</div>
+
+<!--讨论组部分-->
+<div class="box1">
+    <h1>欢迎来到该讨论组</h1>
+    <div class="box1-left">
+        <ul id="ul"></ul>
+        <input type="text" id="ipt" value="" />
+        <input type="button" name="btn" id="btn1" value="取消" />
+        <input type="button" name="btn" id="btn" value="发送" />
+        <p id="noSend">输入不能为空</p>
+    </div>
+    <div class="box1-right">
+        <div class="number">
+            已选联系人
+            <span id="person1">0</span>
+            /
+            <span>100</span>
+        </div>
+        <div class="people1">
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var h=document.getElementsByTagName('h4')[0]
+    var item=document.querySelector(".item");
+    var lis=document.querySelectorAll(".item .li")
+    var uls=document.querySelectorAll(".ul");
+    var lies=document.querySelectorAll(".ul li");
+    var peple=document.querySelector(".people");
+    var person=document.querySelector("#person");
+    var spans=document.querySelectorAll(".li .span")
+    var flag=0;
+    var i=1;
+    var liNodes;
+    h.onclick=function () {
+        if (flag==0){
+            item.classList.remove("list")
+            flag=1;
+        }else{
+            item.classList.add("list")
+            flag=0;
+        }
+    }
+    lis.forEach(function (item,index) {
+        item.onclick=function () {
+            if (flag==0){
+                lis[index].style.backgroundcolor="#F5FBEC";
+                lis[index].classList.remove("list");
+                uls[index].classList.remove("list");
+                flag=1;
+            }else{
+                lis[index].style.backgroundcolor="#FFFFFF";
+                // lis[index].classList.add("list");
+                uls[index].classList.add("list");
+                flag=0;
+            }
+
+        }
+    })
+    lies.forEach(function (item,index) {
+        item.onclick=function (event) {
+            var event=event||window.event;
+            event.stopPropagation();
+            if(this.getAttribute("rel")!= 1){
+                // var y=this.getAttribute("rels")
+                var lis=document.createElement("li");
+                // lis.setAttribute("rels",y)
+                lis.innerHTML=this.innerHTML;
+                peple.appendChild(lis)
+                person.innerHTML=++i;
+            };
+            lies[index].setAttribute("rel",1);
+            // lies[index].setAttribute("rels",1);
+            liNodes=document.querySelectorAll(".people li");
+            liNodes.forEach(function (item,index) {
+                item.onclick=function () {
+                    if (this.getAttribute('rel')!=1){
+                        peple.removeChild(this);
+                        person.innerHTML=--i;
+                    }
+                       lies[index].setAttribute("rel",0);
+                }
+            })
+        }
+    })
+    //整组添加
+    spans.forEach(function (item,index) {
+        item.onclick=function (event) {
+            var event=event||window.event;
+            event.stopPropagation();
+            //整体添加到右框
+            //返回当前元素在其父元素的子元素节点中的后一个元素节点,如果该元素已经是最后一个元素节点,则返回null,该属性是只读的
+            var ul=this.nextElementSibling.children;
+            for (let j = 0; j <ul.length ; j++) {
+                if (ul[j].getAttribute("rel")!=1){
+                    var lis=document.createElement("li");
+                    lis.innerHTML=ul[j].innerHTML;
+                    peple.appendChild(lis)
+                    person.innerHTML=++i;
+                }
+                ul[j].setAttribute("rel",1);
+            }
+            liNodes=document.querySelectorAll(".people li");
+            liNodes.forEach(function (item,index) {
+                item.onclick=function () {
+                    if (this.getAttribute('rel')!=1){
+                        peple.removeChild(this);
+                        person.innerHTML=--i;
+                    }
+                    lies[index].setAttribute("rel",0);
+                }
+            })
+        }
+    })
+</script>
+</html>

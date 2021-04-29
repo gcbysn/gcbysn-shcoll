@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>流程控制语句</title>
+
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+        * 流程控制语句
+        *   顺序结构语句：js默认是由上至下执行的
+        *   分支结构语句：js会根据条件的真假来决定是否执行某段代码
+        *   循环结构语句：js会重复的执行某段代码
+        * */
+
+        /*switch语句：
+        * switch关键字，小括号是要比较的值
+        * case每一个条件，case后面是参照比较的值，冒号后面执行的代码，是全等的比较（数据类型和值都必须相等）
+        * break结束语句
+        *
+        * */
+        const num = parseInt(prompt('请输入数字'));
+        switch (num) {
+            case 1:alert('星期一');
+            break
+            default:alert('星期日');
+            break;
+        }
+        /*
+        * break关键字：
+        * 当循环中遇到break关键字，会立刻结束整个（当前最近的）循环体
+        *
+        * continue关键字：
+        * 当循环中遇到continue关键字，会立刻结束当前最近的循环体
+        *
+        * */
+        for (let i = 0; i <10 ; i++) {
+            console.log('hh');
+            if (i%2==0){
+                break;
+            }
+        }
+
+        for (let i = 0; i <10 ; i++) {
+            console.log('ww');
+            if (i%2==0){
+                continue;
+            }
+        }
+    </script>
+</body>
+</html>

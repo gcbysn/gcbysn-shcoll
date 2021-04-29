@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrap{
+            width: 400px;
+            height: 400px;
+            background: blue;
+        }
+        #inner3{
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+        #inner2{
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+        #inner1{
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+        #app{
+            width: 50px;
+            height: 50px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        wrap
+        <div id="inner3">
+            inner3
+            <div id="inner2">
+                inner2
+                <div id="inner1">
+                    inner1
+                    <div id="app">
+                        app
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload=function (){
+            /*
+            * 冒泡的前提：html结构上要嵌套
+            * 冒泡：子节点的对应事件被触发式会一直往上冒泡去触发祖先节点的同类型事件
+            * */
+            //谷歌提供的一个测试功能 用id就带表这个节点
+            wrap.onclick=function () {
+                console.log("wrap");
+            }
+            inner3.onclick=function () {
+                console.log("inner3");
+            }
+            inner2.onclick=function () {
+                console.log("inner2");
+            }
+            inner1.onclick=function () {
+                console.log("inner1");
+            }
+            app.onclick=function () {
+                console.log("app")
+            }
+            // wrap.onmouseover=function () {
+            //     console.log("wrap");
+            // }
+            // inner3.onmouseover=function () {
+            //     console.log("inner3");
+            // }
+            // inner2.onmouseover=function () {
+            //     console.log("inner2");
+            // }
+            // inner1.onmouseover=function () {
+            //     console.log("inner1");
+            // }
+            // app.onmouseover=function () {
+            //     console.log("app")
+            // }
+
+            // wrap.onmouseenter=function () {
+            //     console.log("wrap");
+            // }
+            // inner3.onmouseenter=function () {
+            //     console.log("inner3");
+            // }
+            // inner2.onmouseenter=function () {
+            //     console.log("inner2");
+            // }
+            // inner1.onmouseenter=function () {
+            //     console.log("inner1");
+            // }
+            // app.onmouseenter=function () {
+            //     console.log("app")
+            // }
+        }
+    </script>
+</body>
+</html>

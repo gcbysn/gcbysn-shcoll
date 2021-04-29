@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>读取html中的元素</title>
+    <style type="text/css">
+        #app{
+            background: antiquewhite;
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 100px;
+
+          /*  //让一个元素水平垂直居中*/
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        app
+    </div>
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li class="laoSan">3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        /*
+        *   只有元素才拥有子节点
+        *
+        * */
+        //通过id获取元素
+        var appNode=document.getElementById('app');
+        console.log(appNode);
+        //通过class获取元素       HTMLCollection  伪数组
+        var items=document.getElementsByClassName('item')
+        //通过标签名获得元素列表
+        var liNodes = document.getElementsByTagName('li');
+        liNodes = Array.prototype.slice.call(liNodes);
+        liNodes.forEach(function (item,index,arr) {
+            console.log(item,index,arr);
+        })
+        /*      获取子节点
+        * childNodes 不会剔除文本节点
+        * children 回剔除文本节点
+        * */
+        var listNode=document.getElementById('list');
+        console.dir(listNode);
+        console.log(listNode.childNodes);
+        console.log(listNode.children);
+        /*
+        *   获取兄弟节点
+        * */
+        var laoSanNodes=listNode.getElementsByClassName('laoSan');
+        var laoSan=laoSanNodes[0];
+        console.log(laoSan.nextSibling);
+        console.log(laoSan.nextElementSibling);     //  li4
+        console.log(laoSan.previousSibling);
+        console.log(laoSan.previousElementSibling);    //   li2
+        /*
+        *   获取父节点
+        * */
+        console.log(laoSan.parentNode);
+        console.log(laoSan.parentElement);
+        /*
+       *   伪数组     真数组
+       *   共同点：都有length属性，属性名都是以数字表示
+       *
+       *   不同点：伪数组不能使用数组的API
+       *
+       * */
+        /*
+        * 伪数组如何转真数组
+        * */
+     /*   items = Array.prototype.slice.call(items);
+
+        items.forEach(function (item) {
+            console.log(item);
+        })*/
+    </script>
+</body>
+</html>

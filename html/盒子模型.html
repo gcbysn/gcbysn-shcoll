@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型</title>
+    <style type="text/css">
+        /*
+            div是一个没有语义的元素，实体化三属性，宽高背景色
+        */
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            /*
+
+              display: inline-block;      转换成行内块元素
+              display: block;             转换成块级元素
+              display:none;               不显示元素
+              display:inline              可以将一个元素作为内联元素
+            */
+            display: inline-block;
+            /*visibility:可以设置元素的显示状态 hidden 隐藏（会占位置）; visible 默认值，元素会显示*/
+            visibility: hidden;
+        }
+        span{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            /*
+                转换成块级元素
+            */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<!--
+    块级显示模式：自己单独占一行，设置宽高起作用，默认宽高和父级元素一样
+    块级元素：div  h1-h6  ul li ol dl dt dd hr form
+
+    行内显示模式：设置宽高不起作用，自身大小是靠文本撑开，一行可以有多个
+    行内元素：span b strong i em  u  ins  del  s a
+
+    行内块显示模式：设置宽高可以起作用，一行可以有多个
+    行内块级元素：images  表单元素
+-->
+    <div>
+
+    </div>
+    <strong>加粗</strong>
+    <span>我是span</span>
+
+</body>
+</html>

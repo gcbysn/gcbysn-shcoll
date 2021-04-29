@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>三列瀑布流</title>
+    <style>
+        body {
+            /* height: 2000px; */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            border: 1px solid red;
+            width: 720px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .cont {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            background: #000;
+            background: rgba(255,255,255,0.5);
+            float: left;
+        }
+        .loading{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            animation: name 2s 0s infinite;
+        }
+        @keyframes name{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+    <div class="cont"></div>
+</div>
+<!-- <img src="images/1-150614203H20-L.jpg" class="loading">  -->
+</body>
+<script>
+    var flag = 0
+    var box = document.querySelector('.box')
+    var cont = document.querySelector('.cont')
+    if (window.addEventListener)
+        window.addEventListener('DOMMouseScroll', wheel, false)
+    //FF,火狐浏览器会识别该方法
+
+    window.onmousewheel = document.onmousewheel = wheel //W3C
+    var scrollTop;
+    // 页面高度
+    //  console.log(document.documentElement.clientHeight)
+    var ymH =
+        document.documentElement.clientHeight || document.body.clientHeight
+    function wheel(event) {
+        document.onscroll = function(){
+            scrollTop =
+                document.documentElement.scrollTop ||document.body.scrollTop || 0
+            // e = event || window.event || 0
+            // console.log(window.opera)
+            // var event = event || window.event
+            var delta = 0
+            if (!event) event = window.event
+            if (event.wheelDelta) {
+                //IE、chrome浏览器使用的是wheelDelta，并且值为“正负120”
+                //   下滚  -120   上滚 120
+                delta = event.wheelDelta / 120
+                //window.opera    ---->判断 当前浏览器 是否为 opera
+                if (window.opera) delta = -delta //因为IE、chrome等向下滚动是负值，FF是正值，为了处理一致性，在此取反处理
+            } else if (event.detail) {
+                //FF浏览器使用的是detail,其值为“正负3”
+                delta = -event.detail / 3
+            }
+            if (delta) handle(delta)
+
+        }
+    }
+
+    //mousewheel ----滚动条滚动
+    //上下滚动时的具体处理函数
+    function handle(delta) {
+        scrollTop =
+            document.documentElement.scrollTop || document.body.scrollTop || 0
+        if (delta < 0) {
+            //向下滚动
+            // console.log('下')
+            // console.log(scrollTop)
+            // 获取元素最后一个节点距离顶部的高度
+            var box_T = box.lastElementChild.offsetTop;
+            var box_H = box.lastElementChild.offsetHeight;
+            var box_TH = box_T+box_H
+            //获取外边距
+            var cont_mar = parseInt(
+                getComputedStyle(box.lastElementChild, null).margin
+            )
+            if (scrollTop + ymH - (box_T + box_H + cont_mar) >= 0) {
+                if(flag == 0){
+                    var img = document.createElement('img')
+                    img.setAttribute('src','img/2.png')
+                    img.setAttribute('class','loading')
+                    document.body.appendChild(img)
+                    setTimeout(function(){
+                        for(var i=0;i<3;i++){
+                            var conts = document.createElement('div')
+                            conts.className = 'cont'
+                            box.appendChild(conts)
+                        }
+                        document.body.removeChild(img)
+                        flag = 0
+                    },2000)
+                    flag = 1
+                }
+            }
+        } else {
+            //向上滚动
+            // console.log('上')
+        }
+    }
+</script>
+</html>

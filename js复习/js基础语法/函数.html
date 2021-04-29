@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+        * 函数作用：将一堆相同的代码进行封装，可以进行重复使用，避免代码冗余
+        * 定义函数;
+        *   function 函数名 小括号 大括号是函数体 强烈建议命名用驼峰命名法
+        * 调用函数：函数名小括号
+        * 函数的参数
+        *   形式参数：函数小括号中的数据叫函数的参数
+        *   实际参数：函数调用中传递的叫实际参数
+        *   形参的顺序和个数要和实参一一对应
+        * 函数的默认返回值是undefined
+        *   return 可以将数据从函数中返回出去，当函数遇到return，后面的代码将不再执行会立刻跳出函数
+        *
+        * 有名函数（命名函数）：又名字的函数叫命名函数
+        * 定义方式:
+        *       1.定义函数的方式:function 函数名 （）{}
+        *       2.函数表达式的方式: var 变量名 =functin(){}    此方式只能在定义后调用
+        * 匿名函数：没有名字的函数叫匿名函数，匿名函数不能直接定义使用
+        * 使用方式：
+        *   1.作为函数表达式的方式
+        *   2.作为参数传递
+        *   3.作为事件处理函数
+        *   4.作为自调用函数
+        *   4.作为返回值
+        * */
+        /*函数表达式的方式*/
+        var sum=function (a,b){
+            return a+b;
+        }
+        console.log(typeof sum);
+        /*定义函数的方式*/
+        function sun(a,b) {
+            return a+b;
+        }
+        /*自调用函数*/
+        ( function(){
+            alert('自调用函数')
+        })();
+
+
+       console.log(sun(3,4));
+        /*求两个数的和*/
+        function sun(a,b) {
+            return a+b;
+        }
+        console.log(max(3,19,60));
+        //求三个数的最大值
+        function max(a,b,c) {
+            if (a>b&&a>c){
+                return a;
+            }else if (b>a&&b>c){
+                return  b;
+            }else if (c>a&&c>b){
+                return c;
+            }
+        }
+        console.log(number(4,6));
+        //求n-m之间所有数的和
+        function number(a,b) {
+            var sum=0;
+            for (let i = a; i <b ; i++) {
+                sum+=i;
+            }
+            return sum;
+        }
+       console.log(parseFloat(s(2)));
+        //求圆的面积
+        function s(a) {
+            return  Math.PI*a*a;
+        }
+      /* var num2=parseInt(prompt('请输入一个数：'));
+        //判断一个数是否是质数
+        console.log(get(num2));
+        function get(a) {
+            for (let i = 2; i <a ; i++) {
+                if (a % i ==0){
+                  return '不是质数';
+                }
+            }
+           return '是质数';
+        }*/
+        var arr=[3,56,78,12,4];
+       maxMin(arr);
+        // console.log(max(arr));
+        //求一组数字的最大值，最小值，和
+        function maxMin(arr) {
+            var sun=0;
+            var Max=arr[0];
+            var Min=arr[0];
+            for (let i = 0; i <arr.length ; i++) {
+                if (Max<arr[i]) {
+                    Max=arr[i];
+                }
+                if (Min>arr[i]){
+                    Min=arr[i];
+                }
+                sun += arr[i];
+            }
+            console.log(sun+'最大值是：'+Max+'最小值'+Min);
+        }
+    </script>
+</body>
+</html>

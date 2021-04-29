@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="warp">
+        <div id="app">app</div>
+        <div id="app2"></div>
+        <div id="app3"></div>
+        <span id="span"></span>
+    </div>
+    <script type="text/javascript">
+       window.onload=function () {
+           var app=document.getElementById("app");
+               console.log(app);
+
+              //创建了一个元素节点
+              var divNode=document.createElement("div");
+              //要将元素点挂载到Dom树上
+              document.body.appendChild(divNode);
+
+              var app2=document.getElementById("app2");
+              var span=document.createElement("span");
+
+              /*第一种插入节点的方式
+              * insertBefore(,) 第一个值填写要插入的元素，第二个值填写自己本身
+              * 如果插入的元素不存在则插入到元素
+              * 如果插入的元素存在则相当于替换位置，将第一个的元素替换在第二个元素之前
+              *
+              * */
+              /*document.body.insertBefore(span,app);
+              document.body.insertBefore(app2,app);*/
+               /*第二种方式
+               * insertAdjacentElement(,)  第一个值填写位置，第二个值填写要插入的元素
+               * beforebegin   插入到该元素之前
+               * afterbegin     插入到该元素当中，在该元素第一个子孩子前面
+               * beforeend       插入到该元素当中，在该元素最后一个子孩子后面
+               * afterend      插入到该元素后面
+               * */
+              app.insertAdjacentElement("afterbegin", span);
+
+             var aNode= document.createElement("a")
+              var warpNode=document.getElementById("warp");
+              var app3=document.getElementById("app3");
+             //替换节点  replaceChild(,)  会把旧的节点删掉换成新的节点    第一个值是填新的节点 ，第二个值是将要被替换的节点
+             warpNode.replaceChild(aNode,app3);
+           //删除节点
+           warpNode.removeChild(app2);
+
+           //克隆节点
+           /* 参数  false (默认)  只克隆元素自己，不克隆后代元素
+           *        true  深度克隆，元素自己和后代元素都会克隆
+           * */
+           var wrap2=warpNode.cloneNode();
+           //挂载上去
+           document.body.appendChild(wrap2);
+
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app" class="active" name="damu">
+        app
+            <div id="inner">
+                我是inner
+            </div>
+    </div>
+
+    <script>
+        var appNOde=document.getElementById("app");
+
+        console.log(appNOde.innerText);
+        //获取纯文本
+        console.log(appNOde.textContent);
+        //获取全部文本的html结构
+        console.log(appNOde.innerHTML);
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">click</button>
+<script>
+    window.onload=function () {
+        var btnNode=document.getElementById("btn");
+        /*
+        *   1.事件名称
+        *       dom2不用带on
+        *   2.this的指向
+        *      dom2: this指向事件绑定的对象
+        *   3.事件函数的指向顺序
+        *       dom2：绑定顺序
+        * */
+        btnNode.addEventListener("click",function () {
+            console.log(this,1);
+        })
+        btnNode.addEventListener("click",function () {
+            console.log(this,2);
+        })
+        btnNode.addEventListener("click",function () {
+            console.log(this,3);
+        })
+        btnNode.addEventListener("click",function () {
+            console.log(this,4);
+        })
+    }
+</script>
+</body>
+</html>

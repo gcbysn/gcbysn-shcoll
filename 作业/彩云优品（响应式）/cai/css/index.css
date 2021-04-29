@@ -1,0 +1,556 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: calc(100vw/19.8/100);
+}
+ul li{
+    list-style: none;
+}
+img{
+    display: block;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.clearfix{
+    zoom: 1;
+}
+.top{
+    /*width: 1950rem;*/
+    width: 100%;
+    height: 800px;
+    background-image: url("../image/bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+}
+.top .new_nav{
+    background: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+}
+.top .new_nav .new_container{
+    padding-top: 35px;
+}
+.top .new_nav .new_container .navbar-header .navbar-brand img{
+    margin-top: -15px;
+}
+.top .new_nav .new_container .navbar-collapse .navbar-nav{
+    font-size: 20px;
+    font-family: SourceHanSansCN;
+    font-weight: 400;
+    color: #434C5F;
+}
+.top .top_content{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.top .img{
+    display: block;
+    position: absolute;
+    top: 220px;
+    left: 226px;
+}
+.db{
+    width: 756px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: SourceHanSansCN;
+    font-weight: 400;
+    color: #434C5F;
+    line-height: 24px;
+}
+.top_content .row{
+    display: none;
+    font-size: 20px;
+    font-family: SourceHanSansCN;
+    font-weight: 400;
+    color: #434C5F;
+    line-height: 1px;
+}
+.db li{
+    float: left;
+    margin-top: 600px;
+    height: 50px;
+    /*line-height: 46px;*/
+}
+.db li:nth-child(2n+1) img{
+    margin-top: 2px;
+    margin-left: 60px;
+    margin-right: 20px;
+}
+.db li:nth-child(1) img{
+    margin-left: 0px;
+}
+.white{
+    line-height: 30px;
+    font-family: SourceHanSansCN;
+}
+.white .white_top{
+    width: 1430rem;
+    height: 100px;
+    margin: 0 auto;
+    background-image: url("../image/02-d.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-position: 50% 50%;*/
+}
+.white p:nth-child(2){
+    font-size: 30px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+}
+.white p:nth-child(3){
+    margin-top: 22px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #999999;
+    text-align: center;
+    margin-bottom: 19px;
+}
+.white .white_content{
+    width: 1200px;
+    /*height: 900px;*/
+    /*margin: 19px auto 0;*/
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+.white .white_content_2{
+    width: 750px;
+    /*height: 900px;*/
+    margin: 90px auto 0px;
+    display: flex;
+    justify-content:space-between;
+}
+.white .white_foot{
+    background-image: url("../image/02-f.jpg");
+}
+.white .er{
+    display: none;
+}
+.red{
+    width: 100%;
+    height: 650px;
+    background-image: url("../image/2_03.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    text-align: center;
+}
+.red p:nth-child(1){
+    margin-top: 68px;
+    font-size: 30px;
+    font-family: SourceHanSansCN;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 30px;
+    text-align: center;
+}
+.red p:nth-child(2){
+    margin-top: 21px;
+    font-size: 20px;
+    font-family: SourceHanSansCN;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 90px;
+}
+.swiper-container_2{
+    width: 1200px;
+}
+.swiper-button-next, .swiper-button-prev{
+    top:60%
+}
+.swiper-button-prev_2{
+    background-image: url("../image/prev.png");
+    left: 30px;
+}
+.swiper-button-next_2{
+    background-image: url("../image/next.png");
+    right: 80px;
+}
+.swiper-slide span{
+    font-size: 16px;
+    font-family: SourceHanSansCN;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 36px;
+}
+.swiper-container_3{
+    display: none;
+}
+.zhao{
+    width: 100%;
+    height: 800px;
+    background-image: url("../image/2_04.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+.zhao p:nth-child(1){
+    margin-top: 68px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+}
+.zhao p:nth-child(2){
+    margin-top: 22px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #999999;
+    text-align: center;
+}
+.zhaoSan{
+    height: 600px;
+    background-image: url("../image/2_05.jpg");
+}
+.zhaoSan p{
+    font-size: 30px;
+    font-family: SourceHanSansCN;
+    font-weight: bold;
+    color: #353952;
+    line-height: 30px;
+    text-align: center;
+}
+.foot p:nth-child(1){
+    text-align: center;
+    font-size: 30px;
+    font-family: SourceHanSansCN;
+    font-weight: bold;
+    color: #333333;
+    line-height: 30px;
+    margin-bottom: 64px;
+    margin-top: 72px;
+}
+.foot p:nth-child(4){
+    text-align: center;
+    font-size: 16px;
+    font-family: SourceHanSansCN;
+    font-weight: 400;
+    color: #333333;
+    line-height: 30px;
+}
+.foot p:nth-child(5){
+    display: none;
+}
+.xian{
+    width: 1200px;
+    height: 1px;
+    background: #CCCCCC;
+    margin:  100px auto 0;
+}
+
+@media (min-width: 1200px) {
+    .new_container {
+        width: 910px;
+    }
+}
+@media (max-width: 1199px)  {
+    html{
+        font-size: calc(100vw/7.2/100);
+    }
+    .top{
+        width: 720rem;
+        height: 800rem;
+        position: relative;
+        padding: 0;
+    }
+    .top .new_nav{
+        display: none;
+    }
+    .top .new_nav .new_container .navbar-collapse{
+        background: transparent;
+    }
+    .top .new_nav .navbar-header .navbar-toggle{
+        border-color: rgba(0,0,0,0);
+        background: rgba(0,0,0,0);
+    }
+    .top .new_nav .navbar-header .navbar-toggle span{
+        background: #FFFFFF;
+    }
+    .top .top_content{
+        width: 700rem;
+        position: absolute;
+        top: 630rem;
+        margin: 0 auto;
+    }
+    .top  .img{
+        display: block;
+        position: absolute;
+        top: 220rem;
+        left: 30rem;
+        width: 500rem;
+        height: 144rem;
+    }
+    .db{
+        display: none;
+    }
+    .top .new_nav .new_container{
+        padding-top: 35rem;
+    }
+    .top .new_nav .new_container .navbar-header .navbar-brand img{
+        margin-top: -15rem;
+        width: 58rem;
+        height: 63rem;
+    }
+    .top .new_nav .new_container .navbar-collapse .navbar-nav{
+        font-size: 20rem;
+        font-family: SourceHanSansCN;
+        font-weight: 400;
+        color: #434C5F;
+    }
+    .top .top_content{
+        width: 700rem;
+        overflow: hidden;
+        margin-left: 10rem;
+        margin-right: 10rem;
+    }
+    .top_content .row{
+        display: block;
+        width: 690rem;
+        text-align: center;
+        font-size: 20rem;
+        font-family: SourceHanSansCN;
+        font-weight: 400;
+        color: #434C5F;
+        line-height: 1rem;
+        margin-left: 0rem;
+    }
+    .top_content .row .col-xs-3{
+        padding: 0;
+        margin: 0;
+    }
+    .top_content .row .col-xs-3 .thumbnail{
+        border-color: rgba(0,0,0,0);
+        background: rgba(0,0,0,0);
+
+    }
+    .top_content .row .col-xs-3 .thumbnail img{
+        width: 46rem;
+        height: 46rem;
+    }
+    .top_content .row .col-xs-3 .thumbnail .caption{
+        margin-top: 11rem;
+
+    }
+    .top_content .row .col-xs-3 .thumbnail .caption p{
+        margin: 0;
+        font-size: 24rem;
+        font-family: SourceHanSansCN;
+        font-weight: 400;
+        color: #434C5F;
+        line-height: 30rem;
+    }
+
+    .white{
+        padding: 0;
+    }
+    .white p:nth-child(2){
+        font-size: 30rem;
+        font-weight: bold;
+        color: #333333;
+        text-align: center;
+    }
+    .white p:nth-child(3){
+        margin-top: 22rem;
+        font-size: 20rem;
+        font-weight: 400;
+        color: #999999;
+        text-align: center;
+        margin-bottom: 19rem;
+    }
+    .white .white_top{
+        float: left;
+        width: 100%;
+        height: 100rem;
+        /*margin: 0 auto;*/
+        background-image: url("../image/02-d.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+    .white .white_foot{
+        float: left;
+        width: 100%;
+        height: 100rem;
+        /*margin: 0 auto;*/
+        background-image: url("../image/02-f.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+    .white .white_content{
+        width: 700rem;
+    }
+    .white .white_content img{
+        width: 210rem;
+
+    }
+    .white .white_content img:nth-child(1),
+    .white .white_content img:nth-child(5){
+        display: none;
+    }
+    .white .white_content_2{
+        display: none;
+    }
+    .white .er{
+        display: block;
+        width: 560rem;
+        margin: 84rem auto 0;
+    }
+    .white .er .left{
+        width: 240rem;
+        margin: 0;
+        float: left;
+    }
+    .white .er .left li{
+        height: 80rem;
+        line-height: 80rem;
+        font-size: 20rem;
+        font-family: SourceHanSansCN;
+        font-weight: 400;
+        color: #333333;
+        text-align: center;
+    }
+    .white .er .right{
+        width: 320rem;
+        border: 40rem solid #96C6E0;
+        float: right;
+    }
+    .white .er .right div{
+        width: 240rem;
+        border: 20rem solid #FFFFFF;
+    }
+    .white .er .right div .tuP{
+        width: 200rem;
+        height: 200rem;
+    }
+    .red{
+        height: 650rem;
+        overflow: hidden;
+        padding: 0;
+    }
+    .red p:nth-child(1){
+        margin-top: 68rem;
+        font-size: 30rem;
+        font-family: SourceHanSansCN;
+        font-weight: bold;
+        color: #FFFFFF;
+        line-height: 30rem;
+        text-align: center;
+    }
+    .red p:nth-child(2){
+        margin-top: 21rem;
+        font-size: 20rem;
+        font-family: SourceHanSansCN;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 24rem;
+        text-align: center;
+        margin-bottom: 90rem;
+    }
+    .red .swiper-container_2{
+        display: none;
+    }
+    .red .swiper-container_3{
+        margin-top: 90rem;
+        display: block;
+        width: 700rem;
+    }
+    .red .swiper-container_3 img{
+        width: 540rem;
+        margin:0 auto;
+    }
+    .swiper-button-prev_2,
+    .swiper-button-next_2{
+        background-size: 27rem 40rem;
+    }
+    .swiper-button-prev_2{
+        left: 30rem;
+    }
+    .swiper-button-next_2{
+        right: 30rem;
+    }
+    .zhao{
+        height: 800rem;
+        padding: 0;
+    }
+    .zhao p:nth-child(1){
+        margin-top: 68rem;
+        font-size: 30rem;
+        font-weight: bold;
+        color: #333333;
+        text-align: center;
+    }
+    .zhao p:nth-child(2){
+        margin-top: 22rem;
+        font-size: 20rem;
+        font-weight: 400;
+        color: #999999;
+        text-align: center;
+    }
+    .zhaoSan{
+       height:  600rem;
+        padding: 0;
+    }
+    .zhaoSan p{
+        font-size: 36rem;
+        font-family: SourceHanSansCN;
+        font-weight: bold;
+        color: #353952;
+        line-height: 30rem;
+    }
+
+    .foot{
+        height: 400rem;
+        padding: 0;
+    }
+    .foot p:nth-child(1){
+        text-align: center;
+        font-size: 30rem;
+        font-family: SourceHanSansCN;
+        font-weight: bold;
+        color: #333333;
+        line-height: 30rem;
+        margin-bottom: 62rem;
+        margin-top: 62rem;
+    }
+    .foot p:nth-child(4){
+        text-align: center;
+        font-size: 16rem;
+        font-family: SourceHanSansCN;
+        font-weight: 400;
+        color: #333333;
+        line-height: 30rem;
+    }
+    .xian{
+        width: 700rem;
+        height: 1rem;
+        margin: 100rem auto 0;
+    }
+    .foot .white_content img{
+        width: 220rem;
+        height: 70rem;
+    }
+    .foot p:nth-child(4){
+       display: none;
+    }
+    .foot p:nth-child(5){
+        display: block;
+        text-align: center;
+        font-size: 16rem;
+        font-family: SourceHanSansCN;
+        font-weight: 400;
+        color: #333333;
+        line-height: 30rem;
+    }
+}

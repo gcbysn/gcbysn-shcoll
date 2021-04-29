@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .warp{
+            width: 600px;
+            height: 400px;
+            margin: 100px auto;
+            border:1px solid red;
+
+            /*变为伸缩容器*/
+            display: flex;
+            /*换行*/
+            flex-wrap: wrap;
+            /*发生换行之后才有用  侧轴不止一行，主轴方向上多个轴
+                flex-start：与侧轴的起点对齐。
+                flex-end：与侧轴的终点对齐。
+                center：与侧轴的中点对齐。
+                space-between：与侧轴两端对齐，轴线之间的间隔平均分布。
+                space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
+                stretch（默认值）：轴线占满整个侧轴。
+                space-evenly: 轴线的间隔以及轴线与伸缩容器边框的间隔相等。 （新增属性值，兼容性稍差）。
+
+
+            */
+            align-content: stretch;
+            align-content: center;
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: space-around;
+            align-content: space-evenly;
+            align-content: space-between;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+        }
+        .box1{
+            background: red;
+        }
+        .box2{
+            background: black;
+        }
+        .box3{
+            background: blue;
+            font-size: 100px;
+        }
+        .box4{
+            background: burlywood;
+        }
+        .box5{
+            background: pink;
+        }
+        .box6{
+            background: #795da3;
+        }
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+        <div class="box box6">6</div>
+    </div>
+</body>
+</html>

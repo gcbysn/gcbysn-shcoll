@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 500px;
+            height: 400px;
+            border: 1px solid #000;
+            box-shadow: 0 0 6px rgba(0,0,0,0.6);
+            margin: 100px auto;
+        }
+        li{
+            list-style: none;
+        }
+        /*添加人部分*/
+        .top{
+            width: 100%;
+            height: 30px;
+            background: #B1DB58;
+        }
+        .center{
+            width: 100%;
+            height: 340px;
+        }
+        .foot{
+            width: 100%;
+            height: 30px;
+            background-color: #EDF6E5;
+        }
+        .top p{
+            float: left;
+            color: #000;
+            line-height: 30px;
+            padding-left: 20px;
+            font-size: 16px;
+        }
+        .top span{
+            float: right;
+            font-size: 30px;
+            line-height: 25px;
+            padding-right: 10px;
+            cursor: pointer;
+        }
+        .box-right{
+            width: 220px;
+            height: 330px;
+            border: 1px solid transparent;
+        }
+        .box-left{
+            width: 220px;
+            height: 330px;
+            border: 1px solid transparent;
+        }
+        .box-left{
+            margin-left: 10px;
+            float: left;
+        }
+        .box-left .friend{
+            width: 220px;
+            height: 300px;
+            float: left;
+            position: relative;
+            background-color: #F5FBEC;
+            /*overflow-y: scroll;*/
+            overflow-y:auto;
+        }
+        .friend h4{
+            padding-left: 15px;
+            line-height: 25px;
+            color: #333;
+        }
+        .friend h4:hover{
+            color: #fff;
+            background-color: #50A2DE;
+        }
+        .friend h4 span{
+            float: right;
+            padding-right: 5px;
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+            z-index: 100;
+        }
+        .friend h4:hover span{
+            display: block;
+        }
+        i {
+            width: 10px;
+            height: 10px;
+            font-style: normal;
+            position: absolute;
+            left: 5px;
+            margin-top: 8px;
+            background: url(./img/1.jpg) center center no-repeat;
+        }
+        .box-right{
+            float: right;
+        }.box-right .people{
+             width: 220px;
+             height: 275px;
+             background-color: #F5FBEC;
+             /*overflow-y: scroll;*/
+             overflow-y:auto;
+         }
+        /*.box-right */.number{
+                           height: 20px;
+                           line-height: 20px;
+                           margin: 5px;
+                       }
+        .box-right img{
+            margin-top: 2.5px;
+        }
+        .friend li{
+            height: 25px;
+            line-height: 25px;
+            padding-left: 42px;
+            position: relative;
+        }
+        .friend li img{
+            position: absolute;
+            left: 15px;
+            top: 2.5px;
+            width: 20px;
+            height: 20px;
+        }
+        .friend li span{
+            display: none;
+        }
+        .friend li:hover{
+            background: lightgreen;
+        }
+        .list{
+            display: none;
+        }
+        .people li{
+            height: 25px;
+            line-height: 25px;
+            padding-left: 35px;
+            position: relative;
+        }
+        .people li img{
+            position: absolute;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+        }
+        .person{
+            float: right;
+            width: 200px;
+            height: 25px;
+            line-height: 25px;
+        }
+        .foot input{
+            width: 60px;
+            height: 20px;
+            border: 1px solid lightsteelblue;
+            float: right;
+            margin: 5px;
+            background-color: #E0FFFF;
+        }
+
+        /*讨论组部分*/
+        .box1{
+            width: 500px;
+            height: 552px;
+            border: 1px solid red;
+            margin: 100px auto;
+            display: none;
+        }
+        .box1 h1{
+            color: yellow;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            background-color: lightgreen;
+        }
+        .box1-left{
+            width: 302px;
+            height: 500px;
+            float: left;
+            position: relative;
+        }
+        .box1-right{
+            float: right;
+            width: 194px;
+            height: 500px;
+            border: 1px solid #2ECC71;
+            background-color: lightgoldenrodyellow;
+        }
+        #ul{
+            width:302px;
+            height:400px;
+            border: 1px solid lightgrey;
+            overflow: hidden;
+            background-color: lightcyan;
+            overflow-y:auto; /*不会出现竖向滚动条样式*/
+            /*overflow-y: scroll;*/
+        }
+        #ul li{
+            list-style:none;
+        }
+        #ul a{
+            max-width:140px;
+            padding:3px;
+            line-height:18px;
+            display:inline-block;
+            border:1px solid #999;
+            border-radius:5px;
+            color:#000;
+            word-break:break-all;
+            box-shadow:0 1px 2px #999;
+            margin-top: 15px;
+        }
+        #ipt{
+            border: 1px solid transparent;
+            outline: none;
+            width: 302px;
+            height: 30px;
+        }
+        #btn,#btn1{
+            outline: none;
+            border: 1px solid #00FFFF;
+            width: 60px;
+            height: 20px;
+            border-radius: 6px;
+            float: right;
+            margin-top: 40px;
+            margin-right: 20px;
+        }
+        #noSend{
+            position: absolute;
+            left: 55%;
+            bottom: 45px;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 12px;
+            text-align: center;
+            color: red;
+            background-color: #eee;
+            box-shadow: 1px 5px 10px #999;
+            z-index: 100;
+            border-radius: 15px;
+            display: none;
+        }
+        #noSend:before{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            border: 15px solid transparent;
+            border-right-color: #eee;
+            transform: rotate(45deg);
+            z-index: 50;
+        }
+        .box1-right li{
+            height: 25px;
+            line-height: 25px;
+            padding-left: 35px;
+            position: relative;
+        }
+        .box1-right li img{
+            margin-top: 2.5px;
+            position: absolute;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<!--添加人部分-->
+<div class="box">
+    <div class="top"><p>发起多人聊天</p><span id="close1">x</span></div>
+    <div class="center">
+        <div class="box-left">
+            <input type="text" name="tex" id="tex" value="" placeholder="输入查找关键字" style="margin: 4px;height: 20px;width:214px;float: left;"/>
+            <div class="friend">
+                <h4>我的好友<i></i><span class="span">+</span></h4>
+                <ul class="list">
+<!--                    <li title="a(12345678)"><img src="./img/1.jpg"/>a(12345678)</li>-->
+<!--                    <li title="b(12345678)"><img src="./img/1.jpg"/>b(12345678)</li>-->
+<!--                    <li title="c(12345678)"><img src="./img/1.jpg"/>c(12345678)</li>-->
+<!--                    <li title="d(12345678)"><img src="./img/1.jpg"/>d(12345678)</li>-->
+<!--                    <li title="e(12345678)"><img src="./img/1.jpg"/>e(12345678)</li>-->
+<!--                    <li title="f(12345678)"><img src="./img/1.jpg"/>f(12345678)</li>-->
+                </ul>
+<!--                <h4>我的同学<i></i><span class="span">+</span></h4>-->
+<!--                <ul class="list">-->
+<!--                    <li title="A(12345678)"><img src="img/icon.png"/>A(12345678)</li>-->
+<!--                    <li title="B(12345678)"><img src="img/icon.png"/>B(12345678)</li>-->
+<!--                    <li title="C(12345678)"><img src="img/icon.png"/>C(12345678)</li>-->
+<!--                    <li title="D(12345678)"><img src="img/icon.png"/>D(12345678)</li>-->
+<!--                </ul>-->
+<!--                <h4>我的同事<i></i><span class="span">+</span></h4>-->
+<!--                <ul class="list">-->
+<!--                    <li title="1(12345678)"><img src="img/icon.png"/>1(12345678)</li>-->
+<!--                    <li title="2(12345678)"><img src="img/icon.png"/>2(12345678)</li>-->
+<!--                    <li title="3(12345678)"><img src="img/icon.png"/>3(12345678)</li>-->
+<!--                    <li title="4(12345678)"><img src="img/icon.png"/>4(12345678)</li>-->
+<!--                    <li title="5(12345678)"><img src="img/icon.png"/>5(12345678)</li>-->
+<!--                    <li title="6(12345678)"><img src="img/icon.png"/>6(12345678)</li>-->
+<!--                    <li title="7(12345678)"><img src="img/icon.png"/>7(12345678)</li>-->
+<!--                    <li title="8(12345678)"><img src="img/icon.png"/>8(12345678)</li>-->
+<!--                </ul>-->
+            </div>
+        </div>
+        <div class="box-right">
+            <div class="number">
+                已选联系人
+                <span id="person">1</span>
+                /
+                <span>100</span>
+            </div>
+            <p style="padding-left: 35px;height:25px;line-height:25px;background: #F5FBEC;position: relative;"><img src="img/icon.png"/ style="position: absolute;left: 10px;top:2px;margin:0;">我自己</p>
+            <div class="people">
+
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        <input type="button" name="btnYes" id="btnNo" value="取消" />
+        <input type="button" name="btnNo" id="btnYes" value="确定" />
+    </div>
+</div>
+
+<!--讨论组部分-->
+<div class="box1">
+    <h1>欢迎来到该讨论组</h1>
+    <div class="box1-left">
+        <ul id="ul"></ul>
+        <input type="text" id="ipt" value="" />
+        <input type="button" name="btn" id="btn1" value="取消" />
+        <input type="button" name="btn" id="btn" value="发送" />
+        <p id="noSend">输入不能为空</p>
+    </div>
+    <div class="box1-right">
+        <div class="number">
+            已选联系人
+            <span id="person1">0</span>
+            /
+            <span>100</span>
+        </div>
+        <div class="people1">
+
+        </div>
+    </div>
+</div>
+<!--<script type="text/javascript" src="js/global.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--    //添加人部分-->
+<!--    var menu = document.querySelectorAll(".friend h4");-->
+<!--    var box = $(".box");-->
+<!--    var friend = $(".friend");-->
+<!--    var people = $(".people");-->
+<!--    var list = document.querySelectorAll(".list");-->
+<!--    var listChil = document.querySelectorAll(".list li");-->
+<!--    var person = $("#person");-->
+<!--    var span = document.querySelectorAll(".span");-->
+<!--    var close = document.querySelectorAll("#close");-->
+<!--    var close1 = $("#close1");-->
+<!--    var btnNo = $("#btnNo");-->
+<!--    var btnYes = $("#btnYes");-->
+<!--    //讨论组部分-->
+<!--    var box1 = $(".box1");-->
+<!--    var people1 = $(".people1");-->
+<!--    var person1 = $("#person1");-->
+<!--    var box1Right = document.querySelector(".box1-right");-->
+<!--    var ul = document.getElementById('ul');-->
+<!--    var li= ul.getElementsByTagName('li');-->
+<!--    var ipt= document.getElementById('ipt'); //输入框-->
+<!--    var btnTo= document.getElementById('btn'); //发送按钮-->
+<!--    var noSend = document.getElementById("noSend");-->
+
+<!--    //添加人部分-->
+<!--    //点击隐藏-->
+<!--    for(var i = 0;i<menu.length;i++){-->
+<!--        menu[i].onclick = function(){-->
+<!--            var ul = this.nextElementSibling;-->
+<!--            var icon = this.firstElementChild;-->
+<!--//style不能获取除行内样式之外的样式-->
+<!--            if(ul.style.display == "block"){-->
+<!--                ul.style.display = "none";-->
+<!--                icon.style.backgroundImage = "url(img/right.png)";-->
+<!--                console.log(1);-->
+<!--            }-->
+<!--            else{-->
+<!--                ul.style.display = "block";-->
+<!--                icon.style.backgroundImage = "url(img/down.png)";-->
+<!--                console.log(2);-->
+<!--            }-->
+<!--        }-->
+<!--    };-->
+<!--    //整体添加-->
+<!--    for (var i = 0; i < span.length; i++){-->
+<!--        span[i].onclick = function(e){-->
+<!--//防冒泡-->
+<!--            e = e || window.event;-->
+<!--            if(e.cancelBubble){-->
+<!--                e.cancelBubble;-->
+<!--            }-->
+<!--            else{-->
+<!--                e.stopPropagation();-->
+<!--            }-->
+<!--//整体添加到右框-->
+<!--            var ul2 = this.parentNode.nextElementSibling.children;-->
+<!--            for(var h = 0;h<ul2.length;h++){-->
+<!--                if(ul2[h].getAttribute("a")!= 1){-->
+<!--                    people.innerHTML += ul2[h].outerHTML;-->
+<!--                    person.innerHTML++;-->
+<!--                };-->
+<!--                ul2[h].setAttribute("a",1);-->
+<!--            }-->
+<!--            dele();-->
+<!--//整体添加到讨论组-->
+<!--            var ul2 = this.parentNode.nextElementSibling.children;-->
+<!--            for(var h = 0;h<ul2.length;h++){-->
+<!--                if(ul2[h].getAttribute("b")!= 1){-->
+<!--                    people1.innerHTML += ul2[h].outerHTML;-->
+<!--                    person1.innerHTML++;-->
+<!--                };-->
+<!--                ul2[h].setAttribute("b",1);-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--    //单个添加-->
+<!--    for(var i = 0;i<listChil.length;i++){-->
+<!--        listChil[i].onclick = function(){-->
+<!--//单个添加到右框-->
+<!--            if(this.getAttribute("a")!= 1){-->
+<!--                people.innerHTML += this.outerHTML; //outerHTML 设置或获取对象及其内容的 HTML 形式-->
+<!--                person.innerHTML++;-->
+<!--            };-->
+<!--            this.setAttribute("a",1);-->
+<!--// person.innerHTML++; //写在这会导致添加完后，没点击一次，还会继续加1-->
+<!--//点击删除-->
+<!--            dele();-->
+<!--//单个添加到讨论组-->
+<!--            if(this.getAttribute("b")!= 1){-->
+<!--                people1.innerHTML += this.outerHTML; //outerHTML 设置或获取对象及其内容的 HTML 形式-->
+<!--                person1.innerHTML++;-->
+
+<!--            };-->
+<!--            this.setAttribute("b",1);-->
+<!--        }-->
+<!--    }-->
+<!--    //点击删除-->
+<!--    function dele(){-->
+<!--        var peopleChild = people.children;-->
+<!--        var people1Child = people1.children;-->
+<!--        console.log(peopleChild);-->
+<!--        console.log(peopleChild.length);-->
+<!--        var span = document.createElement("span");-->
+<!--// var i = document.createElement("i");-->
+<!--// span.appendChild(i);-->
+<!--        span.innerText = "X";-->
+<!--        span.style.cssText = "float: right;margin: 2px 20px 2px 0;width: 21px;height: 21px;text-align: center;line-height: 21px;"-->
+<!--// i.style.cssText = "border: 1px solid transparent;width: 13px;height: 13px;margin: 3px;font-style: normal;"-->
+<!--        for(var j = 0;j<peopleChild.length;j++){-->
+<!--            peopleChild[j].onclick = function(){-->
+<!--//remove删除指定对象-->
+<!--                this.remove();-->
+<!--                people1Child[0].remove();-->
+<!--                span.remove();-->
+<!--                person.innerHTML&#45;&#45;;-->
+<!--                person1.innerHTML&#45;&#45;;-->
+<!--                for(var k = 0;k<listChil.length;k++){-->
+<!--                    if(listChil[k].innerText == this.innerText){-->
+<!--                        listChil[k].setAttribute("a",0);-->
+<!--                    }-->
+<!--                }-->
+<!--            }-->
+<!--            peopleChild[j].onmouseover = function(){-->
+<!--                this.style.background = "lightblue";-->
+<!--                this.appendChild(span);-->
+<!--            }-->
+<!--            peopleChild[j].onmouseout = function(){-->
+<!--                this.style.background = "transparent";-->
+<!--                span.style.background = "lightgreen";-->
+<!--                this.removeChild(this.childNodes[2]);-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--    //点击关闭-->
+<!--    close1.onclick = function(){-->
+<!--        box.style.display = "none";-->
+<!--    }-->
+<!--    btnNo.onclick = function(){-->
+<!--        box.style.display = "none";-->
+<!--    }-->
+<!--    btnYes.onclick = function(){-->
+<!--        box1.style.display = "block";-->
+<!--        box.style.display = "none";-->
+<!--    }-->
+
+<!--    //讨论组部分-->
+<!--    //enter事件-->
+<!--    document.οnkeydοwn=function(event){-->
+<!--        var e = event || window.event || arguments.callee.caller.arguments[0];-->
+<!--        if(e && e.keyCode==13){ // enter键-->
+<!--            ifNull();-->
+<!--        }-->
+<!--    }-->
+<!--    //点击按钮进行发送-->
+<!--    btnTo.onclick = function(){-->
+<!--        ifNull();-->
+<!--    }-->
+<!--    function ifNull(){-->
+<!--        if(ipt.value == ""){-->
+<!--            noSend.style.display = "block";-->
+<!--            setTimeout(run,1000);-->
+<!--        }-->
+<!--        else{-->
+<!--            ul.innerHTML=ul.innerHTML+" <li><a>"+ipt.value+"</a></li> ";-->
+<!--            ipt.value="";-->
+<!--            say();-->
+<!--        }-->
+<!--    }-->
+<!--    //不显示警告框-->
+<!--    function run(){-->
+<!--        noSend.style.display = "none";-->
+<!--    }-->
+<!--    //左右边对话-->
+<!--    function say(){-->
+<!--        for(var i=0;i<li.length;i++){-->
+<!--//获取第一个li里的a-->
+<!--            var a = li[i].getElementsByTagName('a')[0];-->
+<!--            if(i%2!=0){-->
+<!--                li[i].style.textAlign ='right';-->
+<!--                li[i].style.marginRight = "10px";-->
+<!--                a.style.background = "yellow";-->
+<!--            }-->
+<!--            else{-->
+<!--                li[i].style.textAlign ='left';-->
+<!--                li[i].style.marginLeft = "10px";-->
+<!--                a.style.backgroundColor = "orange";-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+</body>
+</html>

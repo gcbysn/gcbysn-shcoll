@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery1.83.min.js"></script>
+    <style>
+        .box{
+            width: 300px;
+            height: 600px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        .imgs{
+            width: 100%;
+            /* height: 200px; */
+            display: block;
+            margin: 0 auto;
+        }
+        .old{
+            text-decoration:line-through ;
+            color: #666666;
+        }
+        .new{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<input type="text" class="type1"><input class="page" type="text">
+<button>ajax方法点击发送请求</button>
+<div id="result"></div>
+</body>
+<script>
+    $(function(){
+        var a=1;
+        var num=9;
+        $('button').eq(0).click(function(){
+           f()
+        })
+        $(window).scroll(function() {
+            if ($(document).scrollTop() >= $(document).height() - $(window).height()) {
+                num+=10;
+                if (num>29){
+                    a++;
+                    num=9;
+                }
+                f()
+            }
+        });
+function f() {
+    $.ajax({
+        //地址
+        url:'http://152.136.185.210:8000/api/w6/home/data',
+        //参数
+        data:{
+            type:'pop',
+            page:a,
+        },
+        //请求类型
+        type:'GET',
+        //响应体结果
+        dataType:'json',
+        //成功的回调
+        success:function(a){
+            // console.log(a);
+            var lists=a.data.list;
+            console.log(lists);
+            console.log(a.data.page)
+            for (let i = 0; i <=9 ; i++) {
+                if (num>9&&num<20){
+                    var s=$('<div class="box">'+
+                        '        <img src="'+lists[i+10].show.img +'" alt="" class="imgs">' +
+                        '        <p class="title">'+lists[i+10].title+'</p>' +
+                        '        <span class="old">'+lists[i+10].orgPrice+'</span><span class="new">'+lists[i+10].price+'</span>' +
+                        '    </div>')
+                    $('body').append(s)
+                }else if(num>19&&num<30){
+                    var s=$('<div class="box">'+
+                        '        <img src="'+lists[i+10].show.img +'" alt="" class="imgs">' +
+                        '        <p class="title">'+lists[i+10].title+'</p>' +
+                        '        <span class="old">'+lists[i+10].orgPrice+'</span><span class="new">'+lists[i+10].price+'</span>' +
+                        '    </div>')
+                    $('body').append(s)
+                }
+                else{
+                    var s=$('<div class="box">'+
+                        '        <img src="'+lists[i].show.img +'" alt="" class="imgs">' +
+                        '        <p class="title">'+lists[i].title+'</p>' +
+                        '        <span class="old">'+lists[i].orgPrice+'</span><span class="new">'+lists[i].price+'</span>' +
+                        '    </div>')
+                    $('body').append(s)
+                }
+
+            }
+        }
+    })
+}
+
+    })
+</script>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            border: none;
+            list-style: none;
+        }
+        .banner{
+            width: 361px;
+            height: 151px;
+            background: #6c6c6c;
+            margin: 100px auto 0;
+            /*相对定位*/
+            position: relative;
+        }
+        .banner ul li a{
+            display: block;
+        }
+        .banner ul li a img{
+            display: block;
+        }
+        .banner .nav{
+            width: 180px;
+            height: 151px;
+            background: #000000;
+            /*绝对定位*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            /*
+            透明属性：
+            单个属性：opacity:0.6
+            */
+            /*
+            a是alpha
+            */
+            background: rgba(0,0,0,0.6);
+        }
+        .banner span{
+            width: 20px;
+            height: 20px;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            background: #000000;
+            color: #FFFFFF;
+            position: absolute;
+            left: 180px;
+            top: 50%;
+            margin-top: -17px;
+            font-size: 15px;
+            text-align: center;
+            line-height: 34px;
+        }
+        .banner .rightButton{
+            /*让left不起作用*/
+            left: auto;
+            right: 0;
+        }
+        .banner ol{
+            position: absolute;
+            right: 60px;
+            bottom: 20px;
+        }
+        .banner ol li{
+            float: left;
+            width: 6px;
+            height: 6px;
+            background: #969396;
+            border: 2px solid #6c6c6c;
+            border-radius: 50%;
+            margin-left: 5px;
+        }
+        .banner .current{
+            background: #FFFFFF;
+        }
+        .banner ol li:hover{
+            background: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <!--<ul>
+            <li>
+                <a href="##"><images src="../images/1.jpg" alt="" width="361" height="151"></a>
+            </li>
+        </ul>-->
+        <!--侧导航-->
+        <div class="nav">
+
+        </div>
+        <span class="leftButton"> < </span>
+        <span class="rightButton"> > </span>
+        <ol>
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+</body>
+</html>

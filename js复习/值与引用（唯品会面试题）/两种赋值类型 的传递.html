@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+        *   js中变量是没有类型的，变量持有其值所对应的类型
+        *js中的值传递：传的都是值（基本数据类型，引用数据类型）！不传引用
+        * */
+        var a=2;
+        var b=a;
+        b++;
+        console.log(a);//2
+        console.log(b);//3
+
+
+
+        var arr1=[1,2,3];
+        var arr2=arr1;
+        console.log(arr1);//123
+        console.log(arr2);//123
+
+        arr2.push(4);
+        console.log(arr1);//1234
+        console.log(arr2);//1234
+
+    </script>
+</body>
+</html>

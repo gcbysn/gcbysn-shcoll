@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: calc(100vw/7.2);
+}
+.app{
+    position: absolute;
+    height: 100%;
+    width: 7.2rem;
+    /*height: 12.8rem;*/
+    background-image: url("../img/ndzdbg.jpg");
+    background-position: 0 -50%;
+    overflow: hidden;
+}
+.top{
+    width: 7.2rem;
+    height: 4.65rem;
+    background-image: url("../img/top.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 1.6rem;
+    display: none;
+}
+.shan{
+    width: 7.2rem;
+    height: 1.31rem;
+    background-image: url("../img/z36.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+}
+.yun1{
+    width: 7.2rem;
+    height: 4.8rem;
+    background-image: url("../img/z35.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: -1rem;
+    display: none;
+}
+.yun2{
+    width: 7.2rem;
+    height: 5.74rem;
+    background-image: url("../img/z29.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: relative;
+    top: -4.7rem;
+    display: none;
+    /*background-position: 1rem 0;*/
+}
+.yun3{
+    width: 7.2rem;
+    height: 2.4rem;
+    background-image: url("../img/z15.png");
+    /*background-repeat: no-repeat;*/
+    /*background-size: auto;*/
+    position: absolute;
+    bottom: 0;
+    background-position: 8rem 0;
+    /*display: none;*/
+}
+.lt1{
+    width: 2rem;
+    /*height: 0.58rem;*/
+    position: absolute;
+    bottom: 0rem;
+    left: 2.6rem;
+    z-index: 50;
+}
+.lt2{
+    width: 1rem;
+    /*height: 4.04rem;*/
+    position: absolute;
+    bottom: -3.185rem;
+    left: 2.6rem;
+    z-index: 49;
+}
+.lt3{
+    width: 1rem;
+    /*height: 4.04rem;*/
+    position: absolute;
+    bottom: -2.895rem;
+    left: 2.11rem;
+    z-index: 48;
+}
+.lt4{
+    width: 2rem;
+    position: absolute;
+    bottom: -3.3156rem;
+    left: 1.61rem;
+    z-index: 47;
+}
+.lt5{
+    width: 1.76rem;
+    position: absolute;
+    bottom: -0.3rem;
+    left: 1.36rem;
+    z-index: 46;
+}

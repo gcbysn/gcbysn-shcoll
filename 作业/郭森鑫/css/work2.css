@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    list-style: none;
+    width: 141px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.db{
+    display: flex;
+    width: 756px;
+    margin: 0 auto;
+    justify-content: space-between;
+    font-size: 20px;
+    font-family: SourceHanSansCN;
+    font-weight: 400;
+    color: #434C5F;
+    line-height: 32px;
+}

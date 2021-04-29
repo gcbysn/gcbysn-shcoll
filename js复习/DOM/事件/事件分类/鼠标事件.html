@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script type="text/javascript">
+          /*
+                click              单击
+                dblclick           双击
+                contextmenu        右击
+                mousedown          鼠标按键按下
+                mouseup            鼠标按键抬起
+                mousemove          鼠标移动
+                mouseover          鼠标悬停在元素上
+                mouseout           鼠标离开元素
+                mouseenter        mouseover的代替方案 鼠标悬停在元素上,不会产生冒泡        （IE9+）
+                mouseleave        mouseout的代替方法  鼠标离开元素,不会产生冒泡          (IE9+)
+
+                */
+
+        window.onload=function () {
+            var appNode=document.querySelector("#app");
+            //鼠标双击事件
+            appNode.ondblclick=function () {
+                console.log("ondblclick")
+            }
+            //鼠标移入
+            appNode.onmouseover=function () {
+                console.log("onmouseover")
+            }
+            //鼠标移出
+            appNode.onmouseout=function () {
+                console.log("onmouseout")
+            }
+
+            appNode.onmousedown=function () {
+                console.log("onmousedown")
+            }
+
+            appNode.onmouseup=function () {
+                console.log("onmouseup")
+            }
+
+            appNode.onmousemove=function () {
+                console.log("onmousemove")
+            }
+
+            appNode.onmouseout=function () {
+                console.log("onmouseout")
+            }
+
+        }
+    </script>
+</body>
+</html>

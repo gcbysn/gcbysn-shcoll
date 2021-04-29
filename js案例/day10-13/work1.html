@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .app{
+            width: 462px;
+            height: 500px;
+            border:1px solid blue;
+            background: #333333;
+            margin: 0 auto;
+        }
+        .show{
+            height: 100px;
+            border-bottom: 1px solid red;
+        }
+        .button{
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .button div{
+            width: 112px;
+            height: 65px;
+            text-align: center;
+            line-height: 65px;
+            font-size: 32px;
+        }
+        .button div:hover{
+            background: #333333;
+        }
+        .item{
+            background: #ffffff;
+        }
+        .js{
+            background: #cccccc;
+        }
+        .number{
+            border: none;
+            width: 462px;
+            height: 100px;
+            line-height: 50px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="show">
+            <input class="number" type="text"  value="0" disabled />
+        </div>
+        <div class="button">
+            <div class="item js">%</div>
+            <div class="item js">CE</div>
+            <div class="item js">C</div>
+            <div class="item js">del</div>
+            <div class="item js">1/x</div>
+            <div class="item js">x<sup>2</sup></div>
+            <div class="item js"><sup>2</sup>√<sub>x</sub></div>
+            <div class="item js">/</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+            <div class="item js">*</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item js">-</div>
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item js">+</div>
+            <div class="item">+/-</div>
+            <div class="item">0</div>
+            <div class="item">.</div>
+            <div class="item">=</div>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload=function () {
+        var liNode=document.querySelectorAll(".item");
+        var number=document.querySelector(".number");
+        var a,b,c;
+        // var input=document.querySelector(".input");
+
+    }
+
+</script>
+</html>

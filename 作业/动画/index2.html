@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 301px;
+            height: 301px;
+            border: 1px solid red;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            animation-name:move;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            /*animation-direction: alternate-reverse;*/
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+
+        }
+        @keyframes move {
+            0%,20%{
+                /*margin-left: 0px;/*/
+                margin-top: 200px;
+                margin-left: 200px;
+            }
+            20%,40%{
+                margin-left: 400px;
+                margin-top: 0px;
+            }
+            40%,60%{
+                margin-left: 600px;
+                margin-top: 200px;
+            }
+            60%,80%{
+                margin-left: 800px;
+                margin-top: 0px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+
+    </div>
+
+
+</body>
+</html>

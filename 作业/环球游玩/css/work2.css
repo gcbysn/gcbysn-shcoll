@@ -1,0 +1,685 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: calc(100vw/7.2);
+}
+.app{
+    position: absolute;
+    height: 100%;
+    width: 13.93rem;
+    /*height: 11.7rem;*/
+    background-image: url("../images/mapbg.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /*overflow-scrolling: auto;*/
+}
+
+.mb{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 9;
+}
+.tc{
+    width: 6.15rem;
+    height: 7.4rem;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: none;
+    z-index: 99;
+}
+.tc .wz{
+    width: 6rem;
+    height: 4.32rem;
+    margin-left: 0.15rem;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+.tc .wz p{
+    text-align: center;
+    line-height: 0.36rem;
+    font-size:0.24rem ;
+    color: #A2A2A2;
+}
+.tc .wz p:nth-child(2n+1){
+    margin-bottom: 0.4rem;
+    padding-left: 0.8rem;
+    text-align: left;
+}
+
+.tc .wz h3{
+    text-align: center;
+    font-size:0.36rem ;
+    color: black;
+    font-weight: 700;
+    margin: 0.2rem 0;
+}
+.tc .gongGao{
+    display: block;
+    width: 6.15rem;
+    height: 3.08rem;
+}
+.tc1 {
+    height: 11.4rem;
+    display: none;
+}
+
+.tc1 .lj {
+    width: 6rem;
+    height: 0.7rem;
+    /*margin-top: -1rem;*/
+    position: relative;
+    top: -0.7rem;
+    z-index: 8;
+}
+
+.tc1 .wz p span {
+    font-size: 0.30rem;
+    color: black;
+    font-weight: 700;
+    padding: 0.1rem;
+    padding-right: 0.36rem;
+}
+
+.tc1 .wz .xlb {
+    /* margin-bottom: 0.1rem; */
+    padding-left: 0.4rem;
+    text-align: left;
+    /* margin-top: 0.1rem; */
+    overflow: hidden;
+}
+
+.tc1 .wz .xlb span {
+    font-size: 0.14rem;
+    font-weight: 500;
+    color: #828282;
+    float: left;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0.05rem;
+}
+.xhx{
+    margin-bottom: 0.2rem!important;
+}
+.tc1 .wz p:nth-child(2n+1){
+    padding-left: 0.4rem;
+    margin-bottom: 0rem;
+}
+.tc1 .wz .xlb span:nth-child(2) {
+    margin-top: 0.2rem;
+}
+
+.tc1 .wz .xlb span:nth-child(3) {
+    margin-top: 0.2rem;
+}
+
+.tc .wz2 {
+    width: 6rem;
+    height: 3.2rem;
+    margin-left: 0.15rem;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    position: relative;
+    top: -1.2rem;
+    border-radius: 10px 10px 10px 10px;
+}
+.tc1 .wz2 .xxs {
+    font-size: 0.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+.tc1 .wz2 .xxs span {
+    margin-top: 0.4rem;
+    display: inline-block;
+    width: 1.8rem;
+}
+.tc1 .wz2 p span:nth-child(2) {
+    border-left: 1px solid #828282;
+    border-right: 1px solid #828282;
+}
+.tc1 .wz2 .xxss {
+    font-size: 0.2rem;
+    font-weight: 500;
+    text-align: center;
+}
+.tc1 .wz2 .xxss span {
+    margin-top: 0.2rem;
+    display: inline-block;
+    width: 1.8rem;
+    color: #828282;
+}
+.tc1 .wz2 .xwz {
+    width: 80%;
+    font-size: 0.18rem;
+    color: red;
+    margin-left: 0.6rem;
+    margin-top: 0.15rem;
+}
+
+
+.qz{
+    width: 0.63rem;
+    height: 0.75rem;
+    background-image: url("../images/north_flag.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+.yuan{
+    width: 0.1rem;
+    height: 0.1rem;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+.app .north{
+    width: 5.46rem;
+    height: 5.01rem;
+    /*background-image: url("../images/north_gray.png");*/
+    background-image: url("../images/north_active.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    position: relative;
+}
+.yuan1{
+    top: 43%;
+    left: 36%;
+}
+.yuan1::after{
+    content: '北美洲';
+    display: block;
+    font-size: 0.24rem;
+    color: #FFFFFF;
+    width: 0.97rem;
+    position: absolute;
+    top: 43%;
+    left: 36%;
+    transform: translate(20%,-50%);
+}
+.qz1{
+    top: 30%;
+    left: 44%;
+}
+.app .south{
+    width: 2.43rem;
+    height: 4.47rem;
+    /*background-image: url("../images/north_gray.png");*/
+    background-image: url("../images/south_active.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    top: 4.86rem;
+    left: 1.8rem;
+}
+.yuan2{
+    top: 43%;
+    left: 44%;
+}
+.yuan2::after{
+    content: '南美洲';
+    display: block;
+    font-size: 0.24rem;
+    color: #FFFFFF;
+    width: 0.97rem;
+    position: absolute;
+    top: 43%;
+    left: 44%;
+    transform: translate(20%,-50%);
+}
+.qz2{
+    top: 30%;
+    left: 65%;
+}
+.app .eurasia{
+    width: 7.49rem;
+    height: 5.9rem;
+    /*background-image: url("../images/north_gray.png");*/
+    background-image: url("../images/eurasia_active.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    top: 0rem;
+    left: 5.46rem;
+}
+.qz3{
+    top: 30%;
+    left: 65%;
+}
+.yuan3{
+    top: 40%;
+    left: 55%;
+}
+.yuan3::after{
+    content: '亚洲';
+    display: block;
+    font-size: 0.24rem;
+    color: #FFFFFF;
+    width: 0.97rem;
+    position: absolute;
+    top: 43%;
+    left: 44%;
+    transform: translate(20%,-50%);
+}
+.qz6{
+    top: 30%;
+    left: 25%;
+}
+.yuan6{
+    top: 38%;
+    left: 22%;
+}
+.yuan6::after{
+    content: '欧洲';
+    display: block;
+    font-size: 0.24rem;
+    color: #FFFFFF;
+    width: 0.97rem;
+    position: absolute;
+    top: 43%;
+    left: 44%;
+    transform: translate(20%,-50%);
+}
+.qz7{
+    top: 55%;
+    left: 33%;
+}
+.yuan7{
+    top: 64%;
+    left: 71%;
+}
+.yuan7::after{
+    content: '港澳台';
+    display: block;
+    font-size: 0.24rem;
+    color: #FFFFFF;
+    width: 0.97rem;
+    position: absolute;
+    top: 43%;
+    left: 44%;
+    transform: translate(20%,-50%);
+}
+.qz8{
+     top: 50%;
+     left: 50%;
+
+}
+.yuan8{
+    top: 63%;
+    left: 30%;
+}
+.yuan8::after{
+    content: '阿联酋';
+    display: block;
+    font-size: 0.24rem;
+    color: #FFFFFF;
+    width: 0.97rem;
+    position: absolute;
+    top: 43%;
+    left: 44%;
+    transform: translate(20%,-50%);
+}
+.qz9{
+    top: 57%;
+    left: 74%;
+}
+.yuan9{
+    top: 60%;
+    left: 47%;
+}
+.yuan9::after{
+    content: '一带一路';
+    display: block;
+    font-size: 0.24rem;
+    color: #FFFFFF;
+    width: 0.97rem;
+    position: absolute;
+    top: 43%;
+    left: 44%;
+    transform: translate(20%,-50%);
+}
+.qz10{
+    top: 42%;
+    left: 81%;
+}
+.yuan10{
+    top: 50%;
+    left: 73%;
+}
+.yuan10::after{
+    content: '韩国';
+    display: block;
+    font-size: 0.24rem;
+    color: #FFFFFF;
+    width: 0.97rem;
+    position: absolute;
+    top: 43%;
+    left: 44%;
+    transform: translate(20%,-50%);
+}
+.qz11{
+    top: 40%;
+    left: 88%;
+}
+.yuan11{
+    top: 47%;
+    left: 85%;
+}
+.yuan11::after{
+    content: '日本';
+    display: block;
+    font-size: 0.24rem;
+    color: #FFFFFF;
+    width: 0.97rem;
+    position: absolute;
+    top: 43%;
+    left: 44%;
+    transform: translate(20%,-50%);
+}
+.warning {
+    position: relative;
+    background-color: #6DA807;
+    border: 1px solid #6DA807;
+    border-radius: 10px;
+    box-shadow: 1vw 3vh 10vh rgba(109, 168, 7, 0.8);
+    background-size: 3em 3em;
+    background-image: linear-gradient(-45deg, transparent 0em, transparent 0.8em, #96D923 0.9em, #96D923 2.1em, transparent 2.1em, transparent 2.9em, #96D923 3.1em);
+    -webkit-animation: warning-animation 750ms infinite linear;
+    -moz-animation: warning-animation 750ms infinite linear;
+    animation: warning-animation 750ms infinite linear;
+}
+@-webkit-keyframes warning-animation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 3em 0;
+    }
+}
+@-moz-keyframes warning-animation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 3em 0;
+    }
+}
+@keyframes warning-animation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 3em 0;
+    }
+}
+.warning:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom, #6DA807, rgba(171, 226, 77, 0.6) 15%, transparent 60%, #6DA807);
+}
+.app .africa{
+    width: 3.25rem;
+    height: 4.27rem;
+    /*background-image: url("../images/north_gray.png");*/
+    background-image: url("../images/africa_active.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    top: 2.9rem;
+    left: 4.9rem;
+}
+.yuan4{
+    top: 23%;
+    left: 44%;
+}
+.yuan4::after{
+    content: '非洲';
+    display: block;
+    font-size: 0.24rem;
+    color: #FFFFFF;
+    width: 0.97rem;
+    position: absolute;
+    top: 43%;
+    left: 44%;
+    transform: translate(20%,-50%);
+}
+.qz4{
+    top: 10%;
+    left: 40%;
+}
+.app .oceania{
+    width: 2.64rem;
+    height: 2.58rem;
+    /*background-image: url("../images/north_gray.png");*/
+    background-image: url("../images/oceania_active.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    top: 5.9rem;
+    left: 10.9rem;
+}
+.yuan5{
+    top: 40%;
+    left: 14%;
+}
+.yuan5::after{
+    content: '大洋洲';
+    display: block;
+    font-size: 0.24rem;
+    color: #FFFFFF;
+    width: 0.97rem;
+    position: absolute;
+    top: 40%;
+    left: 14%;
+    transform: translate(20%,-50%);
+}
+.qz5{
+    top: 10%;
+    left: 40%;
+}
+
+.bottom{
+    width: 6.4rem;
+    height:2rem;
+    background-color: #D8F9FF;
+    border-radius: 0.2rem;
+    position: fixed;
+    bottom: 3rem;
+    left: 0.4rem;
+}
+.top {
+    width: 0.69rem;
+    height: 0.95rem;
+    display: block;
+    position: absolute;
+    top: -0.75rem;
+    left: 0.1rem;
+    transform-origin: 50% 100%;
+    animation: qiq 3s ease infinite;
+}
+
+@keyframes qiq{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(5deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.tx{
+    width: 1.05rem;
+    height: 1.05rem;
+    display: block;
+    position: absolute;
+    top: 0.2rem;
+    left: 0.2rem;
+}
+.right{
+    width: 5rem;
+    height: 1.2rem;
+    float: right;
+    margin-top: 0.2rem;
+    font-size: 0.24rem;
+}
+.right span:nth-child(1){
+    display: inline-block;
+    width:4rem;
+    height: 0.25rem;
+    background-color: #BBEBF5;
+    border-radius: 0.2rem;
+}
+.right span:nth-child(2){
+    display: inline-block;
+    width:3rem;
+    height: 0.25rem;
+    background-color: #BBEBF5;
+    border-radius: 0.2rem;
+}
+.right span:nth-child(3){
+    display: inline-block;
+    width:2rem;
+    height: 0.25rem;
+    background-color: #BBEBF5;
+    border-radius: 0.2rem;
+}
+.right span:nth-child(5){
+    display: inline-block;
+    width:1rem;
+    height: 0.25rem;
+    background-color: #BBEBF5;
+    border-radius: 0.2rem;
+    /*float: left;*/
+}
+.db{
+    display: block;
+    width: 1.18rem;
+    height: 0.31rem;
+    position: absolute;
+    top: 1.4rem;
+    left: 30%;
+    transform: translate(-50%,0);
+}
+.l{
+    width: 3.22rem;
+    height: 0.83rem;
+    background-image: url("../images/orange_btn.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 0.36rem;
+    line-height: 0.83rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+.fx{
+    width: 0.82rem;
+    height: 0.82rem;
+    position: fixed;
+    bottom: 2rem;
+    left: 80%;
+    transform: translate(-50%,0);
+}
+.hd{
+    position: fixed;
+    text-decoration:underline ;
+    bottom: 1.28rem;
+    left: 1.44rem;
+    font-size: 0.32rem;
+    color: black;
+}
+.cx{
+    position: fixed;
+    text-decoration:underline ;
+    bottom: 1.28rem;
+    left: 4.44rem;
+    font-size: 0.32rem;
+    color: black;
+}
+.xing{
+    width: 0.29rem;
+    height: 0.28rem;
+    position: absolute;
+    top: 1.35rem;
+    display: none;
+}
+.xing:nth-child(3){
+    left: 0.2rem;
+}
+.xing:nth-child(4){
+    left: 0.4rem;
+}
+.xing:nth-child(5){
+    left: 0.6rem;
+}
+.xing:nth-child(6){
+    left: 0.8rem;
+}
+.xing:nth-child(7){
+    left: 1rem;
+}
+.tc2{
+    width: 6rem;
+    height: 2.2rem;
+    border-radius: 0.2rem;
+    position: fixed;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: #FFFFFF;
+    display: none;
+    z-index: 9;
+}
+.tc2 .left{
+    width: 50%;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    text-align: center;
+    font-size: 0.48rem;
+    float: left;
+}
+.tc2 .right{
+    width: 50%;
+    height: 2.2rem;
+    font-size: 0.48rem;
+    margin-top: 0;
+    line-height: 2.2rem;
+    text-align: center;
+    float: right;
+}
+.active{
+    display: block;
+}

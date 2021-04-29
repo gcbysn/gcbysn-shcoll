@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *   1.什么是闭包？
+    *       闭包就是一个容器（浏览器通过c++代码创建的一个c++对象）
+    *   2.什么时候产生闭包
+    *       当函数产生嵌套时
+    *       内部函数使用了外部函数的变量，这时就会产生闭包
+    *   3.为什么由闭包
+    *       当外部函数调用结束时 外部函数管理的变量理应被销毁
+    *       当为了让内部函数可以正常执行 外部函数会将内部哈数使用到的属于外部函数的变量放到一个叫闭包的容器中
+    *       以供内部函数使用！
+    * */
+    function wrap() {
+        var i=0;
+        return function() {
+            console.log(i);
+        }
+    }
+    var inner=wrap();
+    inner();
+</script>
+</body>
+</html>

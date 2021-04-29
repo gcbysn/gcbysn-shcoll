@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类</title>
+    <style type="text/css">
+        /*  伪类：伪类的权重值是10
+           四种状态同时存在的时候要按顺序：link  visited hover active
+       */
+        a{
+            font-size: 20px;
+        }
+        /* 默认状态*/
+        a:link{
+            color: green;
+        }
+        /*访问后 */
+        a:visited{
+            color: red;
+        }
+        /* 鼠标移入*/
+        a:hover{
+            color: yellow;
+        }
+        /*鼠标按下*/
+        a:active{
+            color: blueviolet;
+            font-size: 40px;
+        }
+       /*常用的两种状态*/
+        .a1{
+            color: blue;
+            font-size: 15px;
+        }
+        a1:hover{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <a href="##">导航</a>
+    <a href="##" class="a1">百度</a>
+</body>
+</html>

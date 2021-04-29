@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复合属性</title>
+    <style>
+        div{
+            color: red;
+            width: 300px;
+            height: 300px;
+            background: blue;
+
+          /*  line-height: 300px;
+            font-size: 40px;
+            font-weight: 700;
+            font-family: 宋体;
+            font-style: italic;*/
+
+            /*
+                复合属性： 是否倾斜 是否加粗 字号/行高  字体
+                            自号和字体必须写否则报错
+            */
+            font:  40px/300px 宋体;
+
+            /*
+                当复合属性和单属性同时存在时，单属性要写在复合属性的后面，为了层叠复合属性中的单个值
+            */
+            font-weight: 700;
+            font-style: italic;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+            float: right;
+            /*
+               复合属性：粗细（默认3px） 样式（必须写）  颜色（默认黑色）
+            */
+            border: 1px solid black;
+
+            /*边框的粗细*/
+           /* border-width:5px;*/
+            /*
+                solid 实线 dashed 虚线 dotted 点状线
+            */
+           /* border-style: solid;*/
+            /*边框颜色*/
+          /*  border-color: red;*/
+
+          /*  border-left: 1px solid blue;  左
+            border-top: 2px dashed red;     上
+            border-right: 3px solid yellow; 右
+            border-bottom: 4px dashed green;下
+            */
+        }
+        .box2{
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+          /*  !*背景颜色*!
+            background-color: yellow;
+            !*背景图*!
+            background-images: url("../images/1.jpg");
+            !*是否平铺 repeat(默认值)平铺  no-repeat 不平铺 repeat-x 衡向平铺 repeat-y 纵向平铺 *!
+            background-repeat: no-repeat;
+            !*图片的位置     水平left（默认）/right/center  垂直top（默认）/center/bottom
+              用数值表示：  水平  正值向右移动，负值向左移动    垂直    正值向下移，动负值向上移动
+            *!
+            background-position: right bottom;*/
+            /*复合属性
+                        背景色     背景图         是否平铺（默认平铺）    水平位置    垂直位置
+            */
+            background: yellow url("../images/1.jpg") no-repeat 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        复合属性font
+    </div>
+    <div class="box">
+
+    </div>
+    <div class="box2">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <div class="box"></div>
+</body>
+<script type="text/javascript">
+    /*
+    * 订单号：因为订单号是唯一的，所以通常使用时间作为订单号，通常是年月日和当天的时间，精确到毫秒，在加上一组随机数，避免订单重复
+    * */
+    var box=document.querySelector(".box");
+    var date = new Date();
+    // console.log(date)
+    // console.log(date.getFullYear());     //年
+    // console.log(date.getMonth());        //月 ----从0开始
+
+    // console.log(date.getDate());        //日
+    // console.log(date.getMinutes());      //分
+    // console.log(date.getSeconds());      //秒
+    // console.log(date.getDay());          //星期    从0开始
+    // console.log(date.toDateString());     //本地日期
+    // console.log(date.toLocaleTimeString());//本地时间
+    // console.log(date.valueOf());/1秒=1000毫秒
+    var year,month,day,hour,minutes,seconds;
+
+    var time;
+    function autoClick() {
+        time= setInterval(function (ev) {
+            date = new Date();
+            year=date.getFullYear();
+            month=date.getMonth()+1;
+            if (month<10){
+                month="0"+month;
+            }else {
+                month=month;
+            }
+            day=date.getDate();
+            if (day<10){
+                day="0"+day;
+            }else {
+                day=day;
+            }
+            hour=date.getHours();
+            if (hour<10){
+                hour="0"+hour;
+            }else {
+                hour=hour;
+            }
+            minutes=date.getMinutes();
+            if (minutes<10){
+                minutes="0"+minutes;
+            }else {
+                minutes=minutes;
+            }
+            seconds=date.getSeconds();
+            if (seconds<10){
+                seconds="0"+seconds;
+            }else {
+                seconds=seconds;
+            }
+
+            // box.innerHTML=year+'年'+month+'月'+day+'日'+hour+":"+minutes+":"+seconds+;
+
+            console.log(date.getFullYear()+'年'+month+'月'+date.getDate()+'日'+'星期'+date.getDay()
+                +date.toLocaleTimeString());
+        },1000)
+    }
+    autoClick();
+
+</script>
+</html>

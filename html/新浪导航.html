@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav{
+            height: 41px;
+            background:#fcfcfc ;
+            border-top: 3px solid #ff8500;
+            padding-left:190px;
+        }
+        .nav ul li{
+            /*将li横向排列*/
+            float: left;
+            height: 41px;
+            line-height: 41px;
+        }
+        .nav a{
+            /*转换模式*/
+            display:block;
+            text-decoration: none;
+            color: #4c4c4c;
+            font-size: 12px;
+            /*设置左右15px的边距*/
+            padding: 0px 15px;
+        }
+        .nav a:hover{
+            background:#edeef0 ;
+            color: #ff8500;
+        }
+        .box{
+           border: 1px solid wheat;
+        }
+        img{
+            /*解决img底部留白*/
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<!--
+    从seo角度，由于a标签是重要的标签，导航对于网站来说也是重要的，此时如果将一堆导航排列在一起，搜索引擎会认为在作弊，关键词堆砌
+-->
+    <div class="nav">
+        <ul>
+            <li> <a href="##">首页</a></li>
+            <li> <a href="##">电脑首页</a></li>
+            <li> <a href="##">江西职业学院</a></li>
+            <li> <a href="##">江西机电学院</a></li>
+            <li> <a href="##">江西技术学院</a></li>
+        </ul>
+    </div>
+    <div class="box">
+        <img src="../images/1.jpg" alt="">
+    </div>
+</body>
+</html>

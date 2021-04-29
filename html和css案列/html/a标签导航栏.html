@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航栏</title>
+    <style type="text/css">
+        .box1 a{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            color: wheat;
+            background: red;
+            font-size: 20px;
+            text-align: center;
+            display: inline-block;
+            /*
+                text-decoration:underline 下划线  none 无下划线  line_through 中划线 overline 上划线
+            */
+            text-decoration: none;
+            /*
+            cursor:pointer 小手  auto(自动小手)
+            */
+            cursor: pointer;
+        }
+        a:hover{
+            background: yellow;
+            color: blue;
+            text-decoration:underline ;
+        }
+    </style>
+</head>
+<body>
+<!--
+    创建五个a标签
+    默认状态：a标签宽度100px，高度30px，背景色red，字体白色，自号20px，文本水平而且垂直居中a标签，没有下划线
+    鼠标移入状态：a的背景色变成黄色，字体颜色变成蓝色，加下划线
+-->
+    <div class="box1">
+        <a href="##">导航</a>
+        <a href="##">导航</a>
+        <a href="##">导航</a>
+        <a href="##">导航</a>
+        <a href="##">导航</a>
+    </div>
+</body>
+</html>

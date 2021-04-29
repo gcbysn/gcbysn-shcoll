@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app{
+            width: 100px;
+            height: 100px;
+            border: 5px solid red;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">app</div>
+    <a href="http://www.baidu.com">百度</a>
+    <script>
+        /*
+        *   js是一门面向原型的语言 他推崇函数化编程 异步编程
+        * */
+        window.onload=function () {
+            var appNode=document.querySelector("#app");
+            //事件 事件回调   事件对象：事件回调的第一个参数
+            appNode.onclick=function (ev) {
+                document.log(ev.clientX,ev.clientY);
+            }
+            //阻止事件的默认行为
+            var aNode=document.querySelector("a");
+            aNode.onclick=function (ev) {
+                //判断手指有没有划过
+                console.log("---");
+                var href=this.href;
+                //页面进行跳转
+              /*  window.location.href=href;*/
+                //判断是否成功阻止事件默认行为
+                console.log(ev.cancelable);
+                ev.preventDefault();
+            }
+        }
+    </script>
+</body>
+</html>

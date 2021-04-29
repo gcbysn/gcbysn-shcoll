@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <script>
+        window.onload=function () {
+            var btnNode=document.getElementById("btn");
+            /*
+            *   1.事件名称
+            *       dom0带on
+            *   2.this的指向
+            *      dom0: this指向事件绑定的对象
+            *   3.事件函数的指向顺序
+            *       dom0：没有顺序着一说，回调函数就是覆盖的过程
+            * */
+            btnNode.onclick=function () {
+                    console.log(this);
+            }
+        }
+    </script>
+</body>
+</html>

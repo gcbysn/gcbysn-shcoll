@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+<h2>JavaScript 创建 JSON 对象</h2>
+<p>
+    网站名称: <span id="jname"></span><br />
+    网站地址: <span id="jurl"></span><br />
+    网站 slogan: <span id="jslogan"></span><br />
+</p>
+<div id="demo"></div>
+<script>
+    var JSONObject= {
+        "name":"菜鸟教程",
+        "url":"www.runoob.com",
+        "slogan":"学的不仅是技术，更是梦想！"
+    };
+    document.getElementById("jname").innerHTML=JSONObject.name
+    document.getElementById("jurl").innerHTML=JSONObject.url
+    document.getElementById("jslogan").innerHTML=JSONObject.slogan
+
+
+    var sites = [
+        { "name":"runoob" , "url":"www.runoob.com" },
+        { "name":"google" , "url":"www.google.com" },
+        { "name":"微博" , "url":"www.weibo.com" }
+    ];
+    console.log(sites[0].name );
+
+    sites[0].name="菜鸟教程";
+
+
+// JSON.parse() 方法处理以上数据，将其转换为 JavaScript 对象：
+    var obj = JSON.parse('{ "name":"runoob", "alexa":10000, "site":"www.runoob.com" }');
+
+    //
+
+
+    // var obj = { "name":"runoob", "alexa":10000, "site":"www.runoob.com"};
+    // //使用 JSON.stringify() 方法处理以上数据，将其转换为字符串
+    // var myJSON = JSON.stringify(obj);
+    // document.getElementById("demo").innerHTML = myJSON;
+
+
+    var arr = [ "Google", "Runoob", "Taobao", "Facebook" ];
+    var myJSON = JSON.stringify(arr);
+    document.getElementById("demo").innerHTML = myJSON;
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" class="js">
+<select name="" id="fh">
+    <option  value="+">+</option>
+    <option  value="-">-</option>
+    <option  value="*">*</option>
+    <option  value="/">/</option>
+</select>
+<input type="text" class="js2">
+
+<input type="button" value="计算" class="reset">
+<input type="text" class="number">
+
+</body>
+<script>
+    window.onload=function () {
+        var a=document.getElementById()
+        var a=document.getElementsByName();
+        var a=document.getElementsByClassName()
+        var a=document.getElementsByTagName()
+
+        var reset=document.querySelector(".reset");
+        var js=document.querySelector(".js");
+        var js2=document.querySelector(".js2");
+        var item=document.querySelectorAll(".item");
+        var number=document.querySelector(".number");
+        var fh=document.querySelector("#fh");
+        reset.onclick=function () {
+
+            console.log(fh.value);
+            if (fh.value=="+"){
+                number.value=Number(js.value)+Number(js2.value);
+            }
+            else if (fh.value=="-"){
+                number.value=Number(js.value)-Number(js2.value);
+            }
+            else if (fh.value=="*"){
+                number.value=Number(js.value)*Number(js2.value);
+            }
+            else if (fh.value=="/"){
+                number.value=Number(js.value)/Number(js2.value);
+            }
+        }
+
+
+    }
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">app</div>
+    <script>
+        var appNode=document.getElementById("app");
+        /*
+        *   第一种方式
+        *
+        * */
+       /* //创建一个新的属性节点
+        var classAttr=document.createAttribute("class");
+        //新增属性节点    setAttributeNode()：只能添加预定义属性
+        appNode.setAttributeNode(classAttr);*/
+        /*
+        *   第二种方式
+        * setAttribute(,)    设置指定元素上的一个值，如果属性已经存在，则更改该值
+        *   如果不存在将添加一个新的属性用指定的名称和值
+        *       第一个值填属性名称的字符串   第二个值填属性的值
+        *
+        * */
+        appNode.setAttribute("damu","item");
+        appNode.className="item";
+        /*第一种方式
+        *   删除属性节点
+        *   removeAttribute()
+        * */
+        appNode.removeAttribute("class");
+        /*第二种方式*/
+        var damu=appNode.getAttributeNode("damu");
+        appNode.removeAttributeNode(damu);
+
+    </script>
+</body>
+</html>

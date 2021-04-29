@@ -1,0 +1,168 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: red;
+}
+.nav{
+    width: 1200px;
+    height: 940px;
+    margin: 0 auto;
+    line-height: 1;
+    /*overflow: hidden;*/
+}
+.nav div{
+    /*overflow: hidden;*/
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.item{
+    width: 292px;
+    height: 460px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: #FFFFFF;
+}
+.item p img{
+    width: 290px;
+    height: 290px;
+    display: block;
+}
+.item p{
+    text-align: center;
+}
+.item_1{
+    background:#EBEEF3;;
+}
+.item_2{
+    color: #222222;
+    font-size: 22px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 24px 15px 0 15px;
+}
+.item_3{
+    color: #666666;
+    font-size: 16px;
+    height: 22px;
+    line-height: 22px;
+    margin: 5px 15px 0 15px;
+}
+.item_4{
+    color: #ffffff;
+    background: #000000;
+    width: 130px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 22px;
+    margin:20px 80px 0 80px;
+    border-radius: 18px;
+
+}
+.item_4 span{
+    font-size: 30px;
+}
+.zk{
+    background: #F53E49;
+    position:relative;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 15px;
+    top: -155px;
+    border-radius: 14px 14px 14px 0;
+}
+.list{
+    background: white;
+    width: 292px;
+    height: 264px;
+}
+.list_2{
+    color: #333333;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+.list_3{
+    color: #898989;
+    font-size: 16px;
+    line-height: 16px;
+    margin-top: 10px;
+}
+.list_4{
+    color: #ca151d;
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: 20px;
+}
+.item_5{
+    margin-right: 0px;
+}
+.red{
+    width: 292px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+    bottom: -40px;
+    left: 0;
+    background: red;
+    transition: bottom;
+    transition: all 1s ease-out;;
+    /*display:none ;*/
+}
+a:hover .red{
+    bottom: 30px;
+    /*display:block ;*/
+}
+a:hover .r{
+    position: relative;
+    top: 10px;
+    left: 0px;
+}
+.list img{
+    position: relative;
+    top: 30px;
+    left: 0px;
+    display: block;
+    margin: 0 auto;
+}
+.d{
+    float: left;
+    margin-right: 10px;
+}
+.wrap{
+    width: 292px;
+    height: 400px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+.wrap p img{
+    width: 212px;
+    height: 212px;
+}
+.wrap p{
+    text-align: center;
+}
+.wrap_1{
+    margin-right: 0px;
+}
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.clearfix{
+    zoom: 1;
+}

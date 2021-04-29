@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .warp{
+            width: 800px;
+            height: 400px;
+            margin: 100px auto;
+            border:1px solid red;
+
+            /*变为伸缩容器*/
+            display: flex;
+            /*侧轴方向对齐
+                flex-start：侧轴的起点对齐。
+                flex-end：侧轴的终点对齐。
+                center：侧轴的中点对齐。
+                baseline: 伸缩项目的第一行文字的基线对齐。
+                stretch（默认值）：如果伸缩项目未设置高度或设为auto，将占满整个容器的高度。
+
+            */
+            align-items: flex-start;
+           /* align-items: flex-end;
+            align-items: center;*/
+            /*拉伸 伸缩项目设置了高度就没用，伸缩项目没有设置高度，在侧轴方向拉伸*/
+            align-items: stretch;
+            align-items: baseline;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+        }
+        .box1{
+            background: red;
+        }
+        .box2{
+            background: black;
+        }
+        .box3{
+            background: blue;
+            font-size: 100px;
+        }
+        .box4{
+            background: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,416 @@
+.head-wrap{
+    height: 35px;
+    border-bottom: 1px solid #eee;
+}
+.head{
+    width: 1190px;
+    height: 35px;
+    margin: 0 auto;
+}
+/*头部左侧导航*/
+.head .list01{
+    float: left;
+}
+.head .list01 li{
+    float: left;
+    line-height: 35px;
+/*    当给元素设置行高后，在没有设置高度的时候，
+高度就是行高*/
+}
+.head .list01 .two{
+    margin: 0 21px 0 5px;
+}
+.head .list01 li a{
+    float: left;
+    display: block;
+    margin-right: 5px;
+    text-decoration: none;
+}
+/*头部右侧导航*/
+.head .list02{
+    float: right;
+}
+.head .list02 li{
+    float: left;
+    line-height: 35px;
+}
+.head .list02 li a{
+    display: block;
+    padding: 0 10px;
+    text-decoration: none;
+    float: left;
+}
+.head .list02 .go-shop{
+    font-size: 12px;
+    color:#ff4400 ;
+    margin-right: 5px;
+}
+.head .arrow{
+    float: left;
+    font-size: 12px;
+    color: #9C9C9C;
+    margin-right: 5px;
+}
+.head .list02 .sou-jia{
+    font-size: 12px;
+    color: #9C9C9C;
+    margin-right: 5px;
+}
+.head .list02 li:hover{
+    background-color: #FFFFFF;
+}
+/*红色区域*/
+.red-wrap{
+    height: 70px;
+    background-color: #e71b1b;
+}
+.red{
+    width: 1190px;
+    height: 70px;
+    margin: 0 auto;
+}
+/*白色区域*/
+.white-wrap{
+    height: 121px;
+    background-color: #FFFFFF;
+}
+.white{
+    width: 1190px;
+    height: 121px;
+    margin: 0 auto;
+    position: relative;
+}
+/*logo区域*/
+.white .logo{
+    float: left;
+    margin: 33px 0 0 22px;
+}
+/*第一种*/
+.white .logo a{
+    /*将a标签设置固定的高度，高度和img的高度相同，此时在
+    写其他标签盒子文本就属于超出高度的部分了，可以通过
+    溢出隐藏将超出部分截取*/
+    height: 58px;
+    display: block;
+    overflow: hidden;
+}
+/*第二种方式
+.white .logo a{
+    display: block;
+    background: url(../images/3.jpg) no-repeat 0 0;
+    width: 142px;
+    height: 58px;
+    text-indent: -9999px;
+}*/
+/*搜索框区域*/
+.white .search{
+    width: 630px;
+    height: 97px;
+    float: left;
+    margin: 25px 0 0 100px;
+}
+.white .search-top li{
+    float: left;
+    width: 36px;
+    height: 23px;
+    text-align: center;
+    color: #f40;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.search-top li:hover{
+    background: #ffeee5;
+}
+.search .search-top .current{
+    background: #FF5600; !important;
+    margin-left: 13px;
+    font-weight: 700;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.search-center{
+    width: 628px;
+    height: 36px;
+    border-radius: 18px;
+    border: 1px solid #ff4200;
+    border-right: none;
+}
+.search-center .souSuo{
+    width: 20px;
+    height: 36px;
+    margin-left: 13px;
+    float: left;
+}
+.souSuo .suoSou_img{
+    padding-top: 9px;
+    float: left;
+}
+.suoSou_Border{
+    float: left;
+}
+.search-center .suoSou_Border input{
+    width: 530px;
+    height: 34px;
+    border: none;
+    border-right: 1px solid #FF5000;
+    float: left;
+}
+.suoSou_Border button{
+    height: 36px;
+    width: 64px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    color: #FFFFFF;
+    background-color:#ff4200 ;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+.search-bottom{
+    float: left;
+    display: block;
+    margin-top: 5px;
+}
+.search-bottom li{
+    float: left;
+    margin-left: 7px;
+}
+/*二维码区*/
+.white-wrap .erWeiMa{
+    width: 74px;
+    height: 88px;
+    border: 1px solid #eeeeee;
+    position: absolute;
+    right: 110px;
+    top: 25px;
+}
+.white-wrap .erWeiMa a{
+    text-decoration:none;
+}
+.white-wrap .erWeiMa h2{
+    text-align: center;
+    color: #ff4400;
+    font-weight: 400;
+}
+.white-wrap .erWeiMa img{
+    margin: 0 auto 0;
+}
+.white-wrap .close{
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    border: 1px solid #eeeeee;
+    color: #cfcfd5;
+    position: absolute;
+    left: -16px;
+    top: -1px;
+    text-align: center;
+    cursor: pointer;
+}
+/*主体部分*/
+.body-wrap{
+    margin: 0 auto;
+    width: 1190px;
+    height: 550px;
+}
+/*主体左部分*/
+.body-left{
+    float: left;
+    width: 190px;
+    height: 548px;
+    background: #FFFFFF;
+}
+/*主体左上部分*/
+.body-left-top{
+    width: 190px;
+    line-height: 30px;
+    background: #FF5000;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffd6;
+}
+/*主体左下部分*/
+.body-left .body-left-bottom{
+    height: 510px;
+    padding-top: 4px;
+    border: 1px solid #ff4400;
+    padding-bottom: 4px;
+}
+.body-left-bottom ul li{
+    padding-left: 25px;
+    height: 34px;
+    position: relative;
+}
+.body-left-bottom ul li:hover{
+    background: #ffe4dc;
+}
+.body-left-bottom ul li a{
+    line-height: 34px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.body-left-bottom ul li .right{
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
+/*主体右部分*/
+.body-right{
+    float: right;
+    width: 1000px;
+    height: 550px;
+}
+/*主体右上导航部分*/
+.body-right-top{
+    width: 1000px;
+    height: 30px;
+    background: #ff8300;
+    text-align: center;
+}
+.body-right-top ul{
+    float: left;
+}
+.body-right-top .list01 li{
+    margin-left: 26px;
+}
+.body-right-top .list02 li{
+    margin-left: 20px;
+}
+
+.body-right-top .list03 li{
+    margin-left: 19px;
+}
+.body-right-top-center{
+    border-left: #eeeeee;
+}
+.body-right-top ul .tianMao{
+    margin-left: 12px;
+}
+.body-right-top ul li{
+    float: left;
+    line-height: 30px;
+}
+.body-right-top ul li a{
+    font-size: 16px;
+    color: #ffffd6;
+    text-decoration: none;
+}
+/*主体右下部分*/
+.body-right-bottom{
+    width: 1000px;
+    height: 510px;
+    padding-top: 10px;
+}
+.body-right-bottom-left{
+    width: 520px;
+    height: 510px;
+    margin-left: 10px;
+    float: left;
+}
+.body-right-bottom-left .top-banner{
+    width: 520px;
+    height: 280px;
+    background: #6c6c6c;
+    margin:  auto 0;
+    /*相对定位*/
+    position: relative;
+}
+.body-right-bottom-left ul li a{
+    display: block;
+}
+.body-right-bottom-left ul li a img{
+    display: block;
+}
+.body-right-bottom-left span{
+    width: 24px;
+    height: 28px;
+    background: rgba(0,0,0,0.2);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -14px;
+    color: #ffffff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 28px;
+}
+.body-right-bottom-left span:hover{
+    background:rgba(0,0,0,0.5);
+}
+.body-right-bottom-left .rightButton{
+    left: auto;
+    right: 0;
+}
+.body-right-bottom-left .top-banner ol{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    margin:  auto 0;
+}
+.top-banner ol li{
+    float: left;
+    width: 6px;
+    height: 6px;
+    background: #969396;
+    border: 2px solid #6c6c6c;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.top-banner .current{
+    background: #FFFFFF;
+}
+.top-banner ol li:hover{
+    background: #FFFFFF;
+}
+.body-right-bottom-left .bottom-banner{
+    width: 520px;
+    height: 226px;
+    margin: 5px auto 0;
+    /*相对定位*/
+    position: relative;
+}
+
+.tianMao-2{
+    height: 22px;
+}
+.body-right-bottom-center{
+    width: 160px;
+    height: 510px;
+    margin-left: 10px;
+    float: left;
+}
+.body-right-bottom-center a{
+    display: block;
+    text-decoration: none;
+}
+
+.user{
+    width: 290px;
+    height: 510px;
+    margin-left: 10px;
+    background: #e71b1b;
+    float: left;
+}
+.user-top{
+    height: 130px;
+    background: #FFFFFF;
+    border: 2px solid #eeeeee;
+}
+.user-center{
+    height: 138px;
+    background: #FFFFFF;
+    border: 2px solid #eeeeee;
+}
+.user-bottom{
+    height: 230px;
+    background: #FFFFFF;
+    border: 2px solid #eeeeee;
+}
+
+.bottom{
+    height: 400px;
+    background: #ff8500;
+}
+

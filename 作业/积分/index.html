@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="top">
+        <div class="top_1">
+            <div class="wenzi">
+                <p>138XXXXX8888 欢迎您</p>
+                <p>兑换记录 ></p>
+            </div>
+        </div>
+        <div class="top_2">
+            <div>
+                <p>1G全国流量包</p>
+                <p>2000积分 <span>30元/月</span></p>
+                <p>立即兑换</p>
+            </div>
+            <img src="./image/f_02.png" alt="">
+        </div>
+        <ul class="item clearfix">
+            <li>
+                <img src="./image/z_01.png" alt="">
+                <p>2G省内流量包</p>
+                <p>1250积分</p>
+            </li>
+            <li>
+                <img src="./image/b_01.png" alt="">
+                <p>1G省内日包</p>
+                <p>600积分</p>
+            </li>
+            <li>
+                <img src="./image/b_01.png" alt="">
+                <p>2G省内日包</p>
+                <p>1000积分</p>
+            </li>
+            <li>
+                <img src="./image/b_01.png" alt="">
+                <p>10G省内7日包</p>
+                <p>2000积分</p>
+            </li>
+        </ul>
+    </div>
+    <div class="top top_5">
+        <div class="top_3">
+
+        </div>
+        <div class="top_2 top_4">
+            <div>
+                <p>和我信看视频-送45元</p>
+                <p>100积分 <span>15元/月</span></p>
+                <p class="zi">立即兑换</p>
+            </div>
+            <img src="./image/k_01.png" alt="">
+        </div>
+        <ul class="item clearfix">
+            <li>
+                <img src="./image/y_01.png" alt="">
+                <p>壹次元</p>
+                <p>50积分</p>
+                <img class="s" src="./image/s_15.png" alt="">
+            </li>
+            <li>
+                <img src="./image/m_02.png" alt="">
+                <p>咪咕阅读梦想成功包</p>
+                <p>600积分</p>
+                <img class="s" src="./image/s_15.png" alt="">
+            </li>
+            <li>
+                <img src="./image/y_02.png" alt="">
+                <p>壹视界会员 </p>
+                <p>1500积分</p>
+            </li>
+            <li>
+                <img src="./image/z_02.png" alt="">
+                <p>尊享影视包</p>
+                <p>2500积分</p>
+            </li>
+        </ul>
+    </div>
+    <div class="top top_6">
+        <div class="top_3">
+
+        </div>
+        <div class="top_2 top_4">
+            <div>
+                <p>彩铃畅享包-送30元</p>
+                <p>100积分 <span>10元/月</span></p>
+                <p class="red">立即兑换</p>
+            </div>
+            <img src="./image/cai.png" alt="">
+        </div>
+        <ul class="item clearfix" >
+            <li>
+                <img src="./image/m_01.png" alt="">
+                <p>当日通话免单</p>
+                <p>1000积分</p>
+            </li>
+            <li>
+                <img src="./image/j_01.png" alt="">
+                <p>紧急开机1次</p>
+                <p>500积分</p>
+            </li>
+            <li>
+                <img src="./image/h_02.png" alt="">
+                <p>和留言</p>
+                <p>30积分</p>
+                <img class="s" src="./image/s_09.png" alt="">
+            </li>
+            <li>
+                <img src="./image/h_01.png" alt="">
+                <p>和彩印</p>
+                <p>50积分</p>
+                <img class="s" src="./image/s_15.png" alt="">
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    window.onload=function () {
+            var ul=document.querySelectorAll(".item");
+            var isMove=false;
+            var startX=0;
+            var distanceX=0;
+
+            for (var i=0;i<ul.length;i++)
+            {
+                (
+                    function (i) {
+                        ul[i].addEventListener('touchstart',function(e){
+                            startX=e.touches[0].clientX;
+                            console.log(startX);
+                        });
+                        ul[i].addEventListener('touchmove',function(e){
+                            isMove=true;
+                            var moveX=e.touches[0].clientX;
+                            distanceX=moveX-startX;
+                            console.log(distanceX);
+                        });
+                        ul[i].addEventListener('touchend',function(e){
+                            // 滑动结束
+                            if(isMove && Math.abs(distanceX)>50){
+                                if(distanceX>0){
+                                    ul[i].style.marginLeft="0";
+                                }else{
+                                    ul[i].style.marginLeft="-0.5rem";
+                                }
+                            }
+                            // 重置参数
+                            isMove=false;
+                            startX=0;
+                            distanceX=0;
+                        });
+                    }
+                )(i)
+            }
+    }
+</script>
+</html>

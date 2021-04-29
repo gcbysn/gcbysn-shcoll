@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+<!--    <link rel="stylesheet" href="./data.json">-->
+</head>
+<body>
+<div id="status"></div>
+<div>
+<!--    <span class="delivery-icon">{{info.description}}</span>-->
+<!--    <span>由商家配送提供配送，约{{info.deliveryTime}}分钟送达，距离{{info.distance}}</span>-->
+</div>
+</body>
+<script>
+    // 设置 cookie 字段
+    document.cookie = 'name=Lucy';
+
+    // 更好的设置方式：
+    document.cookie = encodeURIComponent('age') + '=' + encodeURIComponent(25);
+
+
+
+    console.log(document.cookie)
+    // 访问 cookie
+    // document.cookie
+
+    // 删除 cookie（设置存储有效时长为过去时间）
+    // var date = new Date();
+    // date.setDate(date.getDate() + '设置时长');
+    // document.cookie = 'name=Lucy;expires=' + date.toUTCString();
+
+    //使用方法存储数据
+    sessionStorage.setItem('name','tom');
+    //使用属性存储数据
+    sessionStorage.age='25'
+
+    for (const dbKey in db) {
+
+    }
+
+    console.log(sessionStorage.getItem('name'));
+    console.log(sessionStorage.age);
+
+//openDatabase：这个方法使用现有的数据库或者新建的数据库创建一个数据库对象
+    //transaction：这个方法让我们能够控制一个事务，以及基于这种情况执行提交或者回滚
+//     var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024,fn);
+    //openDatabase() 方法对应的五个参数分别为：数据库名称、版本号、描述文本、数据库大小、创建回调
+
+//executeSql：这个方法用于执行实际的 SQL 查询
+
+    var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+    db.transaction(function (tx) {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS WIN (id unique, name)');
+    });
+
+    var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+    db.transaction(function (tx) {
+        tx.executeSql('CREATE TABLE IF NOT EXISTS WIN (id unique, name)');
+        tx.executeSql('INSERT INTO WIN (id, name) VALUES (1, "winty")');
+        tx.executeSql('INSERT INTO WIN (id, name) VALUES (2, "LuckyWinty")');
+    });
+
+    db.transaction(function (tx) {
+        tx.executeSql('SELECT * FROM WIN', [], function (tx, results) {
+            var len = results.rows.length, i;
+            msg = "<p>查询记录条数: " + len + "</p>";
+            document.querySelector('#status').innerHTML +=  msg;
+
+            for (i = 0; i < len; i++){
+                alert(results.rows.item(i).name );
+            }
+
+        }, null);
+    });
+
+
+
+</script>
+</html>

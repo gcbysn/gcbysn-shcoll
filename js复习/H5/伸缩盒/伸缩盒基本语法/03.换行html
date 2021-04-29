@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .warp{
+            width: 600px;
+            margin: 100px auto;
+            border:1px solid red;
+
+            /*变为伸缩容器*/
+            display: flex;
+            /*如果伸缩项目总宽度大于伸缩容器的宽度   换行
+                    owrap （默认值）：伸缩容器为单行。该情况下伸缩项目可能会溢出容器
+                    wrap：伸缩容器为多行。该情况下伸缩项目溢出的部分会被放置到新行，伸缩项目会发生断行
+                    wrap-reverse：反转 wrap 排列。
+
+            */
+            flex-wrap: nowrap;
+            flex-wrap: wrap;
+            flex-wrap: wrap-reverse;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+        }
+        .box1{
+            background: red;
+        }
+        .box2{
+            background: black;
+        }
+        .box3{
+            background: blue;
+        }
+        .box4{
+            background: burlywood;
+        }
+        .box5{
+            background: pink;
+        }
+        .box6{
+            background: #795da3;
+        }
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+        <div class="box box6">6</div>
+    </div>
+</body>
+</html>

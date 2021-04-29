@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .app{
+            width: 462px;
+            height: 500px;
+            border:1px solid blue;
+            background: #333333;
+            margin: 0 auto;
+        }
+        .show{
+            height: 100px;
+            border-bottom: 1px solid red;
+        }
+        .button{
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .button div{
+            width: 112px;
+            height: 65px;
+            text-align: center;
+            line-height: 65px;
+            font-size: 32px;
+        }
+        .button div:hover{
+            background: #333333;
+        }
+        .item{
+            background: #ffffff;
+        }
+        .js{
+            background: #cccccc;
+        }
+        .number,.xian{
+            border: none;
+            width: 462px;
+            height: 50px;
+            line-height: 50px;
+            text-align: right;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <div class="show">
+        <input class="xian" type="text"  value="" disabled />
+        <input class="number" type="text"  value="0" disabled />
+    </div>
+    <div class="button">
+        <div class="item js">%</div>
+        <div class="item js">CE</div>
+        <div class="item js">C</div>
+        <div class="item js">del</div>
+        <div class="item js">1/x</div>
+        <div class="item js">x<sup>2</sup></div>
+        <div class="item js"><sup>2</sup>√<sub>x</sub></div>
+        <div class="item js">÷</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item js">×</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item js">-</div>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item js">+</div>
+        <div class="item">+/-</div>
+        <div class="item">0</div>
+        <div class="item">.</div>
+        <div class="item">=</div>
+    </div>
+</div>
+</body>
+<script>
+    window.onload=function () {
+        var liNode=document.querySelectorAll(".item");
+        var number=document.querySelector(".number");
+        var xian=document.querySelector(".xian");
+        var flag=true;
+        for (var i=0;i<liNode.length;i++)
+        {
+            (
+                function (i) {
+                    liNode[i].onclick=function()
+                    {
+                        //点击C或者CE清空
+                        if(this.innerText=="C"||this.innerText=="CE") {
+                            number.value="0";
+                            xian.value=""
+                        }
+                        //连续出现不同的符号时重置
+                        else if((number.value=="+"||number.value=="-"||number.value=="×"||number.value=="÷"||number.value=="")&&(this.innerText=="+"||this.innerText=="-"||this.innerText=="×"||this.innerText=="÷"))
+                        {
+                            number.value="0";
+                        }
+                        //判断数字和符号时
+                        else if(!isNaN(this.innerHTML) || this.innerHTML=="."){
+                            //文本框初值不为0
+                            if(number.value!== "0"){
+                                //文本框中含有“.”
+                                if(number.value.indexOf(".")!==-1){
+                                    //输入"."时
+                                    if(this.innerHTML!== "."){
+                                        number.value+=this.innerHTML;
+                                    }
+                                }
+                                else{
+                                    number.value+=this.innerHTML;
+                                }
+                            }
+                            //文本框初值为0
+                            else{
+                                if(this.innerHTML =="."){
+                                    number.value="0"+this.innerHTML ;
+                                }
+                                else{
+                                    number.value=this.innerHTML;
+                                }
+                            }
+                        }
+                        else if(isNaN(this.innerText)){
+                            //文本框显示
+                            if (this.innerText!="="){
+                                xian.value=number.value+this.innerHTML;
+                                a=xian.value;
+                                console.log(number.value);
+                                number.value=""
+                                console.log(xian.value);
+                            }
+                            else if (this.innerText=="="){
+                                // //使用eval函数计算结果
+                                // number.value=eval(number.value);
+                                // // console.log(number.value);
+                                xian.value=a+number.value;
+                                if (xian.value.indexOf('+')>0){
+                                    c= xian.value.indexOf('+')
+                                    a=xian.value.slice(0,c);
+                                    b=xian.value.slice(c+1);
+                                    number.value=((Number(a)*1000)+(Number(b)*1000))/1000;
+                                }else if(xian.value.indexOf('-')>0){
+                                    c= xian.value.indexOf('-')
+                                    a=xian.value.slice(0,c);
+                                    b=xian.value.slice(c+1);
+                                    number.value=((Number(a)*1000)-(Number(b)*1000))/1000;
+                                }
+                                else if(xian.value.indexOf('×')>0){
+                                    c= xian.value.indexOf('×');
+                                    a=xian.value.slice(0,c);
+                                    b=xian.value.slice(c+1);
+                                    number.value=((Number(a)*1000)*(Number(b)*1000))/1000000;
+                                }
+                                else if(xian.value.indexOf('÷')>0){
+                                    c= xian.value.indexOf('÷')
+                                    a=xian.value.slice(0,c);
+                                    b=xian.value.slice(c+1);
+                                    number.value=((Number(a)*1000)/(Number(b)*1000))*1;
+                                }
+
+
+                            }
+                        }
+                    }
+                }
+            )(i)
+        }
+        //
+        // nums[i].onclick=function () {
+        //     console.log(this.innerText)
+        // }
+    var show="1+2+3";
+       console.log(show.split("+")) ;
+
+        // show.value.indexOf("+")!=-1
+    }
+</script>
+</html>

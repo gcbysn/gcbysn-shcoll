@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">清楚缓存</button>
+    <script>
+        /*
+        *   ie6 ie7 ie8 ie9 用这种方式
+        * */
+        window.onload=function () {
+            var btnNode=document.getElementById("btn");
+            btnNode.attachEvent("onclick",function () {
+                alert("清楚成功");
+            })
+        }
+    </script>
+</body>
+</html>

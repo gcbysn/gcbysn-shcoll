@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .warp{
+            width: 600px;
+            margin: 100px auto;
+            border:1px solid red;
+
+            /*变为伸缩容器*/
+            display: flex;
+            /*主轴方向 和 换行 一起设置*/
+            flex-flow: column;
+            flex-flow: wrap;
+            flex-flow: row-reverse wrap;
+            flex-flow: row-reverse wrap-reverse;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+        }
+        .box1{
+            background: red;
+        }
+        .box2{
+            background: black;
+        }
+        .box3{
+            background: blue;
+        }
+        .box4{
+            background: burlywood;
+        }
+        .box5{
+            background: pink;
+        }
+        .box6{
+            background: #795da3;
+        }
+    </style>
+</head>
+<body>
+<div class="warp">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+    <div class="box box4">4</div>
+    <div class="box box5">5</div>
+    <div class="box box6">6</div>
+</div>
+
+</body>
+</html>

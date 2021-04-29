@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*
+            浮动：是一个属性float，是一个半脱离标准的状态，也叫浮动流，当元素设置了浮动属性，不在具备之前的三种显示模式特征
+            如果我们用浮动来实现衡向布局
+
+               float:
+                    none:默认值
+                    left:向左侧浮动
+                    right:向右浮动
+
+             由于元素加了浮动属性后是一个半脱离标准流的状态，相当于飘起来了，这时如果父元素没有设置高度，父元素会认为没有内容撑开
+             自己，所以父元素的高度是0，后面的块元素会上来，被浮动压在下面
+
+             解决方案：
+             1.给父元素设置固定的高度
+             2.给父元素设置overflow:hidden/auto
+             3.给父元素设置clearfix伪类
+
+
+        */
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .head{
+            height: 100px;
+            background: pink;
+
+        }
+        .body{
+            /*height: 400px;*/
+            border: 1px solid yellow;
+            /*overflow: auto;*/
+        }
+        .footer{
+            height: 100px;
+            background:blueviolet;
+        }
+        .one{
+            width: 50px;
+            height: 50px;
+            float: left;
+            background: blue;
+        }
+        .two{
+            width: 200px;
+            height: 200px;
+            float: left;
+            background: red;
+        }
+        .three{
+            width: 300px;
+            height: 300px;
+            float: left;
+            background: green;
+        }
+        .four{
+            width: 300px;
+            height: 400px;
+            background: #882D00;
+            float: left;
+        }
+        .clearfix:after{
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="head"></div>
+    <div class="body clearfix">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <span class="four"></span>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

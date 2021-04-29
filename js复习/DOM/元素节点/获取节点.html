@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+ <div class="box">
+        <div class="boox">
+            <div class="box1">4</div>
+            <div class="box2">1</div>
+            <div class="box3">3</div>
+        </div>
+        <div>
+            <div class="box4">4</div>
+            <div class="box5">1</div>
+            <div class="box6">3</div>
+        </div>
+    </div>
+</body>
+<script>
+    var div=document.querySelector('.box2')
+    var divs=document.querySelector('.boox')
+    // var text= div.parentElement.previousSibling.previousSibling;
+    var text= div.parentElement.nextSibling.nextSibling;
+    var a=text.children;
+
+    var b=divs.children;
+    console.log(a[1])
+
+</script>
+</html>

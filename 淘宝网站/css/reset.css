@@ -1,0 +1,87 @@
+/*
+    基本设置：基本的标签初始化
+*/
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{
+    margin:0;
+    padding:0;
+}
+h1,h2,h3,h4,h5,h6{
+    /*父元素字号的百分比*/
+    font-size:100%;
+}
+em,i{
+    font-style:normal;
+}
+del,s{
+    text-decoration: none;
+}
+ol,ul{
+    list-style:none;
+}
+img{
+    /*解决底部留白*/
+    display: block;
+}
+button,input,select,textarea{
+    font-size:100%;
+    /*去除轮廓线*/
+    outline: none;
+}
+table{
+    /*边框重叠*/
+    border-collapse:collapse;
+    /*单元格与单元格之间的距离*/
+    border-spacing:0;
+}
+/*
+    风格的设置：
+*/
+body {
+    /*字体可以设置多个，浏览器依次识别，能识别就直接使用
+      字体三种表现方式：中文 英文 unicode
+    */
+    font:12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    color: #6c6c6c;
+}
+body{
+    background-color: #f1f1f1;
+    height: 2500px;
+}
+
+a {
+    /*去除下划线*/
+    text-decoration:none;
+    color: #6c6c6c;
+}
+a:hover{
+    text-decoration:underline;
+    color: #f40;
+}
+.clearFix:after{
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix{
+    zoom: 1;
+}
+/*=========图标字体======*/
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff2') format('woff2'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="app">
+        <img class="top" src="./images/top_img.png" alt="">
+        <div class="tc">
+            <img class="gongGao" src="./images/pop_t.png" alt="">
+            <div class="wz">
+                <h3>活动规则</h3>
+                <p>1、8月18-10月31 8成功订购国际漫游大包多天</p>
+                <p>流量包且激活使用。</p>
+                <p>2、活动期间办理并激活多个大包多天流量，只享</p>
+                <p>受1次20元话费赠送。</p>
+                <p>3、赠送的20元话费领取后立即到账，可以冲抵当<br></p>
+                <p>月消费。</p>
+            </div>
+        </div>
+        <a class="bottom"></a>
+        <div class="bottom1">
+        </div>
+        <span class="hd">活动规则</span>
+        <img class="load" src="./images/load/1.png" alt="">
+    </div>
+    <div class="mb">
+    </div>
+</body>
+<script>
+    var hd=document.querySelector('.hd');
+    var mb=document.querySelector('.mb')
+    var tc=document.querySelector('.tc')
+    var b_1=document.querySelector('.bottom1')
+    var b=document.querySelector('.bottom')
+    var load=document.querySelector('.load')
+    hd.onclick=function () {
+        // console.log(1)
+        mb.classList.add('active')
+        tc.classList.add('active')
+        b_1.classList.add('active')
+        b.style.bottom=1+'rem';
+        // tc.style.top=-1+'rem'
+        // b_1.style.bottom=1.2+'rem'
+    }
+    mb.onclick=function () {
+        // console.log(1)
+        mb.classList.remove('active')
+        tc.classList.remove('active')
+        b_1.classList.remove('active')
+        b.style.bottom=0+'rem';
+        // tc.style.top=-1+'rem'
+        // b_1.style.bottom=1.2+'rem'
+    }
+    b.onclick=function () {
+        mb.classList.add('active')
+        load.classList.add('active')
+       var time= setInterval(function () {
+            load.src='./images/load/2.png'
+        },100)
+        var time1=setInterval(function () {
+            load.src='./images/load/3.png'
+        },200)
+        var time2= setInterval(function () {
+            load.src='./images/load/4.png'
+        },300)
+        setTimeout(function () {
+            mb.classList.remove('active')
+            load.classList.remove('active')
+            window.location.href='wor2.html'
+            clearInterval(time)
+            clearInterval(time1)
+            clearInterval(time2)
+        },2000)
+        // clearInterval(time3)
+    }
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .warp{
+            width: 600px;
+            margin: 100px auto;
+            border:1px solid red;
+
+            /*变为伸缩容器*/
+            display: flex;
+        }
+        .warp01{
+            /*变为伸缩容器，伸缩容器会变为行内元素*/
+            display: inline-flex;
+        }
+        .box{
+            width: 150px;
+            height: 150px;
+
+        }
+        .box1{
+            background: red;
+        }
+        .box2{
+            background: black;
+        }
+        .box3{
+            background: blue;
+        }
+        .box4{
+            background: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <span class="box box1"></span>
+    </div>
+    <div class="warp warp01">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    </div>
+    <div class="warp warp01">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    </div>
+    <p>
+       段落
+    </p>
+</body>
+</html>

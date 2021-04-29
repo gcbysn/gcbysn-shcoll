@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <div id="app" class="active" name="damu">
+        </div>
+        <script>
+            window.onload=function () {
+                /*
+                *   第一种     节点层面
+                * */
+                var appNode=document.getElementById("app");
+                var textNode=document.createTextNode("来了老弟");
+                appNode.appendChild(textNode);
+
+                //值的层面  第二种
+                appNode.textContent="我是app";
+            }
+        </script>
+</body>
+</html>

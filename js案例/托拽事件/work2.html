@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            border: 15px solid blue;
+            background-color: red;
+            position: absolute;
+        }
+
+        .box2{
+            width: 1000px;
+            height: 500px;
+            border: 10px solid black;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box2">
+        <div class="box1"></div>
+    </div>
+</body>
+<script>
+    window.onload = function(){
+        /*
+         * 拖拽box1元素
+         *  - 拖拽的流程
+         * 		1.当鼠标在被拖拽元素上按下时，开始拖拽  onmousedown
+         * 		2.当鼠标移动时被拖拽元素跟随鼠标移动 onmousemove
+         * 		3.当鼠标松开时，被拖拽元素固定在当前位置	onmouseup
+         */
+
+        //获取box1
+        var box1 = document.querySelector(".box1");
+        var box2 = document.querySelector(".box2");
+        //为box1绑定一个鼠标按下事件
+        //当鼠标在被拖拽元素上按下时，开始拖拽  onmousedown
+        box1.onmousedown = function(event){
+            event = event || window.event;
+            //div的偏移量 鼠标.clentX - 元素.offsetLeft
+            //div的偏移量 鼠标.clentY - 元素.offsetTop
+            var ol = event.clientX - box1.offsetLeft;
+            var ot = event.clientY - box1.offsetTop;
+
+            // console.log(box1.offsetLeft,box1.offsetTop);
+
+            //为document绑定一个onmousemove事件
+            document.onmousemove = function(event){
+                event = event || window.event;
+                //当鼠标移动时被拖拽元素跟随鼠标移动 onmousemove
+                //获取鼠标的坐标
+                var left = event.clientX - ol;
+                var top = event.clientY - ot;
+
+                var maxl=box2.clientWidth-box1.offsetWidth+10;
+                var maxt=box2.clientHeight-box1.offsetHeight+10;
+                // console.log(maxl,maxt)
+
+                left=left<10?10:left;
+                top=top<10?10:top;
+
+                left=left>maxl?maxl:left;
+                top=top>maxt?maxt:top;
+
+                //修改box1的位置
+                box1.style.left = left+"px";
+                box1.style.top = top+"px";
+                console.log(event.clientX,event.clientY);
+            };
+
+            //为document绑定一个鼠标松开事件
+            document.onmouseup = function(){
+                //当鼠标松开时，被拖拽元素固定在当前位置	onmouseup
+                //取消document的onmousemove事件
+                document.onmousemove = null;
+                //取消document的onmouseup事件
+                document.onmouseup = null;
+            };
+        };
+    };
+</script>
+</html>

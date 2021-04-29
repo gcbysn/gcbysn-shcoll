@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*
+            外边距margin：盒子与盒子之间的边距
+            margin所有属性的用法和padding一样
+
+            外边距合并问题:垂直排列的两个块级元素，分别给上面的设置下边距，给下面的盒子设置向上的边距，此时会造成外边距合并问题，
+            当两个外边距的数值相同时，外边距就是这个值，当两个外边距的数值不同时免谁的值大就是哪个值
+
+            外边距塌陷问题：嵌套的两个块级元素，当子元素设置向上的外边距时，此时父盒子会跟着掉下来，叫做外边距塌陷
+
+             行内元素和行内块元素在设置垂直方向的外边距时，都会对周围的元素造成影响
+
+            解决方案：
+            1.给父盒子设置上边框
+            2.给父盒子设置overflow:hidden；属性
+
+
+            overflow:
+                visible 默认值，不会对溢出内容进行处理，元素会在父元素之外显示
+                hidden  溢出的内容会被修减，不会显示
+                scroll  会为父元素添加滚动条，通过滚动条来查看完整内容
+                auto    会根据内容天骄滚动条
+        */
+
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin-left: 10px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            overflow: auto;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background: blue;
+            margin-top: 10px;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background: #ff8500;
+            overflow: hidden;
+        }
+        .phone{
+            width: 50px;
+            height: 100px;
+            background: green;
+            margin-left: 75px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <div class="box2">
+
+    </div>
+    <div class="box3">
+        <div class="phone"></div>
+    </div>
+</body>
+</html>
